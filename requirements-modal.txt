@@ -1,0 +1,8 @@
+# Modal-specific requirements (installed inside Modal container)
+torch>=2.1.0
+transformers>=4.37.0
+accelerate>=0.25.0
+tokenizers>=0.15.0
+numpy>=1.24.0
+tqdm>=4.66.0
+modal>=0.57.0

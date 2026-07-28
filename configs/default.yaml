@@ -1,0 +1,41 @@
+# Default configuration for Culture-Geo experiments
+# Override via CLI: python script.py key=value
+
+model:
+  name: "meta-llama/Meta-Llama-3-8B"
+  dtype: "bfloat16"
+  device: "cuda"
+  max_length: 128
+  batch_size: 8
+
+data:
+  num_concepts_per_language: 20
+  num_prompt_templates: 3
+  seed: 42
+
+extraction:
+  layers: "all"  # or list of specific layer indices
+  include_embeddings: true
+  include_attention: false
+  output_dir: "data/activations"
+  compress: true
+
+analysis:
+  pca_components: 50
+  umap_n_neighbors: 15
+  umap_min_dist: 0.1
+  umap_n_components: 2
+  kmeans_k: 10
+  silhouette_samples: 10
+
+visualization:
+  figsize: [10, 8]
+  dpi: 300
+  style: "seaborn-v0_8-whitegrid"
+  palette: "Set2"
+  output_dir: "paper/figures"
+
+modal:
+  gpu: "L4"
+  timeout: 3600
+  image: "debian_slim"

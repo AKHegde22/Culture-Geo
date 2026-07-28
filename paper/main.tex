@@ -1,0 +1,216 @@
+\documentclass{article}
+
+% NeurIPS 2026 Workshop Template
+\usepackage[preprint]{neurips_2026}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\title{The Geometry of Untranslatability: How LLMs Represent Cultural Concepts Without English Equivalents}
+
+\author{
+  Anonymous Author(s)\\
+  \texttt{anonymous@example.com} \\
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Recent work has shown that multilingual LLMs route through an English-centric latent space for semantic processing. However, what happens when a cultural concept \emph{has no English equivalent}? We present the first systematic study of how LLMs represent \textit{untranslatable} cultural concepts---words like Japanese \textit{Tsundoku}, German \textit{Schadenfreude}, and Portuguese \textit{Saudade}---that resist direct translation into English. Using mechanistic interpretability tools (residual stream analysis, logit lens, and activation clustering) on Llama-3-8B, we analyze 200 untranslatable concepts across 10 languages. We find that (1) untranslatable concepts show distinct activation trajectories compared to translatable controls, (2) they occupy more isolated clusters in the residual stream, and (3) the model exhibits higher ``English routing'' in mid-layers for concepts that lack English equivalents, suggesting forced alignment to an English-centric representation space. Our results揭示 the representational cost of lexical gaps in LLMs and have implications for cultural fairness in multilingual AI deployment.
+\end{abstract}
+
+\section{Introduction}
+
+Large language models (LLMs) are increasingly deployed globally, yet their internal representations remain poorly understood across cultures. Recent mechanistic interpretability work has established that LLMs route through an English-centric latent space~\cite{schut2025think, wendler2024llamas}---but these studies exclusively examine concepts that \textit{do} have English equivalents.
+
+We ask a different question: \textbf{What happens when a cultural concept has no English equivalent?}
+
+Consider the Japanese word \textit{Tsundoku} (積ん読), which describes the act of buying books and letting them pile up unread. English requires a full phrase to express this concept. How does Llama-3-8B internally represent this concept? Does it:
+\begin{itemize}
+    \item Force the concept into an English approximation (e.g., ``book collecting''), losing cultural nuance?
+    \item Carve out a language-specific cluster in the residual stream?
+    \item Show a distinct activation trajectory compared to translatable concepts?
+\end{itemize}
+
+We present the first systematic study of this question, analyzing 200 untranslatable concepts across 10 languages (Japanese, German, Portuguese, Korean, Arabic, Hindi, Russian, Danish, Spanish, French) using activation extraction, PCA/UMAP clustering, logit lens analysis, and trajectory tracking on Llama-3-8B.
+
+\section{Related Work}
+
+\textbf{Cultural Representations in LLMs.}
+Khanuja et al.~\cite{khanuja2026steering} introduced Cultural Embeddings (CuE) using Sparse Autoencoders to extract culture-specific features. Zou et al.~\cite{zou2026deciphering} provided causal evidence that LLMs encode cultural knowledge as decoupled semantic structures. Both studies focus on concepts that exist across languages.
+
+\textbf{English-Centric Latent Spaces.}
+Schut et al.~\cite{schut2025think} demonstrated that LLMs make key decisions in a representation space closest to English, regardless of input/output language. Wendler et al.~\cite{wendler2024llamas} showed the abstract ``concept space'' lies closer to English than other languages. RomanLens~\cite{romanlens2025} revealed that romanization serves as a bridge between concept space and language-specific regions.
+
+\textbf{Untranslatability in Linguistics.}
+The study of lexical gaps---concepts that exist in one language but not another---is central to linguistic relativity theory~\cite{sapir1929}. Our work connects this classical linguistic concept to modern mechanistic interpretability.
+
+\section{Methodology}
+
+\subsection{Dataset}
+
+We construct a dataset of 200 untranslatable cultural concepts across 10 source languages, paired with 200 translatable control concepts (direct English equivalents exist). Each concept is paired with 3 prompt templates:
+
+\begin{enumerate}
+    \item \textbf{Definition probe:} ``In \{language\}, the word \{word\} means...'' (tests knowledge retrieval)
+    \item \textbf{Usage probe:} ``Write a sentence in \{language\} using the word \{word\}...'' (tests generation)
+    \item \textbf{Comparison probe:} ``Explain the \{language\} concept \{word\} to an English speaker...'' (tests translation routing)
+\end{enumerate}
+
+This yields 600 prompts total (200 concepts $\times$ 3 templates).
+
+\subsection{Activation Extraction}
+
+We load Llama-3-8B via HuggingFace Transformers and register forward hooks on all 32 transformer layers to capture the residual stream at each layer. For each prompt, we extract:
+\begin{itemize}
+    \item \texttt{hidden\_states[layer]}: Residual stream vector at each layer (4096-dimensional)
+    \item \texttt{logits}: Final layer logits for logit lens analysis
+\end{itemize}
+
+Activations are extracted at the last non-padding token position, capturing the model's full-context representation of each prompt.
+
+\subsection{Analysis Pipeline}
+
+\textbf{Logit Lens.} We project intermediate representations through the unembedding matrix to obtain layer-wise token predictions. We compute the \textit{English Routing Rate} (ERR): the fraction of top-1 predictions that are English tokens at each layer.
+
+\textbf{Clustering.} We apply PCA (50 components) followed by UMAP (2D) for visualization. K-means clustering (k=10) is evaluated against true language labels using Adjusted Rand Index (ARI) and Silhouette Score.
+
+\textbf{Trajectory Analysis.} We compute cosine distance from the translatable-concept centroid at each layer, tracking how untranslatable concepts diverge from the English-adjacent representation space.
+
+\textbf{Statistical Testing.} All comparisons between untranslatable and translatable groups use Welch's t-test with Cohen's d effect sizes and 95\% confidence intervals.
+
+\section{Experiments}
+
+\subsection{Experiment 1: English Routing Rate}
+
+\textbf{Finding:} Untranslatable concepts show higher ERR in mid-layers (12-24) compared to translatable controls, suggesting the model attempts to route these concepts through English before reverting to source-language representations in later layers.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/fig2_err_across_layers.pdf}
+    \caption{English Routing Rate across model layers for untranslatable (red) and translatable (blue) concepts. The divergence in mid-layers indicates forced English alignment for untranslatable concepts.}
+    \label{fig:err}
+\end{figure}
+
+\subsection{Experiment 2: Activation Clustering}
+
+\textbf{Finding:} Untranslatable concepts form tighter, more isolated clusters per language than translatable concepts (higher silhouette scores), suggesting the model maintains distinct representations for concepts without English equivalents.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/fig1_umap_translatability.pdf}
+        \caption{Colored by translatability}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/fig1b_umap_language.pdf}
+        \caption{Colored by source language}
+    \end{subfigure}
+    \caption{UMAP embedding of concept activations at the model's mid-layer. Untranslatable concepts form more distinct clusters.}
+    \label{fig:umap}
+\end{figure}
+
+\subsection{Experiment 3: Trajectory Analysis}
+
+\textbf{Finding:} Untranslatable concepts show greater cosine distance from the translatable centroid in mid-layers, with the maximum divergence occurring around layer 18-22. This ``repulsion'' pattern suggests the model struggles to integrate these concepts into its English-centric representation space.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/fig3_trajectory_distances.pdf}
+    \caption{Cosine distance from the translatable-concept centroid across layers. Untranslatable concepts (red) show greater divergence in mid-layers.}
+    \label{fig:trajectory}
+\end{figure}
+
+\subsection{Experiment 4: Clustering Quality Across Layers}
+
+\textbf{Finding:} The Adjusted Rand Index (agreement between k-means clusters and true language labels) peaks at layers 12-16, suggesting these mid-layers contain the most linguistically differentiated representations.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/fig4_ari_by_layer.pdf}
+    \caption{Adjusted Rand Index across model layers, measuring how well language identity is represented.}
+    \label{fig:ari}
+\end{figure}
+
+\section{Discussion}
+
+Our results suggest that LLMs face a ``representational dilemma'' when processing untranslatable concepts. In mid-layers---where semantic processing is most active---the model attempts to route these concepts through English, causing measurable divergence from the expected representation path.
+
+This has practical implications:
+\begin{itemize}
+    \item \textbf{Cultural Fairness:} Models may systematically distort culturally-specific concepts that lack English equivalents, leading to biased outputs for non-English cultures.
+    \item \textbf{Multilingual Deployment:} Steering interventions (like CuE) may need to account for the additional representational cost of untranslatable concepts.
+    \item \textbf{Evaluation:} Benchmarks should include culturally-specific concepts to properly assess multilingual capabilities.
+\end{itemize}
+
+\section{Limitations and Future Work}
+
+\textbf{Limitations:}
+\begin{itemize}
+    \item We analyze a single model (Llama-3-8B); results may vary across architectures and sizes.
+    \item Our dataset, while carefully curated, covers 10 languages---extending to more typologically diverse languages would strengthen generalizability.
+    \item We use residual stream analysis rather than Sparse Autoencoders, which would provide more interpretable feature-level insights.
+\end{itemize}
+
+\textbf{Future Work:}
+\begin{itemize}
+    \item Apply SAE-based analysis (CuE framework) to untranslatable concepts for feature-level interpretability.
+    \item Extend to larger models (70B+) to study scale effects.
+    \item Develop steering interventions specifically targeting untranslatable concept representations.
+    \item Build a comprehensive benchmark for evaluating cultural concept handling in multilingual LLMs.
+\end{itemize}
+
+\section{Conclusion}
+
+We present the first study of how LLMs represent cultural concepts that lack English equivalents. Using mechanistic interpretability tools, we show that untranslatable concepts trigger distinct activation patterns---higher English routing in mid-layers, tighter language-specific clustering, and greater trajectory divergence. These findings reveal the representational cost of lexical gaps in LLMs and motivate culturally-aware approaches to multilingual AI alignment.
+
+\bibliographystyle{plainnat}
+\begin{thebibliography}{10}
+
+\bibitem{khanuja2026steering}
+Simran Khanuja, Hongbin Liu, Shujian Zhang, et al.
+\newblock Steering LLMs for Culturally Localized Generation.
+\newblock \emph{arXiv preprint arXiv:2603.23301}, 2026.
+
+\bibitem{schut2025think}
+Lisa Schut, Yarin Gal, and Sebastian Farquhar.
+\newblock Do Multilingual LLMs Think In English?
+\newblock In \emph{ICLR 2025 Workshop: Building Trust in LLMs}, 2025.
+
+\bibitem{wendler2024llamas}
+Chris Wendler, Veniamin Veselovsky, Giovanni Monea, and Robert West.
+\newblock Do Llamas Work in English? On the Latent Language of Multilingual Transformers.
+\newblock In \emph{ACL 2024}, 2024.
+
+\bibitem{zou2026deciphering}
+Chenye Zou, Difan Jiao, and Lijie Hu.
+\newblock Deciphering Cultural Representations in Large Language Models via Sparse Autoencoders.
+\newblock In \emph{Findings of ACL 2026}, 2026.
+
+\bibitem{romanlens2025}
+Anonymous.
+\newblock RomanLens: The Role Of Latent Romanization In Multilinguality In LLMs.
+\newblock \emph{arXiv preprint arXiv:2502.07424}, 2025.
+
+\bibitem{sapir1929}
+Edward Sapir.
+\newblock The Status of Linguistics as a Science.
+\newblock \emph{Language}, 5(4):207--214, 1929.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "culture-geo"
+version = "0.1.0"
+description = "The Geometry of Untranslatability: Probing LLM Representations of Cultural Lexical Gaps"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Akshay Kumar"}
+]
+
+[project.scripts]
+culture-geo-build = "scripts.01_build_dataset:main"
+culture-geo-extract = "scripts.02_extract_activations:main"
+culture-geo-analyze = "scripts.03_run_analysis:main"
+culture-geo-figures = "scripts.04_generate_figures:main"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
