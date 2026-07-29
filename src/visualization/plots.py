@@ -297,9 +297,6 @@ def plot_statistical_results(
     output_path: Optional[str] = None,
     title: str = "Statistical Test Results",
 ) -> plt.Figure:
-    """
-    Forest plot of statistical test results (effect sizes with CIs).
-    """
     setup_style()
     fig, ax = plt.subplots(figsize=(10, 6))
 
@@ -323,7 +320,6 @@ def plot_statistical_results(
 
     y_pos = range(len(test_names))
 
-    # Plot effect sizes with CIs
     ax.errorbar(
         effects,
         y_pos,
@@ -337,10 +333,7 @@ def plot_statistical_results(
         markersize=8,
     )
 
-    # Reference line at 0
     ax.axvline(x=0, color="gray", linestyle="--", alpha=0.5)
-
-    # Effect size benchmarks
     ax.axvline(x=0.2, color="green", linestyle=":", alpha=0.3, label="Small (d=0.2)")
     ax.axvline(x=0.5, color="orange", linestyle=":", alpha=0.3, label="Medium (d=0.5)")
     ax.axvline(x=0.8, color="red", linestyle=":", alpha=0.3, label="Large (d=0.8)")
@@ -350,6 +343,118 @@ def plot_statistical_results(
     ax.set_xlabel("Effect Size (Cohen's d)")
     ax.set_title(title)
     ax.legend(loc="lower right")
+
+    if output_path:
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        fig.savefig(output_path, bbox_inches="tight")
+        print(f"  Saved: {output_path}")
+
+    return fig
+
+
+def plot_cross_model_err(
+    err_by_model: Dict[str, Dict[str, Dict[int, float]]],
+    output_path: Optional[str] = None,
+    title: str = "English Routing Rate Across Models",
+) -> plt.Figure:
+    setup_style()
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    for model_key, err_groups in err_by_model.items():
+        color = TRANSLATABILITY_COLORS.get(model_key, "#999999")
+        label = model_key
+        for translatability, layer_errs in err_groups.items():
+            layers = sorted(layer_errs.keys())
+            values = [layer_errs[l] for l in layers]
+            ls = "-" if translatability == "untranslatable" else "--"
+            alpha = 1.0 if translatability == "untranslatable" else 0.5
+            ax.plot(
+                layers, values,
+                marker="", linestyle=ls, color=color,
+                label=f"{label} ({translatability})",
+                linewidth=2, alpha=alpha,
+            )
+
+    ax.set_xlabel("Layer")
+    ax.set_ylabel("English Routing Rate")
+    ax.set_title(title)
+    ax.legend(bbox_to_anchor=(1.05, 1), loc="upper left", fontsize=9)
+    ax.set_ylim(0, 1)
+    ax.grid(True, alpha=0.3)
+
+    if output_path:
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        fig.savefig(output_path, bbox_inches="tight")
+        print(f"  Saved: {output_path}")
+
+    return fig
+
+
+def plot_cross_model_ari(
+    ari_by_model: Dict[str, Dict[int, float]],
+    output_path: Optional[str] = None,
+    title: str = "Adjusted Rand Index Across Models",
+) -> plt.Figure:
+    setup_style()
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    for model_key, ari_layers in ari_by_model.items():
+        color = TRANSLATABILITY_COLORS.get(model_key, "#999999")
+        layers = sorted(ari_layers.keys())
+        values = [ari_layers[l] for l in layers]
+        ax.plot(layers, values, marker="o", color=color, label=model_key, linewidth=2, markersize=4)
+
+    ax.set_xlabel("Layer")
+    ax.set_ylabel("Adjusted Rand Index")
+    ax.set_title(title)
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+
+    if output_path:
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        fig.savefig(output_path, bbox_inches="tight")
+        print(f"  Saved: {output_path}")
+
+    return fig
+
+
+def plot_cross_model_silhouette(
+    silhouette_by_model: Dict[str, Dict[str, float]],
+    output_path: Optional[str] = None,
+    title: str = "Silhouette Scores by Model",
+) -> plt.Figure:
+    setup_style()
+    model_keys = list(silhouette_by_model.keys())
+    groups = ["untranslatable", "translatable"]
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+
+    n_models = len(model_keys)
+    bar_width = 0.35
+    x = np.arange(n_models)
+
+    for gi, group in enumerate(groups):
+        values = []
+        for mk in model_keys:
+            v = silhouette_by_model.get(mk, {}).get(group, 0)
+            values.append(v)
+        offset = (gi - 0.5) * bar_width
+        bars = ax.bar(
+            x + offset, values, bar_width,
+            label=group,
+            color=TRANSLATABILITY_COLORS.get(group, "#999999"),
+            alpha=0.8,
+        )
+        for bar, val in zip(bars, values):
+            ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.005,
+                    f"{val:.3f}", ha="center", va="bottom", fontsize=8)
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(model_keys, fontsize=9)
+    ax.set_ylabel("Silhouette Score")
+    ax.set_title(title)
+    ax.legend()
+    ax.grid(True, alpha=0.3, axis="y")
 
     if output_path:
         os.makedirs(os.path.dirname(output_path), exist_ok=True)

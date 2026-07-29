@@ -37,7 +37,6 @@ from src.analysis.clustering import (
     apply_umap,
     cluster_kmeans,
     evaluate_clustering,
-    find_optimal_k,
     compute_silhouette_by_group,
     cluster_per_layer,
 )
@@ -45,12 +44,15 @@ from src.analysis.trajectory import (
     compute_translatable_centroids,
     compute_trajectory_distances,
     compute_per_language_trajectories,
-    compute_trajectory_curvature,
     find_peak_distance_layer,
 )
 from src.analysis.statistics import (
     run_all_statistical_tests,
     format_results_table,
+)
+from src.analysis.cross_model import (
+    load_model_results,
+    build_cross_model_report,
 )
 
 
@@ -60,8 +62,11 @@ def run_analysis(
     model_name: str = "meta-llama/Meta-Llama-3-8B",
     pca_components: int = 50,
     n_clusters: int = 10,
+    model_key: str = "llama-3-8b",
 ):
     """Run the complete analysis pipeline."""
+    activations_dir = os.path.join(activations_dir, model_key)
+    output_dir = os.path.join(output_dir, model_key)
     os.makedirs(output_dir, exist_ok=True)
 
     print("Loading activations...")
@@ -247,21 +252,52 @@ def run_analysis(
 
 def main():
     import argparse
+    from src.extraction.model_config import get_model_config, resolve_model_keys
+
     parser = argparse.ArgumentParser(description="Run activation analysis")
+    parser.add_argument("--models", type=str, default=None,
+                        help="Comma-separated model keys or 'all' (default: llama-3-8b)")
     parser.add_argument("--activations-dir", default="data/activations")
     parser.add_argument("--output-dir", default="data/analysis")
-    parser.add_argument("--model", default="meta-llama/Meta-Llama-3-8B")
+    parser.add_argument("--model", default=None,
+                        help="HuggingFace model name (legacy)")
     parser.add_argument("--pca-components", type=int, default=50)
     parser.add_argument("--n-clusters", type=int, default=10)
     args = parser.parse_args()
 
-    run_analysis(
-        activations_dir=args.activations_dir,
-        output_dir=args.output_dir,
-        model_name=args.model,
-        pca_components=args.pca_components,
-        n_clusters=args.n_clusters,
-    )
+    model_keys = resolve_model_keys(args.models)
+
+    all_model_results = {}
+    for mk in model_keys:
+        cfg = get_model_config(mk)
+        print("\n" + "=" * 60)
+        print(f"Running analysis for: {mk} ({cfg['short_name']})")
+        print("=" * 60)
+
+        run_analysis(
+            activations_dir=args.activations_dir,
+            output_dir=args.output_dir,
+            model_name=cfg["hf_name"],
+            pca_components=args.pca_components,
+            n_clusters=args.n_clusters,
+            model_key=mk,
+        )
+
+    # Cross-model comparison
+    if len(model_keys) > 1:
+        print("\n" + "=" * 60)
+        print("Running Cross-Model Comparison")
+        print("=" * 60)
+
+        model_results = load_model_results(args.output_dir, model_keys)
+        report = build_cross_model_report(model_results)
+
+        from src.utils.io import save_results
+        save_results(report, os.path.join(args.output_dir, "cross_model.json"))
+        print(f"  Cross-model comparison: {len(report['models_analyzed'])} models")
+        if "err_correlations" in report:
+            for pair, corr in report["err_correlations"].items():
+                print(f"    {pair}: r={corr['pearson_r']:.3f} ({corr['n_layers']} layers)")
 
 
 if __name__ == "__main__":

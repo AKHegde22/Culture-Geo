@@ -29,10 +29,15 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 
-def run_local(args):
-    """Run extraction on local GPU."""
+def run_local(args, model_key: str):
+    """Run extraction on local GPU for a specific model."""
     import torch
-    from src.extraction.extract import load_model, extract_activations, save_activations
+    from src.extraction.extract import load_model, extract_activations, save_activations, model_output_dir
+    from src.extraction.model_config import get_model_config
+
+    cfg = get_model_config(model_key)
+    model_name = cfg["hf_name"]
+    output_dir = model_output_dir(args.output_dir, model_key)
 
     # Load prompts
     prompts_path = os.path.join(args.prompts_dir, "prompts.json")
@@ -48,8 +53,8 @@ def run_local(args):
 
     # Load model
     model, tokenizer = load_model(
-        model_name=args.model,
-        dtype=args.dtype,
+        model_name=model_name,
+        dtype=cfg["dtype"],
         device=args.device,
     )
 
@@ -70,28 +75,33 @@ def run_local(args):
     # Save
     save_activations(
         results=results,
-        output_dir=args.output_dir,
+        output_dir=output_dir,
         compress=args.compress,
     )
 
-    print(f"\nExtraction complete in {elapsed:.1f}s")
+    print(f"\n{model_key} extraction complete in {elapsed:.1f}s")
     print(f"  Speed: {len(prompts) / elapsed:.1f} prompts/sec")
 
 
-def run_modal(args):
-    """Run extraction on Modal serverless GPU."""
+def run_modal(args, model_key: str):
+    """Run extraction on Modal serverless GPU for a specific model."""
     import subprocess
     import sys
+    from src.extraction.model_config import get_model_config
 
-    # Run the Modal app
+    cfg = get_model_config(model_key)
+    model_name = cfg["hf_name"]
+    from src.extraction.extract import model_output_dir
+    output_dir = model_output_dir(args.output_dir, model_key)
+
     modal_script = PROJECT_ROOT / "src" / "extraction" / "modal_extract.py"
 
     cmd = [
         sys.executable, str(modal_script),
         "--prompts-file", os.path.join(args.prompts_dir, "prompts.json"),
-        "--output-dir", args.output_dir,
-        "--model-name", args.model,
-        "--batch-size", str(args.batch_batch_size),
+        "--output-dir", output_dir,
+        "--model-name", model_name,
+        "--modal-batch-size", str(args.modal_batch_size),
     ]
 
     print(f"Running Modal extraction: {' '.join(cmd)}")
@@ -100,6 +110,8 @@ def run_modal(args):
 
 def main():
     import argparse
+    from src.extraction.model_config import resolve_model_keys
+
     parser = argparse.ArgumentParser(
         description="Extract activations from LLM"
     )
@@ -108,9 +120,11 @@ def main():
     parser.add_argument("--modal", action="store_true",
                         help="Use Modal serverless GPU instead of local")
 
-    # Model
-    parser.add_argument("--model", default="meta-llama/Meta-Llama-3-8B",
-                        help="HuggingFace model name")
+    # Model selection
+    parser.add_argument("--models", type=str, default=None,
+                        help="Comma-separated model keys or 'all' (default: llama-3-8b)")
+    parser.add_argument("--model", type=str, default=None,
+                        help="HuggingFace model name (legacy, overrides --models)")
     parser.add_argument("--dtype", default="bfloat16",
                         choices=["float32", "float16", "bfloat16", "auto"],
                         help="Model dtype")
@@ -121,7 +135,7 @@ def main():
     parser.add_argument("--prompts-dir", default="data/processed",
                         help="Directory containing prompts.json")
     parser.add_argument("--output-dir", default="data/activations",
-                        help="Output directory for activations")
+                        help="Base output directory for activations")
 
     # Extraction
     parser.add_argument("--batch-size", type=int, default=8,
@@ -143,23 +157,29 @@ def main():
 
     args = parser.parse_args()
 
-    print("=" * 60)
-    print("Step 2: Extracting Activations")
-    print("=" * 60)
-    print(f"  Model: {args.model}")
-    print(f"  Mode: {'Modal' if args.modal else 'Local'}")
-    if not args.modal:
-        print(f"  Device: {args.device}")
-        print(f"  Batch size: {args.batch_size}")
-    print()
+    model_keys = resolve_model_keys(args.models)
 
-    if args.modal:
-        run_modal(args)
-    else:
-        run_local(args)
+    for mk in model_keys:
+        print("=" * 60)
+        print(f"Step 2: Extracting Activations — {mk}")
+        print("=" * 60)
+        print(f"  Model key: {mk}")
+        print(f"  Mode: {'Modal' if args.modal else 'Local'}")
+        if not args.modal:
+            print(f"  Device: {args.device}")
+            print(f"  Batch size: {args.batch_size}")
+        print()
+
+        if args.modal:
+            run_modal(args, mk)
+        else:
+            run_local(args, mk)
+
+        print(f"\n{mk} extraction complete.")
+        print()
 
     print("\n" + "=" * 60)
-    print("Done! Activations ready for analysis.")
+    print("Done! All activations ready for analysis.")
     print("=" * 60)
 
 

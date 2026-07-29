@@ -8,6 +8,39 @@ model:
   max_length: 128
   batch_size: 8
 
+# Multi-model registry
+models:
+  llama-3-8b:
+    hf_name: "meta-llama/Meta-Llama-3-8B"
+    short_name: "Llama-3-8B"
+    layers: 32
+    d_model: 4096
+    vocab_size: 128256
+    dtype: "bfloat16"
+  llama-3-8b-instruct:
+    hf_name: "meta-llama/Meta-Llama-3-8B-Instruct"
+    short_name: "Llama-3-8B-IT"
+    layers: 32
+    d_model: 4096
+    vocab_size: 128256
+    dtype: "bfloat16"
+  mistral-7b:
+    hf_name: "mistralai/Mistral-7B-v0.3"
+    short_name: "Mistral-7B"
+    layers: 32
+    d_model: 4096
+    vocab_size: 32768
+    dtype: "bfloat16"
+  qwen-2.5-7b:
+    hf_name: "Qwen/Qwen2.5-7B"
+    short_name: "Qwen2.5-7B"
+    layers: 28
+    d_model: 3584
+    vocab_size: 152064
+    dtype: "bfloat16"
+
+default_model: "llama-3-8b"
+
 data:
   num_concepts_per_language: 20
   num_prompt_templates: 3

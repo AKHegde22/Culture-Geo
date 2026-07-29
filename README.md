@@ -16,7 +16,7 @@ This project investigates how LLMs internally represent untranslatable cultural 
 - Portuguese *Saudade* — deep emotional longing for something absent
 - Korean *Han* (한) — collective grief from historical oppression
 
-We use mechanistic interpretability tools (residual stream analysis, logit lens, activation clustering) on **Llama-3-8B** to analyze 70 untranslatable + 82 translatable control concepts across 10 languages.
+We use mechanistic interpretability tools (residual stream analysis, logit lens, activation clustering) across **four LLMs** (Llama-3-8B, Llama-3-8B-Instruct, Mistral-7B, Qwen2.5-7B) to analyze 70 untranslatable + 82 translatable control concepts across 10 languages.
 
 ## Key Research Questions
 
@@ -81,7 +81,7 @@ Culture-Geo/
 
 - Python 3.10+
 - GPU with 16GB+ VRAM (for local) OR Modal account (for serverless)
-- HuggingFace access to [Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+- HuggingFace access to models: [Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B), [Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct), [Mistral-7B-v0.3](https://huggingface.co/mistralai/Mistral-7B-v0.3), [Qwen2.5-7B](https://huggingface.co/Qwen/Qwen2.5-7B)
 
 ### Installation
 
@@ -110,7 +110,12 @@ bash scripts/05_run_all.sh --modal
 
 # Option C: Step by step
 python scripts/01_build_dataset.py
-python scripts/02_extract_activations.py --model meta-llama/Meta-Llama-3-8B
+python scripts/02_extract_activations.py --models all
+python scripts/03_run_analysis.py --models all
+python scripts/04_generate_figures.py --models all
+
+# Single model (default)
+python scripts/02_extract_activations.py
 python scripts/03_run_analysis.py
 python scripts/04_generate_figures.py
 ```
@@ -132,13 +137,22 @@ Output:
 
 ### Step 2: Extract Activations
 
-**Local GPU:**
+**All models (recommended):**
+```bash
+python scripts/02_extract_activations.py --models all
+```
+
+**Single model (default):**
 ```bash
 python scripts/02_extract_activations.py \
-    --model meta-llama/Meta-Llama-3-8B \
     --device cuda \
     --batch-size 8 \
     --max-length 128
+```
+
+**Specific models:**
+```bash
+python scripts/02_extract_activations.py --models llama-3-8b,mistral-7b
 ```
 
 **Modal Serverless (L4 GPU at $0.80/hr):**
@@ -147,8 +161,8 @@ python scripts/02_extract_activations.py \
 pip install modal
 modal setup
 
-# Run extraction
-python scripts/02_extract_activations.py --modal --gpu L4
+# Run extraction for all models
+python scripts/02_extract_activations.py --modal --models all
 ```
 
 **Memory-efficient (specific layers only):**
@@ -157,51 +171,70 @@ python scripts/02_extract_activations.py --layers 8,12,16,20,24,28,32
 ```
 
 Output:
-- `data/activations/layer_XX.npz` — Activations per layer
-- `data/activations/logits.npz` — Final logits
-- `data/activations/metadata.json` — Prompt metadata
+- `data/activations/llama-3-8b/layer_XX.npz` — Activations per layer
+- `data/activations/llama-3-8b/logits.npz` — Final logits
+- `data/activations/llama-3-8b/metadata.json` — Prompt metadata
+- `data/activations/mistral-7b/layer_XX.npz` — Per model
+- ...
 
 ### Step 3: Run Analysis
 
 ```bash
+# All models
+python scripts/03_run_analysis.py --models all
+
+# Single model
 python scripts/03_run_analysis.py
-# or with options
-python scripts/03_run_analysis.py \
-    --activations-dir data/activations \
-    --output-dir data/analysis \
-    --pca-components 50 \
-    --n-clusters 10
+
+# With options
+python scripts/03_run_analysis.py --models llama-3-8b,mistral-7b --pca-components 50 --n-clusters 10
 ```
 
 Output:
-- `data/analysis/analysis_results.json` — All analysis results
+- `data/analysis/llama-3-8b/analysis_results.json` — Per-model results
+- `data/analysis/cross_model.json` — Cross-model comparison
 
 ### Step 4: Generate Figures
 
 ```bash
+# All models
+python scripts/04_generate_figures.py --models all
+
+# Single model
 python scripts/04_generate_figures.py
 ```
 
-Output (6 paper figures):
-- `paper/figures/fig1_umap_translatability.pdf` — UMAP embedding by translatability
-- `paper/figures/fig1b_umap_language.pdf` — UMAP embedding by language
-- `paper/figures/fig2_err_across_layers.pdf` — English Routing Rate
-- `paper/figures/fig3_trajectory_distances.pdf` — Trajectory divergence
-- `paper/figures/fig4_ari_by_layer.pdf` — Clustering quality (ARI)
-- `paper/figures/fig5_silhouette_by_group.pdf` — Cluster separation
-- `paper/figures/fig6_statistical_results.pdf` — Effect sizes
+Output (per-model + cross-model figures):
+- `paper/figures/llama3-8b_umap_translatability.pdf`
+- `paper/figures/llama3-8b_err_across_layers.pdf`
+- `paper/figures/mistral-7b_err_across_layers.pdf`
+- `paper/figures/qwen2.5-7b_err_across_layers.pdf`
+- `paper/figures/cross_model_err.pdf` — Overlaid ERR curves
+- `paper/figures/cross_model_ari.pdf` — Overlaid ARI curves
+- `paper/figures/cross_model_silhouette.pdf` — Grouped silhouette scores
 
 ## Compute Budget
 
 | Component | GPU | Time | Cost |
 |-----------|-----|------|------|
-| Activation extraction (600 prompts) | Modal L4 | ~30 min | ~$0.40 |
-| Extra experiments (logit lens, etc.) | Modal L4 | ~2-3 hrs | ~$2.00 |
-| Debugging / re-runs | Modal L4 | ~2-3 hrs | ~$2.00 |
-| Buffer | Modal L4 | ~2 hrs | ~$1.60 |
-| **Total** | | **~8 hrs** | **~$6.00** |
+| Activation extraction (600 prompts, 1 model) | Modal L4 | ~30 min | ~$0.40 |
+| Activation extraction (600 prompts, 4 models) | Modal L4 | ~2 hrs | ~$1.60 |
+| Analysis + figures | CPU | ~10 min | ~$0 |
+| Debugging / re-runs | Modal L4 | ~2 hrs | ~$1.60 |
+| **Total (4 models)** | | **~4 hrs** | **~$3.20** |
 
 Using Modal's free $30/month credit, this project costs effectively **$0**.
+
+## Supported Models
+
+| Key | HF Model | Layers | d_model | Vocab |
+|-----|----------|--------|---------|-------|
+| `llama-3-8b` | meta-llama/Meta-Llama-3-8B | 32 | 4096 | 128256 |
+| `llama-3-8b-instruct` | meta-llama/Meta-Llama-3-8B-Instruct | 32 | 4096 | 128256 |
+| `mistral-7b` | mistralai/Mistral-7B-v0.3 | 32 | 4096 | 32768 |
+| `qwen-2.5-7b` | Qwen/Qwen2.5-7B | 28 | 3584 | 152064 |
+
+Use `--models all` to run across all models, or `--models key1,key2` for a subset.
 
 ## Dataset Details
 

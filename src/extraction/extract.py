@@ -101,6 +101,11 @@ def load_model(
     return model, tokenizer
 
 
+def model_output_dir(base_dir: str, model_key: str) -> str:
+    """Get the model-specific output directory under base_dir."""
+    return os.path.join(base_dir, model_key)
+
+
 def extract_activations(
     model,
     tokenizer,
