@@ -30,11 +30,11 @@ def welch_ttest(
     )
     cohens_d = (group_a.mean() - group_b.mean()) / max(pooled_std, 1e-8)
 
-    # Confidence interval for difference in means (95%)
+    # Confidence interval for Cohen's d (95%)
     se = np.sqrt(group_a.var() / len(group_a) + group_b.var() / len(group_b))
-    diff = group_a.mean() - group_b.mean()
-    ci_lower = diff - 1.96 * se
-    ci_upper = diff + 1.96 * se
+    se_d = se / max(pooled_std, 1e-8)
+    ci_lower = cohens_d - 1.96 * se_d
+    ci_upper = cohens_d + 1.96 * se_d
 
     return {
         "test": "Welch's t-test",

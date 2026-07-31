@@ -24,6 +24,9 @@ from src.visualization.plots import (
     plot_silhouette_by_group,
     plot_concept_heatmap,
     plot_statistical_results,
+    plot_cross_model_err,
+    plot_cross_model_ari,
+    plot_cross_model_silhouette,
 )
 
 

@@ -56,6 +56,46 @@ def load_activations(
     return activations
 
 
+def load_concept_activations(
+    activation_dir: str,
+    layers: Optional[List[int]] = None,
+) -> Dict[int, np.ndarray]:
+    """
+    Load concept-token activations (at the concept word's position).
+
+    Args:
+        activation_dir: Directory containing concept_layer_XX.npz files
+        layers: If specified, only load these layers
+
+    Returns:
+        Dict mapping layer_idx -> [n_prompts, d_model] activations
+    """
+    activations = {}
+    layer_files = sorted(Path(activation_dir).glob("concept_layer_*.npz"))
+
+    for f in layer_files:
+        layer_idx = int(f.stem.replace("concept_layer_", ""))
+        if layers is not None and layer_idx not in layers:
+            continue
+        data = np.load(f)
+        activations[layer_idx] = data["activations"]
+
+    if not activations:
+        layer_files = sorted(Path(activation_dir).glob("concept_layer_*.npy"))
+        for f in layer_files:
+            layer_idx = int(f.stem.replace("concept_layer_", ""))
+            if layers is not None and layer_idx not in layers:
+                continue
+            activations[layer_idx] = np.load(f)
+
+    print(f"  Loaded {len(activations)} concept layers from {activation_dir}")
+    if activations:
+        sample_layer = list(activations.keys())[0]
+        print(f"  Shape per concept layer: {activations[sample_layer].shape}")
+
+    return activations
+
+
 def load_logits(activation_dir: str) -> Optional[np.ndarray]:
     """Load extracted logits from disk."""
     logits_path = os.path.join(activation_dir, "logits.npz")
@@ -129,6 +169,20 @@ def load_lm_head_from_file(path: str):
     if weights.ndim == 2:
         weights = weights.T
     return weights, bias
+
+
+def load_final_norm_from_file(path: str):
+    """
+    Load final RMSNorm gamma weights from a pre-saved .npz file.
+
+    Returns:
+        gamma array (d_model,), or None if not available
+    """
+    if not os.path.exists(path):
+        return None
+
+    data = np.load(path, allow_pickle=True)
+    return data["gamma"]
 
 
 def save_results(results: Dict, output_path: str):

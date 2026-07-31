@@ -30,6 +30,7 @@ from src.utils.io import (
     load_metadata,
     load_lm_head,
     load_lm_head_from_file,
+    load_final_norm_from_file,
     save_results,
 )
 from src.analysis.logit_lens import aggregate_err_by_translatability
@@ -98,6 +99,12 @@ def run_analysis(
     if lm_head_weights is None:
         lm_head_weights, lm_head_bias = load_lm_head(model_name)
 
+    final_norm_gamma = load_final_norm_from_file(
+        os.path.join(activations_dir, "final_norm.npz")
+    )
+    if final_norm_gamma is not None:
+        print(f"  Final norm loaded: {final_norm_gamma.shape}")
+
     if lm_head_weights is not None and logits is not None:
         err_by_translatability = aggregate_err_by_translatability(
             hidden_states=hidden_states,
@@ -106,6 +113,7 @@ def run_analysis(
             tokenizer=tokenizer,
             lm_head_weights=lm_head_weights,
             lm_head_bias=lm_head_bias,
+            final_norm_gamma=final_norm_gamma,
         )
 
         # Note: We compute ERR using the unembedding projection

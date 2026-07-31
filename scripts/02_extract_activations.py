@@ -103,6 +103,8 @@ def run_modal(args, model_key: str):
         "--model-name", model_name,
         "--model-key", model_key,
         "--batch-size", str(args.modal_batch_size),
+        "--positions", args.positions,
+        "--include-logits", str(args.include_logits),
     ]
 
     print(f"Running Modal extraction: {' '.join(cmd)}")
@@ -155,6 +157,10 @@ def main():
                         help="Modal GPU type (L4, A10G, A100)")
     parser.add_argument("--modal-batch-size", type=int, default=50,
                         help="Batch size for Modal extraction")
+    parser.add_argument("--positions", default="last,concept",
+                        help="Token positions to extract: 'last', 'concept', or 'last,concept'")
+    parser.add_argument("--include-logits", type=lambda v: v.lower() == "true", default=True,
+                        help="Whether to transfer/save final-layer logits")
 
     args = parser.parse_args()
 

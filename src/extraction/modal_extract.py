@@ -46,6 +46,46 @@ lm_volume = modal.Volume.from_name("culture-geo-lm-heads", create_if_missing=Tru
 hf_cache_volume = modal.Volume.from_name("culture-geo-hf-cache", create_if_missing=True)
 
 
+def _find_concept_token_index(tokenizer, text: str, concept_word: str) -> int:
+    """
+    Find the token index of the LAST subword token covering the concept word.
+
+    The concept appears as "Word" (double-quoted) in the prompt text. Returns
+    the token index of the final token of the concept span, or -1 if the word
+    cannot be located.
+    """
+    if not concept_word:
+        return -1
+    enc = tokenizer(
+        text,
+        max_length=128,
+        truncation=True,
+        return_offsets_mapping=True,
+    )
+    offsets = enc.get("offset_mapping")
+    if offsets is None:
+        return -1
+
+    # Locate the quoted concept first, then the bare word
+    quoted = f'"{concept_word}"'
+    start = text.find(quoted)
+    if start >= 0:
+        start += 1  # skip the opening quote
+    else:
+        start = text.find(concept_word)
+    if start < 0:
+        return -1
+    end = start + len(concept_word)
+
+    selected = [
+        i for i, (s, e) in enumerate(offsets)
+        if s is not None and s < end and e > start
+    ]
+    if selected:
+        return selected[-1]
+    return -1
+
+
 @app.function(
     image=image,
     gpu="L4",
@@ -60,13 +100,16 @@ def extract_batch(
     hf_token: Optional[str] = None,
     max_length: int = 128,
     include_attention: bool = False,
+    positions: str = "last,concept",
+    include_logits: bool = True,
 ) -> List[Dict]:
     """
     Extract activations for a batch of prompts on Modal GPU.
 
     Runs a single batched forward pass per call and returns per-prompt
-    hidden states (at the last real token position) and final logits.
-    Also writes the model's LM head weights to the /lm volume once.
+    hidden states (at the last real token position and/or the concept token
+    position) and optionally final logits. Also writes the model's LM head
+    weights to the /lm volume once.
     """
     import torch
     import numpy as np
@@ -135,6 +178,21 @@ def extract_batch(
         except Exception as e:
             print(f"  WARNING: could not save LM head: {e}")
 
+    # Save final RMSNorm weights (applied before the LM head; needed for logit lens)
+    final_norm_path = f"/lm/{model_key}_final_norm.npz"
+    if model_key and not os.path.exists(final_norm_path):
+        try:
+            norm_mod = getattr(getattr(model, "model", None), "norm", None)
+            if norm_mod is not None and hasattr(norm_mod, "weight"):
+                gamma = norm_mod.weight.data.float().cpu().numpy()
+                np.savez_compressed(final_norm_path, gamma=gamma)
+                lm_volume.commit()
+                print(f"  Saved final norm to volume: {gamma.shape}")
+            else:
+                print("  WARNING: no final norm found to save")
+        except Exception as e:
+            print(f"  WARNING: could not save final norm: {e}")
+
     # Tokenize the whole batch at once (pad to longest in batch)
     encodings = tokenizer(
         [p["text"] for p in prompt_batch],
@@ -155,21 +213,43 @@ def extract_batch(
         )
         logits = outputs.logits.detach()
 
-    # Per-prompt extraction at last real token position
+    # Per-prompt extraction at requested positions
+    want_last = "last" in positions.split(",")
+    want_concept = "concept" in positions.split(",")
+
     results = []
     for i, prompt in enumerate(prompt_batch):
-        last_pos = int(attention_mask[i].sum().item()) - 1
-        hidden_states = {}
-        for k, v in cache.items():
-            layer_idx = int(k.split("_")[-1])
-            hidden_states[layer_idx] = v[i, last_pos, :].float().cpu().numpy()
+        seq_len = int(attention_mask[i].sum().item())
 
-        results.append({
+        hidden_states = {}
+        concept_hidden_states = {}
+        concept_token_index = -1
+
+        if want_last:
+            last_pos = seq_len - 1
+            for k, v in cache.items():
+                layer_idx = int(k.split("_")[-1])
+                hidden_states[layer_idx] = v[i, last_pos, :].float().cpu().numpy()
+
+        if want_concept:
+            concept_token_index = _find_concept_token_index(
+                tokenizer, prompt["text"], prompt.get("concept_word", "")
+            )
+            if 0 <= concept_token_index < seq_len:
+                for k, v in cache.items():
+                    layer_idx = int(k.split("_")[-1])
+                    concept_hidden_states[layer_idx] = v[i, concept_token_index, :].float().cpu().numpy()
+
+        result = {
             "metadata": prompt,
             "hidden_states": hidden_states,
-            "logits": logits[i, last_pos, :].float().cpu().numpy(),
-            "seq_length": int(attention_mask[i].sum().item()),
-        })
+            "concept_hidden_states": concept_hidden_states,
+            "concept_token_index": concept_token_index,
+            "seq_length": seq_len,
+        }
+        if include_logits:
+            result["logits"] = logits[i, seq_len - 1, :].float().cpu().numpy()
+        results.append(result)
 
     # Cleanup
     for hook in hooks:
@@ -200,12 +280,34 @@ async def fetch_lm_head(model_key: str, output_dir: str):
                 with np.load(dest) as npz:
                     shape = npz["weights"].shape
                 print(f"  LM head downloaded to {dest} (shape {shape})")
-                return
+                break
         except Exception as e:
             print(f"  LM head fetch attempt {attempt + 1} failed: {e}")
-        await asyncio.sleep(10)
+            await asyncio.sleep(10)
+    else:
+        print(f"  WARNING: could not fetch LM head for {model_key}")
 
-    print(f"  WARNING: could not fetch LM head for {model_key}")
+    # Fetch final norm weights
+    norm_fname = f"{model_key}_final_norm.npz"
+    norm_dest = os.path.join(output_dir, "final_norm.npz")
+    for attempt in range(15):
+        try:
+            chunks = []
+            for chunk in v.read_file(norm_fname):
+                chunks.append(chunk)
+            data = b"".join(chunks)
+            if data:
+                with open(norm_dest, "wb") as f:
+                    f.write(data)
+                with np.load(norm_dest) as npz:
+                    shape = npz["gamma"].shape
+                print(f"  Final norm downloaded to {norm_dest} (shape {shape})")
+                break
+        except Exception as e:
+            print(f"  Final norm fetch attempt {attempt + 1} failed: {e}")
+            await asyncio.sleep(10)
+    else:
+        print(f"  WARNING: could not fetch final norm for {model_key}")
 
 
 @app.local_entrypoint()
@@ -216,16 +318,22 @@ async def main(
     model_key: str = "llama-3-8b",
     batch_size: int = 50,
     max_length: int = 128,
+    positions: str = "last,concept",
+    include_logits: str = "true",
 ):
     """
     Main entry point for Modal-based extraction.
 
     Reads prompts from JSON, processes in batches on Modal GPU, and saves
     activations + LM head weights to the local output directory.
+
+    positions: comma-separated "last,concept" (which token positions to save).
+    include_logits: "true"/"false"; whether to transfer/save final-layer logits.
     """
     import json
     from huggingface_hub import get_token
 
+    include_logits = include_logits.lower() in ("true", "1", "yes")
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
     hf_token = get_token()
@@ -236,6 +344,7 @@ async def main(
     print(f"Loaded {len(prompts)} prompts")
     print(f"Model: {model_name} ({model_key})")
     print(f"Output: {output_dir}")
+    print(f"Positions: {positions}, include_logits: {include_logits}")
 
     os.makedirs(output_dir, exist_ok=True)
 
@@ -251,15 +360,17 @@ async def main(
             model_key=model_key,
             hf_token=hf_token,
             max_length=max_length,
+            positions=positions,
+            include_logits=include_logits,
         )
         all_results.extend(results)
 
-    # Save results locally (metadata.json, layer_XX.npz, logits.npz)
+    # Save results locally (metadata.json, layer_XX.npz, concept_layer_XX.npz, logits.npz)
     from src.extraction.extract import save_activations
 
     save_activations(all_results, output_dir, compress=True)
 
-    # Download LM head weights from the volume
+    # Download LM head weights from the volume (needed for logit lens)
     await fetch_lm_head(model_key, output_dir)
 
     print(f"Done! Extracted {len(all_results)} activations to {output_dir}")

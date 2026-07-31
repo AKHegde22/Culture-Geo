@@ -1,0 +1,2167 @@
+[
+  {
+    "word": "Tsundoku",
+    "native_script": "積ん読",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Buying books and letting them pile up unread",
+    "category": "habit",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Wabi-sabi",
+    "native_script": "侘寂",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Finding beauty in imperfection and impermanence",
+    "category": "aesthetic",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Mono no aware",
+    "native_script": "物の哀れ",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "The bittersweet awareness of transience",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Komorebi",
+    "native_script": "木漏れ日",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Sunlight filtering through tree leaves",
+    "category": "nature",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Kintsugi",
+    "native_script": "金継ぎ",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Repairing pottery with gold, embracing breakage",
+    "category": "aesthetic",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Ikigai",
+    "native_script": "生き甲斐",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "A reason for being; the thing that gets you out of bed",
+    "category": "philosophy",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Kairos",
+    "native_script": "カイロス",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "The right or opportune moment (borrowed from Greek, culturally adapted)",
+    "category": "time",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Wabi",
+    "native_script": "侘",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Rustic beauty found in simplicity and imperfection",
+    "category": "aesthetic",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Hanami",
+    "native_script": "花見",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "The tradition of enjoying the transient beauty of flowers",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Schadenfreude",
+    "native_script": "Schadenfreude",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Pleasure derived from another's misfortune",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Weltschmerz",
+    "native_script": "Weltschmerz",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "World-weariness; sadness about the world's imperfection",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Fernweh",
+    "native_script": "Fernweh",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "An ache for distant places; the opposite of homesickness",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Waldeinsamkeit",
+    "native_script": "Waldeinsamkeit",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "The feeling of being alone in the woods",
+    "category": "nature",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Zeitgeist",
+    "native_script": "Zeitgeist",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "The defining spirit or mood of a particular period",
+    "category": "philosophy",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Verschlimmbesserung",
+    "native_script": "Verschlimmbesserung",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "An intended improvement that makes things worse",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Kummerspeck",
+    "native_script": "Kummerspeck",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Excess weight gained from emotional overeating",
+    "category": "habit",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Fremdscham",
+    "native_script": "Fremdscham",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Secondhand embarrassment; vicarious shame for someone else",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Torschlusspanik",
+    "native_script": "Torschlusspanik",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Panic about diminishing opportunities as one ages",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Feierabend",
+    "native_script": "Feierabend",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "The end of the workday; the joy of finishing work",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Saudade",
+    "native_script": "Saudade",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Deep emotional longing for something absent",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Desenrascanço",
+    "native_script": "Desenrascanço",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Improvising a clever solution to a problem",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Sobremesa",
+    "native_script": "Sobremesa",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "The time spent lingering at the table after a meal",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Cafuné",
+    "native_script": "Cafuné",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Tenderly running fingers through a loved one's hair",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Levada",
+    "native_script": "Levada",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "An irrigation channel; a traditional walk along one",
+    "category": "nature",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Despedida",
+    "native_script": "Despedida",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "A farewell that carries the weight of uncertain return",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Ilhado",
+    "native_script": "Ilhado",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Feeling isolated or abandoned on an island",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Jeong",
+    "native_script": "정",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "A deep bond of affection and attachment",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Han",
+    "native_script": "한",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Collective grief and resentment from historical oppression",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Nunchi",
+    "native_script": "눈치",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "The ability to read the room and gauge others' moods",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Palli-palli",
+    "native_script": "빨리빨리",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "The hurry-hurry culture; urgency to act quickly",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Dinganeun",
+    "native_script": "디나느",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "The act of wandering through streets without purpose",
+    "category": "habit",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Jeongseon",
+    "native_script": "정선",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "A pure, unspoken emotional connection",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Chemyon",
+    "native_script": "체면",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Social face; the balance between dignity and reputation",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Gyeolhon",
+    "native_script": "결혼",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "The deeply communal nature of Korean marriage",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Tarab",
+    "native_script": "طرب",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "Musical ecstasy that transcends the performance",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Ya'aburnee",
+    "native_script": "يعبورني",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "I hope I die before you so I don't have to live without you",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Taza",
+    "native_script": "تازة",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "The freshness of something newly made or experienced",
+    "category": "aesthetic",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Khayyal",
+    "native_script": "خيال",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "A state of vivid imagination and daydreaming",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Samar",
+    "native_script": "سمر",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "Late-night conversation under the stars",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Nasib",
+    "native_script": "نصيب",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "One's destined share in life; fate's allocation",
+    "category": "philosophy",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Jugaad",
+    "native_script": "जुगाड़",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "A flexible approach to problem-solving using limited resources",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Garma-garam",
+    "native_script": "गरमा-गरम",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Freshly made and piping hot; the thrill of immediacy",
+    "category": "aesthetic",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Dosti",
+    "native_script": "दोस्ती",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "A deep, loyal friendship bond",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Filhal",
+    "native_script": "फ़िलहाल",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Right now, in this moment; temporary present state",
+    "category": "time",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Dil",
+    "native_script": "दिल",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Heart; the center of all emotion and decision-making",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Sukoon",
+    "native_script": "सुकून",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Deep peace and contentment; the absence of worry",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Toska",
+    "native_script": "Тоска",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "Spiritual anguish without a specific cause",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Pochemuchka",
+    "native_script": "Почемучка",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "A child who asks too many questions",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Davai",
+    "native_script": "Давай",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "Let's go / come on; a versatile expression of encouragement",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Zapoi",
+    "native_script": "Запой",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "A prolonged period of uninterrupted drinking",
+    "category": "habit",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Vypyivat",
+    "native_script": "Выпивать",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "The ritual of drinking together as a social bond",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Hygge",
+    "native_script": "Hygge",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "Cozy togetherness and warm atmosphere",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Forelsket",
+    "native_script": "Forelsket",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "The euphoria of falling in love",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Pyt",
+    "native_script": "Pyt",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "A verbal expression for letting go of frustration",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Lykke",
+    "native_script": "Lykke",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "Happiness that comes from small, everyday moments",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Trivsel",
+    "native_script": "Trivsel",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "The state of thriving and flourishing in life",
+    "category": "philosophy",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Samfundssind",
+    "native_script": "Samfundssind",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "Community-mindedness; civic-mindedness for the common good",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Sobremesa",
+    "native_script": "Sobremesa",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "Time spent lingering at the table after a meal",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Estrenar",
+    "native_script": "Estrenar",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "To use or wear something for the first time",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Duende",
+    "native_script": "Duende",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "A heightened state of emotion and authenticity in art",
+    "category": "aesthetic",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Tutear",
+    "native_script": "Tutear",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "To address someone informally (tuteo vs. usted)",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Madrugada",
+    "native_script": "Madrugada",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "The early hours before dawn",
+    "category": "time",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Convivencia",
+    "native_script": "Convivencia",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "The art of living together in harmony",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Depaysement",
+    "native_script": "Depaysement",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "The feeling of being a foreigner; disorientation in a new place",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "L'esprit de l'escalier",
+    "native_script": "L'esprit de l'escalier",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "Thinking of the perfect reply too late",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Flaneur",
+    "native_script": "Flaneur",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "A person who wanders the streets observing life",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Retrouvailles",
+    "native_script": "Retrouvailles",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "The joy of reuniting after a long separation",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Bricolage",
+    "native_script": "Bricolage",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "Improvising with whatever materials are at hand",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Mottainai",
+    "native_script": "勿体無い",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "A sense of regret over waste; nothing should be wasted",
+    "category": "philosophy",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Otsukaresama",
+    "native_script": "お疲れ様",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Acknowledging someone's hard work; 'you've done well'",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Shibui",
+    "native_script": "渋い",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Aesthetically restrained, subtle and understated",
+    "category": "aesthetic",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Yugen",
+    "native_script": "幽玄",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "A profound, mysterious sense of the beauty of the universe",
+    "category": "aesthetic",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Ukiyo",
+    "native_script": "浮世",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "The floating world; living in the moment",
+    "category": "philosophy",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Shokunin",
+    "native_script": "職人",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "A craftsman's total dedication to mastery of their art",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Omotenashi",
+    "native_script": "おもてなし",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Wholehearted hospitality that anticipates a guest's needs",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Sehnsucht",
+    "native_script": "Sehnsucht",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "An intense, restless longing for something distant",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Geborgenheit",
+    "native_script": "Geborgenheit",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "The feeling of being sheltered and completely safe",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Backpfeifengesicht",
+    "native_script": "Backpfeifengesicht",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "A face that seems to invite a slap",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Schnapsidee",
+    "native_script": "Schnapsidee",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "A wild idea conceived in drunkenness",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Sturmfrei",
+    "native_script": "Sturmfrei",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Having the house entirely to oneself",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Erklarungsnot",
+    "native_script": "Erklärungsnot",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "The awkward pressure of having to explain something",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Xodo",
+    "native_script": "Xodó",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "A pet name for someone deeply cherished",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Fado",
+    "native_script": "Fado",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "A melancholic music genre expressing resignation and fate",
+    "category": "aesthetic",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Desbundar",
+    "native_script": "Desbundar",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "To lose all inhibition and let loose completely",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Aegyo",
+    "native_script": "애교",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Cute, endearing behavior used to charm someone",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Hwabyeong",
+    "native_script": "화병",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Suppressed anger that manifests as an illness",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Kibun",
+    "native_script": "기분",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "The subtle, holistic state of one's mood",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Wasta",
+    "native_script": "واسطة",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "Influence or connections used to get things done",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Jootha",
+    "native_script": "जूठा",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Food or drink contaminated by another's touch",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Gherao",
+    "native_script": "घेराओ",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "A protest tactic of surrounding and trapping someone",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Poshlost",
+    "native_script": "Пошлость",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "Banal vulgarity that masquerades as deep meaning",
+    "category": "aesthetic",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Rasputitsa",
+    "native_script": "Распутица",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "The season when roads become impassable mud",
+    "category": "nature",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Perezhivanie",
+    "native_script": "Переживание",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "An emotionally lived-through experience",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Janteloven",
+    "native_script": "Janteloven",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "The unspoken law of not thinking you are better than others",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Arbejdsglaede",
+    "native_script": "Arbejdsglæde",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "Joy and satisfaction found in one's work",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Morgenfrisk",
+    "native_script": "Morgenfrisk",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "Feeling fresh and energetic in the morning",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Verguenza ajena",
+    "native_script": "Vergüenza ajena",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "Secondhand embarrassment felt for someone else",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Antojo",
+    "native_script": "Antojo",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "A sudden, capricious craving",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Empalagar",
+    "native_script": "Empalagar",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "To be overwhelmed by something excessively sweet or clingy",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Desvelo",
+    "native_script": "Desvelo",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "Sleeplessness caused by worry or excitement",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Consuegro",
+    "native_script": "Consuegro",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "The relationship between a child's parents and their in-laws",
+    "category": "social",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "L'appel du vide",
+    "native_script": "L'appel du vide",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "The urge to jump when looking from a great height",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "J'adoube",
+    "native_script": "J'adoube",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "The chess declaration 'I adjust', signaling no move intent",
+    "category": "concept",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Spleen",
+    "native_script": "Spleen",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "A poetic melancholy peculiar to the French Romantics",
+    "category": "emotion",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Flanerie",
+    "native_script": "Flânerie",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "The art of strolling idly and observing urban life",
+    "category": "habit",
+    "translatability": "untranslatable"
+  },
+  {
+    "word": "Ryokan",
+    "native_script": "旅館",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Traditional Japanese inn",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "traditional inn"
+  },
+  {
+    "word": "Bento",
+    "native_script": "弁当",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "A packed lunch in a box",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "packed lunch"
+  },
+  {
+    "word": "Kimono",
+    "native_script": "着物",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Traditional Japanese garment",
+    "category": "aesthetic",
+    "translatability": "translatable",
+    "english_equivalent": "traditional garment"
+  },
+  {
+    "word": "Samurai",
+    "native_script": "侍",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "A Japanese warrior",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "warrior"
+  },
+  {
+    "word": "Sensei",
+    "native_script": "先生",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Teacher or master",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "teacher"
+  },
+  {
+    "word": "Tempura",
+    "native_script": "天ぷら",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Deep-fried battered vegetables or seafood",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "fried food"
+  },
+  {
+    "word": "Sake",
+    "native_script": "酒",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Japanese rice wine",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "rice wine"
+  },
+  {
+    "word": "Dojo",
+    "native_script": "道場",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "A training hall for martial arts",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "training hall"
+  },
+  {
+    "word": "Zen",
+    "native_script": "禅",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "A school of Mahayana Buddhism",
+    "category": "philosophy",
+    "translatability": "translatable",
+    "english_equivalent": "meditation"
+  },
+  {
+    "word": "Harakiri",
+    "native_script": "腹切り",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Ritual suicide by disembowelment",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "ritual suicide"
+  },
+  {
+    "word": "Handschuh",
+    "native_script": "Handschuh",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "A glove (hand-shoe)",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "glove"
+  },
+  {
+    "word": "Kindergarten",
+    "native_script": "Kindergarten",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "A preschool for young children",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "preschool"
+  },
+  {
+    "word": "Wanderlust",
+    "native_script": "Wanderlust",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "A strong desire to travel",
+    "category": "emotion",
+    "translatability": "translatable",
+    "english_equivalent": "wanderlust"
+  },
+  {
+    "word": "Angst",
+    "native_script": "Angst",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Fear or anxiety",
+    "category": "emotion",
+    "translatability": "translatable",
+    "english_equivalent": "anxiety"
+  },
+  {
+    "word": "Kitsch",
+    "native_script": "Kitsch",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Tacky or tasteless art",
+    "category": "aesthetic",
+    "translatability": "translatable",
+    "english_equivalent": "tacky art"
+  },
+  {
+    "word": "Gestalt",
+    "native_script": "Gestalt",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "An organized whole; form",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "form"
+  },
+  {
+    "word": "Doppelganger",
+    "native_script": "Doppelgänger",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "A look-alike of a living person",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "look-alike"
+  },
+  {
+    "word": "Poltergeist",
+    "native_script": "Poltergeist",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "A noisy ghost",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "ghost"
+  },
+  {
+    "word": "Rucksack",
+    "native_script": "Rucksack",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "A backpack",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "backpack"
+  },
+  {
+    "word": "Schmuck",
+    "native_script": "Schmuck",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Jewelry",
+    "category": "aesthetic",
+    "translatability": "translatable",
+    "english_equivalent": "jewelry"
+  },
+  {
+    "word": "Samba",
+    "native_script": "Samba",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "A Brazilian dance and music genre",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "dance"
+  },
+  {
+    "word": "Futebol",
+    "native_script": "Futebol",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Soccer",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "soccer"
+  },
+  {
+    "word": "Feijoada",
+    "native_script": "Feijoada",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "A bean stew with meat",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "bean stew"
+  },
+  {
+    "word": "Carnaval",
+    "native_script": "Carnaval",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "The pre-Lenten festival",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "carnival"
+  },
+  {
+    "word": "Praia",
+    "native_script": "Praia",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Beach",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "beach"
+  },
+  {
+    "word": "Favela",
+    "native_script": "Favela",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "A Brazilian shantytown",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "slum"
+  },
+  {
+    "word": "Capoeira",
+    "native_script": "Capoeira",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Afro-Brazilian martial art dance",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "martial art"
+  },
+  {
+    "word": "Café",
+    "native_script": "Café",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Coffee or coffee shop",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "coffee"
+  },
+  {
+    "word": "Soju",
+    "native_script": "소주",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Korean distilled spirit",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "distilled spirit"
+  },
+  {
+    "word": "Bibimbap",
+    "native_script": "비빔밥",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Mixed rice bowl",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "rice bowl"
+  },
+  {
+    "word": "Taekwondo",
+    "native_script": "태권도",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Korean martial art",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "martial art"
+  },
+  {
+    "word": "Chuseok",
+    "native_script": "추석",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Korean harvest festival",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "harvest festival"
+  },
+  {
+    "word": "Hanbok",
+    "native_script": "한복",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Traditional Korean clothing",
+    "category": "aesthetic",
+    "translatability": "translatable",
+    "english_equivalent": "traditional clothing"
+  },
+  {
+    "word": "Kimchi",
+    "native_script": "김치",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Fermented cabbage dish",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "fermented food"
+  },
+  {
+    "word": "K-pop",
+    "native_script": "케이팝",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Korean popular music",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "pop music"
+  },
+  {
+    "word": "Makgeolli",
+    "native_script": "막걸리",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Korean rice wine",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "rice wine"
+  },
+  {
+    "word": "Habibi",
+    "native_script": "حبيبي",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "My beloved/darling",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "darling"
+  },
+  {
+    "word": "Shukran",
+    "native_script": "شكرا",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "Thank you",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "thank you"
+  },
+  {
+    "word": "Maktub",
+    "native_script": "مكتوب",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "It is written (fate)",
+    "category": "philosophy",
+    "translatability": "translatable",
+    "english_equivalent": "destiny"
+  },
+  {
+    "word": "Inshallah",
+    "native_script": "إن شاء الله",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "God willing",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "god willing"
+  },
+  {
+    "word": "Souk",
+    "native_script": "سوق",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "A marketplace",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "market"
+  },
+  {
+    "word": "Qahwa",
+    "native_script": "قهوة",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "Coffee",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "coffee"
+  },
+  {
+    "word": "Khamsa",
+    "native_script": "خمسة",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "Five; a protective hand symbol",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "hand symbol"
+  },
+  {
+    "word": "Shisha",
+    "native_script": "شيشة",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "Hookah or water pipe",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "water pipe"
+  },
+  {
+    "word": "Namaste",
+    "native_script": "नमस्ते",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "A respectful greeting",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "greeting"
+  },
+  {
+    "word": "Masala",
+    "native_script": "मसाला",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "A blend of spices",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "spice blend"
+  },
+  {
+    "word": "Chai",
+    "native_script": "चाय",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Tea",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "tea"
+  },
+  {
+    "word": "Yoga",
+    "native_script": "योग",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "A spiritual and physical practice",
+    "category": "philosophy",
+    "translatability": "translatable",
+    "english_equivalent": "yoga"
+  },
+  {
+    "word": "Guru",
+    "native_script": "गुरु",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "A spiritual teacher",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "teacher"
+  },
+  {
+    "word": "Avatar",
+    "native_script": "अवतार",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "A divine descent or incarnation",
+    "category": "philosophy",
+    "translatability": "translatable",
+    "english_equivalent": "incarnation"
+  },
+  {
+    "word": "Karma",
+    "native_script": "कर्म",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Action and its consequences",
+    "category": "philosophy",
+    "translatability": "translatable",
+    "english_equivalent": "karma"
+  },
+  {
+    "word": "Pundit",
+    "native_script": "पंडित",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "A learned person or scholar",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "scholar"
+  },
+  {
+    "word": "Sputnik",
+    "native_script": "Спутник",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "A fellow traveler; satellite",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "satellite"
+  },
+  {
+    "word": "Vodka",
+    "native_script": "Водка",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "A distilled alcoholic beverage",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "spirit"
+  },
+  {
+    "word": "Babushka",
+    "native_script": "Бабушка",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "Grandmother",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "grandmother"
+  },
+  {
+    "word": "Matryoshka",
+    "native_script": "Матрёшка",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "A nesting doll",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "nesting doll"
+  },
+  {
+    "word": "Kremlin",
+    "native_script": "Кремль",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "A fortress or citadel",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "fortress"
+  },
+  {
+    "word": "Cosmonaut",
+    "native_script": "Космонавт",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "A Russian astronaut",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "astronaut"
+  },
+  {
+    "word": "Pirozhki",
+    "native_script": "Пирожки",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "Small baked or fried buns",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "pastry"
+  },
+  {
+    "word": "Samovar",
+    "native_script": "Самовар",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "A heated metal container for water",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "kettle"
+  },
+  {
+    "word": "Bakken",
+    "native_script": "Bakken",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "The oldest operating amusement park",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "amusement park"
+  },
+  {
+    "word": "Smorrebrod",
+    "native_script": "Smørrebrød",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "An open-faced sandwich",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "sandwich"
+  },
+  {
+    "word": "Lego",
+    "native_script": "Lego",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "Interlocking plastic bricks",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "toy bricks"
+  },
+  {
+    "word": "Frikadeller",
+    "native_script": "Frikadeller",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "Danish meatballs",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "meatballs"
+  },
+  {
+    "word": "Tivoli",
+    "native_script": "Tivoli",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "A garden in Copenhagen",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "garden"
+  },
+  {
+    "word": "Noma",
+    "native_script": "Noma",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "A new Nordic cuisine restaurant",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "restaurant"
+  },
+  {
+    "word": "Siesta",
+    "native_script": "Siesta",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "An afternoon nap",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "afternoon nap"
+  },
+  {
+    "word": "Fiesta",
+    "native_script": "Fiesta",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "A party or festival",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "party"
+  },
+  {
+    "word": "Canyon",
+    "native_script": "Cañón",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "A deep gorge",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "gorge"
+  },
+  {
+    "word": "Plaza",
+    "native_script": "Plaza",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "A public square",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "square"
+  },
+  {
+    "word": "Mosquito",
+    "native_script": "Mosquito",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "A small flying insect",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "mosquito"
+  },
+  {
+    "word": "Guitar",
+    "native_script": "Guitarra",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "A stringed musical instrument",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "guitar"
+  },
+  {
+    "word": "Chocolate",
+    "native_script": "Chocolate",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "A cacao-based food",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "chocolate"
+  },
+  {
+    "word": "Tornado",
+    "native_script": "Tornado",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "A violent windstorm",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "tornado"
+  },
+  {
+    "word": "Croissant",
+    "native_script": "Croissant",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "A crescent-shaped pastry",
+    "category": "habit",
+    "translatability": "translatable",
+    "english_equivalent": "pastry"
+  },
+  {
+    "word": "Restaurant",
+    "native_script": "Restaurant",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "A place to eat meals",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "restaurant"
+  },
+  {
+    "word": "Ballet",
+    "native_script": "Ballet",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "A form of dance",
+    "category": "aesthetic",
+    "translatability": "translatable",
+    "english_equivalent": "dance"
+  },
+  {
+    "word": "Cafe",
+    "native_script": "Café",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "A coffeehouse",
+    "category": "social",
+    "translatability": "translatable",
+    "english_equivalent": "coffeehouse"
+  },
+  {
+    "word": "Bouquet",
+    "native_script": "Bouquet",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "A flower arrangement",
+    "category": "aesthetic",
+    "translatability": "translatable",
+    "english_equivalent": "flower arrangement"
+  },
+  {
+    "word": "Frac",
+    "native_script": "Frac",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "A morning coat or dress coat",
+    "category": "aesthetic",
+    "translatability": "translatable",
+    "english_equivalent": "coat"
+  },
+  {
+    "word": "Tranquil",
+    "native_script": "Tranquille",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "Calm and peaceful",
+    "category": "emotion",
+    "translatability": "translatable",
+    "english_equivalent": "calm"
+  },
+  {
+    "word": "Museum",
+    "native_script": "Musée",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "A building housing historical artifacts",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "museum"
+  },
+  {
+    "word": "Mizu",
+    "native_script": "水",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Water",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "water"
+  },
+  {
+    "word": "Inu",
+    "native_script": "犬",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Dog",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "dog"
+  },
+  {
+    "word": "Yama",
+    "native_script": "山",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Mountain",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "mountain"
+  },
+  {
+    "word": "Hon",
+    "native_script": "本",
+    "language": "Japanese",
+    "language_code": "ja",
+    "meaning": "Book",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "book"
+  },
+  {
+    "word": "Haus",
+    "native_script": "Haus",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "House",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "house"
+  },
+  {
+    "word": "Wasser",
+    "native_script": "Wasser",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Water",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "water"
+  },
+  {
+    "word": "Hund",
+    "native_script": "Hund",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Dog",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "dog"
+  },
+  {
+    "word": "Berg",
+    "native_script": "Berg",
+    "language": "German",
+    "language_code": "de",
+    "meaning": "Mountain",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "mountain"
+  },
+  {
+    "word": "Casa",
+    "native_script": "Casa",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "House",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "house"
+  },
+  {
+    "word": "Agua",
+    "native_script": "Água",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Water",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "water"
+  },
+  {
+    "word": "Cao",
+    "native_script": "Cão",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Dog",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "dog"
+  },
+  {
+    "word": "Livro",
+    "native_script": "Livro",
+    "language": "Portuguese",
+    "language_code": "pt",
+    "meaning": "Book",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "book"
+  },
+  {
+    "word": "Mul",
+    "native_script": "물",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Water",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "water"
+  },
+  {
+    "word": "Gae",
+    "native_script": "개",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Dog",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "dog"
+  },
+  {
+    "word": "San",
+    "native_script": "산",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Mountain",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "mountain"
+  },
+  {
+    "word": "Chaek",
+    "native_script": "책",
+    "language": "Korean",
+    "language_code": "ko",
+    "meaning": "Book",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "book"
+  },
+  {
+    "word": "Bayt",
+    "native_script": "بيت",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "House",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "house"
+  },
+  {
+    "word": "Maa",
+    "native_script": "ماء",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "Water",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "water"
+  },
+  {
+    "word": "Kitab",
+    "native_script": "كتاب",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "Book",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "book"
+  },
+  {
+    "word": "Nar",
+    "native_script": "نار",
+    "language": "Arabic",
+    "language_code": "ar",
+    "meaning": "Fire",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "fire"
+  },
+  {
+    "word": "Paani",
+    "native_script": "पानी",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Water",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "water"
+  },
+  {
+    "word": "Kutta",
+    "native_script": "कुत्ता",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Dog",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "dog"
+  },
+  {
+    "word": "Kitaab",
+    "native_script": "किताब",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Book",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "book"
+  },
+  {
+    "word": "Pahad",
+    "native_script": "पहाड़",
+    "language": "Hindi",
+    "language_code": "hi",
+    "meaning": "Mountain",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "mountain"
+  },
+  {
+    "word": "Dom",
+    "native_script": "Дом",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "House",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "house"
+  },
+  {
+    "word": "Voda",
+    "native_script": "Вода",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "Water",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "water"
+  },
+  {
+    "word": "Sobaka",
+    "native_script": "Собака",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "Dog",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "dog"
+  },
+  {
+    "word": "Kniga",
+    "native_script": "Книга",
+    "language": "Russian",
+    "language_code": "ru",
+    "meaning": "Book",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "book"
+  },
+  {
+    "word": "Hus",
+    "native_script": "Hus",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "House",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "house"
+  },
+  {
+    "word": "Vand",
+    "native_script": "Vand",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "Water",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "water"
+  },
+  {
+    "word": "Hund",
+    "native_script": "Hund",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "Dog",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "dog"
+  },
+  {
+    "word": "Bog",
+    "native_script": "Bog",
+    "language": "Danish",
+    "language_code": "da",
+    "meaning": "Book",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "book"
+  },
+  {
+    "word": "Casa",
+    "native_script": "Casa",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "House",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "house"
+  },
+  {
+    "word": "Agua",
+    "native_script": "Agua",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "Water",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "water"
+  },
+  {
+    "word": "Perro",
+    "native_script": "Perro",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "Dog",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "dog"
+  },
+  {
+    "word": "Montana",
+    "native_script": "Montaña",
+    "language": "Spanish",
+    "language_code": "es",
+    "meaning": "Mountain",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "mountain"
+  },
+  {
+    "word": "Maison",
+    "native_script": "Maison",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "House",
+    "category": "concept",
+    "translatability": "translatable",
+    "english_equivalent": "house"
+  },
+  {
+    "word": "Eau",
+    "native_script": "Eau",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "Water",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "water"
+  },
+  {
+    "word": "Chien",
+    "native_script": "Chien",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "Dog",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "dog"
+  },
+  {
+    "word": "Montagne",
+    "native_script": "Montagne",
+    "language": "French",
+    "language_code": "fr",
+    "meaning": "Mountain",
+    "category": "nature",
+    "translatability": "translatable",
+    "english_equivalent": "mountain"
+  }
+]

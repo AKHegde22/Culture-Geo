@@ -17,12 +17,36 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 
 
+def apply_final_norm(
+    hidden: np.ndarray,
+    gamma: Optional[np.ndarray] = None,
+    eps: float = 1e-6,
+) -> np.ndarray:
+    """Apply RMSNorm (as done before the LM head) to hidden states.
+
+    Args:
+        hidden: [n_prompts, d_model] or [d_model] activations
+        gamma: RMSNorm weight vector [d_model] (elementwise scale)
+        eps: RMSNorm epsilon
+
+    Returns:
+        Normed activations (same shape as input)
+    """
+    if gamma is None:
+        return hidden
+    hidden = hidden.astype(np.float32)
+    gamma = gamma.astype(np.float32)
+    rms = np.sqrt(np.mean(hidden.astype(np.float32) ** 2, axis=-1, keepdims=True) + eps)
+    return hidden / rms * gamma
+
+
 def compute_logit_lens(
     hidden_states: Dict[int, np.ndarray],
     logits: np.ndarray,
     tokenizer,
     lm_head_weights: Optional[np.ndarray] = None,
     lm_head_bias: Optional[np.ndarray] = None,
+    final_norm_gamma: Optional[np.ndarray] = None,
 ) -> Dict:
     """
     Apply the logit lens technique to intermediate representations.
@@ -50,9 +74,9 @@ def compute_logit_lens(
     english_routing = {}
 
     for layer_idx, hs in hidden_states.items():
-        # Project through unembedding (if weights provided) or use logits directly
+        # Project through final norm + unembedding (if weights provided)
         if lm_head_weights is not None:
-            layer_logits = hs @ lm_head_weights
+            layer_logits = apply_final_norm(hs, final_norm_gamma) @ lm_head_weights
             if lm_head_bias is not None:
                 layer_logits += lm_head_bias
         else:
@@ -185,6 +209,7 @@ def aggregate_err_by_translatability(
     tokenizer,
     lm_head_weights: np.ndarray,
     lm_head_bias: Optional[np.ndarray] = None,
+    final_norm_gamma: Optional[np.ndarray] = None,
 ) -> Dict[str, Dict[int, float]]:
     """
     Compute per-prompt ERR, then aggregate by translatability.
@@ -202,8 +227,8 @@ def aggregate_err_by_translatability(
     for translatability, indices in groups.items():
         layer_errs = {}
         for layer_idx, hs in hidden_states.items():
-            # Project through unembedding
-            layer_logits = hs @ lm_head_weights
+            # Project through final norm + unembedding
+            layer_logits = apply_final_norm(hs, final_norm_gamma) @ lm_head_weights
             if lm_head_bias is not None:
                 layer_logits += lm_head_bias
 

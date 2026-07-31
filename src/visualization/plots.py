@@ -320,13 +320,14 @@ def plot_statistical_results(
 
     y_pos = range(len(test_names))
 
+    xerr = [
+        [max(e - l, 0.0) for e, l in zip(effects, ci_lowers)],
+        [max(u - e, 0.0) for e, u in zip(effects, ci_uppers)],
+    ]
     ax.errorbar(
         effects,
         y_pos,
-        xerr=[
-            [e - l for e, l in zip(effects, ci_lowers)],
-            [u - e for e, u in zip(effects, ci_uppers)],
-        ],
+        xerr=xerr,
         fmt="o",
         color="#3498DB",
         capsize=5,

@@ -255,8 +255,46 @@ def save_activations(
             else:
                 np.save(layer_path, stacked)
 
+    # Stack concept-token activations (if present)
+    concept_layers = set()
+    for r in results:
+        concept_layers.update(r.get("concept_hidden_states", {}).keys())
+    concept_layers = sorted(concept_layers)
+    for layer_idx in concept_layers:
+        layer_activations = []
+        for r in results:
+            chs = r.get("concept_hidden_states", {})
+            if layer_idx in chs:
+                layer_activations.append(chs[layer_idx])
+        if layer_activations:
+            stacked = np.stack(layer_activations, axis=0)
+            layer_path = os.path.join(output_dir, f"concept_layer_{layer_idx:02d}.npy")
+            if compress:
+                np.savez_compressed(
+                    layer_path.replace(".npy", ".npz"),
+                    activations=stacked,
+                )
+            else:
+                np.save(layer_path, stacked)
+
+    # Save concept token positions for QC
+    if any(r.get("concept_token_index", -1) >= 0 for r in results):
+        concept_positions = [
+            {
+                "prompt_index": i,
+                "concept_word": r["metadata"].get("concept_word"),
+                "language_code": r["metadata"].get("language_code"),
+                "template_name": r["metadata"].get("template_name"),
+                "concept_token_index": int(r.get("concept_token_index", -1)),
+                "seq_length": int(r.get("seq_length", -1)),
+            }
+            for i, r in enumerate(results)
+        ]
+        with open(os.path.join(output_dir, "concept_positions.json"), "w") as f:
+            json.dump(concept_positions, f, indent=2, ensure_ascii=False)
+
     # Stack logits
-    logits_list = [r["logits"] for r in results if r["logits"] is not None]
+    logits_list = [r["logits"] for r in results if r.get("logits") is not None]
     if logits_list:
         logits_stacked = np.stack(logits_list, axis=0)
         logits_path = os.path.join(output_dir, "logits.npy")
@@ -272,8 +310,10 @@ def save_activations(
     summary = {
         "num_results": len(results),
         "layers": all_layers,
-        "d_model": int(results[0]["hidden_states"][all_layers[0]].shape[-1]) if results else 0,
-        "has_logits": any(r["logits"] is not None for r in results),
+        "concept_layers": concept_layers,
+        "d_model": int(results[0]["hidden_states"][all_layers[0]].shape[-1]) if results and all_layers else 0,
+        "has_logits": any(r.get("logits") is not None for r in results),
+        "has_concept_states": bool(concept_layers),
     }
     with open(os.path.join(output_dir, "extraction_summary.json"), "w") as f:
         json.dump(summary, f, indent=2)
