@@ -97,11 +97,12 @@ def run_modal(args, model_key: str):
     modal_script = PROJECT_ROOT / "src" / "extraction" / "modal_extract.py"
 
     cmd = [
-        sys.executable, str(modal_script),
+        "modal", "run", str(modal_script),
         "--prompts-file", os.path.join(args.prompts_dir, "prompts.json"),
         "--output-dir", output_dir,
         "--model-name", model_name,
-        "--modal-batch-size", str(args.modal_batch_size),
+        "--model-key", model_key,
+        "--batch-size", str(args.modal_batch_size),
     ]
 
     print(f"Running Modal extraction: {' '.join(cmd)}")

@@ -93,9 +93,9 @@ def load_lm_head(model_name: str, device: str = "cpu"):
             device_map="cpu",
         )
 
-        # Extract LM head weights
+        # Extract LM head weights (PyTorch shape [vocab, d_model] -> [d_model, vocab])
         if hasattr(model, "lm_head"):
-            weights = model.lm_head.weight.data.cpu().numpy()
+            weights = model.lm_head.weight.data.cpu().numpy().T
             bias = None
             if model.lm_head.bias is not None:
                 bias = model.lm_head.bias.data.cpu().numpy()
@@ -109,13 +109,37 @@ def load_lm_head(model_name: str, device: str = "cpu"):
     return None, None
 
 
+def load_lm_head_from_file(path: str):
+    """
+    Load LM head (unembedding) weights from a pre-saved .npz file.
+
+    Returns:
+        (weights, bias) tuple, or (None, None) if not available
+    """
+    if not os.path.exists(path):
+        return None, None
+
+    data = np.load(path, allow_pickle=True)
+    weights = data["weights"]
+    bias = None
+    if "bias" in data.files:
+        raw = data["bias"]
+        if isinstance(raw, np.ndarray) and raw.ndim > 0 and raw.dtype.kind != "O":
+            bias = raw
+    if weights.ndim == 2:
+        weights = weights.T
+    return weights, bias
+
+
 def save_results(results: Dict, output_path: str):
     """Save analysis results to JSON."""
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
     # Convert numpy types to Python types for JSON serialization
     def convert(obj):
-        if isinstance(obj, np.integer):
+        if isinstance(obj, (bool, np.bool_)):
+            return bool(obj)
+        elif isinstance(obj, np.integer):
             return int(obj)
         elif isinstance(obj, np.floating):
             return float(obj)

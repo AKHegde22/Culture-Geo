@@ -94,15 +94,20 @@ def _get_english_token_ids(tokenizer) -> set:
     """Get set of token IDs that are primarily English words."""
     english_ids = set()
 
-    # Strategy: Check if tokens are "English-looking" by checking their
-    # character composition (ASCII letters, common English patterns)
+    # Strip tokenizer space/word-piece markers:
+    #   " "     - WordPiece/BPE leading space
+    #   "\u0120" (Ġ) - BPE leading-space marker (Llama/Qwen/GPT-2 style)
+    #   "\u2581" (▁) - SentencePiece leading-space marker
+    #   "##"    - WordPiece continuation marker
+    markers = [" ", "\u0120", "\u2581", "##"]
+
     vocab = tokenizer.get_vocab()
     for token, token_id in vocab.items():
-        # Skip special tokens
         if token.startswith("<|") or token.startswith("["):
             continue
-        # Check if mostly ASCII lowercase letters
-        clean = token.replace(" ", "").replace("##", "")
+        clean = token
+        for m in markers:
+            clean = clean.replace(m, "")
         if clean and all(c in "abcdefghijklmnopqrstuvwxyz'" for c in clean):
             english_ids.add(token_id)
 
@@ -189,8 +194,6 @@ def aggregate_err_by_translatability(
     """
     english_tokens = _get_english_token_ids(tokenizer)
     n_prompts = logits.shape[0]
-
-    # Group prompts by translatability
     groups = {"untranslatable": [], "translatable": []}
     for i, m in enumerate(metadata):
         groups[m["translatability"]].append(i)
@@ -209,7 +212,7 @@ def aggregate_err_by_translatability(
 
             # Count English tokens
             english_count = sum(
-                1 for idx in top_1_indices if idx in english_token_ids
+                1 for idx in top_1_indices if idx in english_tokens
             )
             err = english_count / len(indices)
             layer_errs[layer_idx] = err

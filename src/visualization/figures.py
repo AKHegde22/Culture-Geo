@@ -9,6 +9,7 @@ import json
 import os
 import sys
 from pathlib import Path
+from typing import List, Optional
 
 import numpy as np
 
@@ -51,10 +52,15 @@ def generate_figures_for_model(
         return
 
     results = {}
-    for fname in os.listdir(model_results_dir):
-        if fname.endswith(".json"):
-            with open(os.path.join(model_results_dir, fname)) as f:
-                results[fname.replace(".json", "")] = json.load(f)
+    analysis_path = os.path.join(model_results_dir, "analysis_results.json")
+    if os.path.exists(analysis_path):
+        with open(analysis_path) as f:
+            results = json.load(f)
+    else:
+        for fname in os.listdir(model_results_dir):
+            if fname.endswith(".json"):
+                with open(os.path.join(model_results_dir, fname)) as f:
+                    results[fname.replace(".json", "")] = json.load(f)
 
     print(f"  Generating figures for {model_key}...")
 

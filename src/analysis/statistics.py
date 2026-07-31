@@ -164,8 +164,10 @@ def run_all_statistical_tests(
             })
 
     # Test 2: Silhouette scores
-    sil_untrans = np.array(silhouette_by_translatability.get("untranslatable", []))
-    sil_trans = np.array(silhouette_by_translatability.get("translatable", []))
+    sil_untrans = np.atleast_1d(np.asarray(
+        silhouette_by_translatability.get("untranslatable", [])))
+    sil_trans = np.atleast_1d(np.asarray(
+        silhouette_by_translatability.get("translatable", [])))
     if len(sil_untrans) > 1 and len(sil_trans) > 1:
         results["silhouette_by_translatability"] = compare_translatability_groups({
             "untranslatable": sil_untrans,
@@ -173,8 +175,10 @@ def run_all_statistical_tests(
         })
 
     # Test 3: Peak trajectory distances
-    peak_untrans = np.array(peak_distance_by_translatability.get("untranslatable", []))
-    peak_trans = np.array(peak_distance_by_translatability.get("translatable", []))
+    peak_untrans = np.atleast_1d(np.asarray(
+        peak_distance_by_translatability.get("untranslatable", [])))
+    peak_trans = np.atleast_1d(np.asarray(
+        peak_distance_by_translatability.get("translatable", [])))
     if len(peak_untrans) > 1 and len(peak_trans) > 1:
         results["peak_distance_by_translatability"] = compare_translatability_groups({
             "untranslatable": peak_untrans,

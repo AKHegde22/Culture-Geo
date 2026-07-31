@@ -41,6 +41,7 @@ def apply_pca(
     Returns:
         (transformed activations, fitted PCA object)
     """
+    n_components = min(n_components, activations.shape[1], activations.shape[0])
     pca = PCA(n_components=n_components, random_state=random_state)
     transformed = pca.fit_transform(activations)
 
@@ -183,7 +184,9 @@ def compute_silhouette_by_group(
 
     for group in unique_groups:
         mask = group_labels == group
-        if mask.sum() < 2:
+        n = mask.sum()
+        n_labels = len(np.unique(labels[mask]))
+        if n < 2 or n_labels < 2 or n_labels >= n:
             continue
 
         sil = silhouette_score(activations[mask], labels[mask])

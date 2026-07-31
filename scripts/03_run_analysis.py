@@ -29,6 +29,7 @@ from src.utils.io import (
     load_logits,
     load_metadata,
     load_lm_head,
+    load_lm_head_from_file,
     save_results,
 )
 from src.analysis.logit_lens import aggregate_err_by_translatability
@@ -77,6 +78,12 @@ def run_analysis(
     print(f"  {len(hidden_states)} layers loaded")
     print(f"  {len(metadata)} prompts")
 
+    # Load tokenizer locally (tokenizer files only, no weights)
+    print("Loading tokenizer...")
+    from transformers import AutoTokenizer
+
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+
     all_results = {}
 
     # ─── 1. Logit Lens ─────────────────────────────────────────────────────
@@ -84,15 +91,19 @@ def run_analysis(
     print("1. Logit Lens Analysis")
     print("=" * 60)
 
-    # Load LM head for unembedding
-    lm_head_weights, lm_head_bias = load_lm_head(model_name)
+    # Load LM head for unembedding (prefer the saved file from extraction)
+    lm_head_weights, lm_head_bias = load_lm_head_from_file(
+        os.path.join(activations_dir, "lm_head.npz")
+    )
+    if lm_head_weights is None:
+        lm_head_weights, lm_head_bias = load_lm_head(model_name)
 
     if lm_head_weights is not None and logits is not None:
         err_by_translatability = aggregate_err_by_translatability(
             hidden_states=hidden_states,
             logits=logits,
             metadata=metadata,
-            tokenizer=None,  # Will compute ERR using weights directly
+            tokenizer=tokenizer,
             lm_head_weights=lm_head_weights,
             lm_head_bias=lm_head_bias,
         )

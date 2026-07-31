@@ -72,27 +72,49 @@ def collect_silhouette_scores(
     return collected
 
 
+def _model_num_layers(model_key: str) -> int:
+    """Get the number of transformer layers for a model key."""
+    try:
+        from src.extraction.model_config import get_model_config
+        return get_model_config(model_key)["layers"]
+    except Exception:
+        return 32
+
+
+def _resample_curve(curve: Dict[int, float], n_layers: int, fractions):
+    """Resample a per-layer curve onto normalized depth fractions [0, 1]."""
+    layers = sorted(curve.keys())
+    if not layers:
+        return np.array([])
+    values = np.array([curve[l] for l in layers])
+    x = np.array(layers, dtype=float) / max(n_layers - 1, 1)
+    return np.interp(fractions, x, values)
+
+
 def compute_err_correlation(
     err_curves: Dict[str, Dict[str, Dict[int, float]]],
     group: str = "untranslatable",
+    n_sample_points: int = 20,
 ) -> Dict[str, Dict[str, float]]:
     correlations = {}
     model_keys = list(err_curves.keys())
+    fractions = np.linspace(0, 1, n_sample_points)
     for i, mk1 in enumerate(model_keys):
         for mk2 in model_keys[i + 1:]:
             curve1 = err_curves.get(mk1, {}).get(group, {})
             curve2 = err_curves.get(mk2, {}).get(group, {})
-            common_layers = sorted(set(curve1.keys()) & set(curve2.keys()))
-            if len(common_layers) < 3:
+            if len(curve1) < 3 or len(curve2) < 3:
                 continue
-            v1 = np.array([curve1[l] for l in common_layers])
-            v2 = np.array([curve2[l] for l in common_layers])
+            # Normalize by layer fraction (handles different layer counts)
+            v1 = _resample_curve(curve1, _model_num_layers(mk1), fractions)
+            v2 = _resample_curve(curve2, _model_num_layers(mk2), fractions)
             r = np.corrcoef(v1, v2)[0, 1]
             correlations[f"{mk1}_vs_{mk2}"] = {
                 "model_a": mk1,
                 "model_b": mk2,
                 "pearson_r": float(r),
-                "n_layers": len(common_layers),
+                "n_layers": len(fractions),
+                "normalized_depth": True,
             }
     return correlations
 
