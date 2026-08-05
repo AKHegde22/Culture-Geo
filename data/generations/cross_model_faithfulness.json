@@ -1,0 +1,394 @@
+{
+  "llama-3-8b": {
+    "n_records": 424,
+    "overall_untrans_vs_trans": {
+      "test": "Welch's t-test",
+      "t_statistic": -4.005082122706914,
+      "p_value": 7.330963919157035e-05,
+      "cohens_d": -0.38646360853856565,
+      "mean_a": 0.7793890692640694,
+      "mean_b": 0.8428176229508197,
+      "std_a": 0.14351796428200198,
+      "std_b": 0.18241979616761045,
+      "n_a": 180,
+      "n_b": 244,
+      "significant_005": true
+    },
+    "by_template": {
+      "comparison": {
+        "test": "Welch's t-test",
+        "t_statistic": -0.5050462246127534,
+        "p_value": 0.6140591799168063,
+        "cohens_d": -0.0689818366461026,
+        "mean_a": 0.7728744588744589,
+        "mean_b": 0.7852971311475411,
+        "std_a": 0.15865724323127658,
+        "std_b": 0.199223249736328,
+        "n_a": 90,
+        "n_b": 122,
+        "significant_005": false
+      },
+      "definition": {
+        "test": "Welch's t-test",
+        "t_statistic": -6.139524052814623,
+        "p_value": 4.289335626660894e-09,
+        "cohens_d": -0.8455140825240491,
+        "mean_a": 0.7859036796536797,
+        "mean_b": 0.9003381147540985,
+        "std_a": 0.12715458636709392,
+        "std_b": 0.1430635367219463,
+        "n_a": 90,
+        "n_b": 122,
+        "significant_005": true
+      }
+    },
+    "by_metric": {
+      "meaning_correctness": {
+        "test": "Welch's t-test",
+        "t_statistic": -4.124521975050582,
+        "p_value": 4.4761388699428425e-05,
+        "cohens_d": -0.3957010432163923,
+        "mean_a": 0.5253321909571909,
+        "mean_b": 0.6702868852459016,
+        "std_a": 0.3045995955236196,
+        "std_b": 0.4190528214347187,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": true
+      },
+      "cultural_specificity": {
+        "test": "Welch's t-test",
+        "t_statistic": -1.3756458014755453,
+        "p_value": 0.169740135150396,
+        "cohens_d": -0.13540345741157694,
+        "mean_a": 0.869722222222222,
+        "mean_b": 0.890983606557377,
+        "std_a": 0.1588626846557735,
+        "std_b": 0.15516039669110965,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": false
+      },
+      "english_collapse": {
+        "test": "Welch's t-test",
+        "t_statistic": NaN,
+        "p_value": NaN,
+        "cohens_d": 0.0,
+        "mean_a": 0.0,
+        "mean_b": 0.0,
+        "std_a": 0.0,
+        "std_b": 0.0,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": false
+      },
+      "overall": {
+        "test": "Welch's t-test",
+        "t_statistic": -4.005082122706914,
+        "p_value": 7.330963919157035e-05,
+        "cohens_d": -0.38646360853856565,
+        "mean_a": 0.7793890692640694,
+        "mean_b": 0.8428176229508197,
+        "std_a": 0.14351796428200198,
+        "std_b": 0.18241979616761045,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": true
+      }
+    }
+  },
+  "llama-3-8b-instruct": {
+    "n_records": 424,
+    "overall_untrans_vs_trans": {
+      "test": "Welch's t-test",
+      "t_statistic": -5.598162257446303,
+      "p_value": 4.42087629686025e-08,
+      "cohens_d": -0.557081661955465,
+      "mean_a": 0.9158036616161616,
+      "mean_b": 0.9682120901639343,
+      "std_a": 0.10178658934574375,
+      "std_b": 0.08567586446837497,
+      "n_a": 180,
+      "n_b": 244,
+      "significant_005": true
+    },
+    "by_template": {
+      "comparison": {
+        "test": "Welch's t-test",
+        "t_statistic": -2.408515577099998,
+        "p_value": 0.01694410425651403,
+        "cohens_d": -0.33370119663448256,
+        "mean_a": 0.9265296717171717,
+        "mean_b": 0.9591905737704917,
+        "std_a": 0.09598297415611833,
+        "std_b": 0.09973051526425938,
+        "n_a": 90,
+        "n_b": 122,
+        "significant_005": true
+      },
+      "definition": {
+        "test": "Welch's t-test",
+        "t_statistic": -5.625220868752943,
+        "p_value": 9.617368183177377e-08,
+        "cohens_d": -0.8061464446777652,
+        "mean_a": 0.9050776515151515,
+        "mean_b": 0.977233606557377,
+        "std_a": 0.10673339926083218,
+        "std_b": 0.06805200322001655,
+        "n_a": 90,
+        "n_b": 122,
+        "significant_005": true
+      }
+    },
+    "by_metric": {
+      "meaning_correctness": {
+        "test": "Welch's t-test",
+        "t_statistic": -6.436216498298124,
+        "p_value": 4.018927132095315e-10,
+        "cohens_d": -0.639382909420976,
+        "mean_a": 0.7671738215488215,
+        "mean_b": 0.9187500000000001,
+        "std_a": 0.2539387409472709,
+        "std_b": 0.21889729021290202,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": true
+      },
+      "cultural_specificity": {
+        "test": "Welch's t-test",
+        "t_statistic": -2.1004191093387656,
+        "p_value": 0.03644629916109768,
+        "cohens_d": -0.2098496511205687,
+        "mean_a": 0.9652777777777778,
+        "mean_b": 0.978688524590164,
+        "std_a": 0.07072987844278641,
+        "std_b": 0.05626145344277215,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": true
+      },
+      "english_collapse": {
+        "test": "Welch's t-test",
+        "t_statistic": NaN,
+        "p_value": NaN,
+        "cohens_d": 0.0,
+        "mean_a": 0.0,
+        "mean_b": 0.0,
+        "std_a": 0.0,
+        "std_b": 0.0,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": false
+      },
+      "overall": {
+        "test": "Welch's t-test",
+        "t_statistic": -5.598162257446303,
+        "p_value": 4.42087629686025e-08,
+        "cohens_d": -0.557081661955465,
+        "mean_a": 0.9158036616161616,
+        "mean_b": 0.9682120901639343,
+        "std_a": 0.10178658934574375,
+        "std_b": 0.08567586446837497,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": true
+      }
+    }
+  },
+  "mistral-7b": {
+    "n_records": 424,
+    "overall_untrans_vs_trans": {
+      "test": "Welch's t-test",
+      "t_statistic": -5.545278647606619,
+      "p_value": 5.9014794262606614e-08,
+      "cohens_d": -0.5526931247787816,
+      "mean_a": 0.8830237644300145,
+      "mean_b": 0.9479252049180329,
+      "std_a": 0.12821487884277163,
+      "std_b": 0.10554351680840963,
+      "n_a": 180,
+      "n_b": 244,
+      "significant_005": true
+    },
+    "by_template": {
+      "comparison": {
+        "test": "Welch's t-test",
+        "t_statistic": -3.1486527551958545,
+        "p_value": 0.0019442152146319596,
+        "cohens_d": -0.4444781966440989,
+        "mean_a": 0.8924658189033189,
+        "mean_b": 0.9460655737704918,
+        "std_a": 0.13279186124768702,
+        "std_b": 0.10700632272235423,
+        "n_a": 90,
+        "n_b": 122,
+        "significant_005": true
+      },
+      "definition": {
+        "test": "Welch's t-test",
+        "t_statistic": -4.736063051686207,
+        "p_value": 4.530175165907459e-06,
+        "cohens_d": -0.6662675602102763,
+        "mean_a": 0.8735817099567099,
+        "mean_b": 0.9497848360655737,
+        "std_a": 0.12348616187535506,
+        "std_b": 0.10446818941062025,
+        "n_a": 90,
+        "n_b": 122,
+        "significant_005": true
+      }
+    },
+    "by_metric": {
+      "meaning_correctness": {
+        "test": "Welch's t-test",
+        "t_statistic": -6.377323055743852,
+        "p_value": 5.391708773956267e-10,
+        "cohens_d": -0.6300875696279551,
+        "mean_a": 0.7047925685425686,
+        "mean_b": 0.8769467213114756,
+        "std_a": 0.283146115559623,
+        "std_b": 0.2629247518459205,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": true
+      },
+      "cultural_specificity": {
+        "test": "Welch's t-test",
+        "t_statistic": -0.6742761292669167,
+        "p_value": 0.5005931704813124,
+        "cohens_d": -0.067194759944824,
+        "mean_a": 0.9452777777777777,
+        "mean_b": 0.9514344262295081,
+        "std_a": 0.09995770365596542,
+        "std_b": 0.0824520798805231,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": false
+      },
+      "english_collapse": {
+        "test": "Welch's t-test",
+        "t_statistic": NaN,
+        "p_value": NaN,
+        "cohens_d": 0.0,
+        "mean_a": 0.0,
+        "mean_b": 0.0,
+        "std_a": 0.0,
+        "std_b": 0.0,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": false
+      },
+      "overall": {
+        "test": "Welch's t-test",
+        "t_statistic": -5.545278647606619,
+        "p_value": 5.9014794262606614e-08,
+        "cohens_d": -0.5526931247787816,
+        "mean_a": 0.8830237644300145,
+        "mean_b": 0.9479252049180329,
+        "std_a": 0.12821487884277163,
+        "std_b": 0.10554351680840963,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": true
+      }
+    }
+  },
+  "qwen-2.5-7b": {
+    "n_records": 424,
+    "overall_untrans_vs_trans": {
+      "test": "Welch's t-test",
+      "t_statistic": -5.533439215431515,
+      "p_value": 6.282263255471778e-08,
+      "cohens_d": -0.5515575376003783,
+      "mean_a": 0.8887842712842714,
+      "mean_b": 0.954405737704918,
+      "std_a": 0.1299640624843355,
+      "std_b": 0.10686140512465137,
+      "n_a": 180,
+      "n_b": 244,
+      "significant_005": true
+    },
+    "by_template": {
+      "comparison": {
+        "test": "Welch's t-test",
+        "t_statistic": -2.8587335513951837,
+        "p_value": 0.004774583526940397,
+        "cohens_d": -0.401897477250513,
+        "mean_a": 0.8873679653679655,
+        "mean_b": 0.942264344262295,
+        "std_a": 0.14690281485718143,
+        "std_b": 0.1254386242333933,
+        "n_a": 90,
+        "n_b": 122,
+        "significant_005": true
+      },
+      "definition": {
+        "test": "Welch's t-test",
+        "t_statistic": -5.478619368715162,
+        "p_value": 1.6634938787028424e-07,
+        "cohens_d": -0.7774374340064366,
+        "mean_a": 0.8902005772005774,
+        "mean_b": 0.9665471311475411,
+        "std_a": 0.11129512032903792,
+        "std_b": 0.0830721540647518,
+        "n_a": 90,
+        "n_b": 122,
+        "significant_005": true
+      }
+    },
+    "by_metric": {
+      "meaning_correctness": {
+        "test": "Welch's t-test",
+        "t_statistic": -6.215883735809691,
+        "p_value": 1.3740373436608703e-09,
+        "cohens_d": -0.6137928885967945,
+        "mean_a": 0.7245746151996152,
+        "mean_b": 0.8889344262295082,
+        "std_a": 0.2765313049894966,
+        "std_b": 0.2587272818663968,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": true
+      },
+      "cultural_specificity": {
+        "test": "Welch's t-test",
+        "t_statistic": -3.543640780810166,
+        "p_value": 0.00046733481174548324,
+        "cohens_d": -0.3616197027393588,
+        "mean_a": 0.9369444444444444,
+        "mean_b": 0.9700819672131147,
+        "std_a": 0.1130288795954143,
+        "std_b": 0.06339497846738001,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": true
+      },
+      "english_collapse": {
+        "test": "Welch's t-test",
+        "t_statistic": NaN,
+        "p_value": NaN,
+        "cohens_d": 0.0,
+        "mean_a": 0.0,
+        "mean_b": 0.0,
+        "std_a": 0.0,
+        "std_b": 0.0,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": false
+      },
+      "overall": {
+        "test": "Welch's t-test",
+        "t_statistic": -5.533439215431515,
+        "p_value": 6.282263255471778e-08,
+        "cohens_d": -0.5515575376003783,
+        "mean_a": 0.8887842712842714,
+        "mean_b": 0.954405737704918,
+        "std_a": 0.1299640624843355,
+        "std_b": 0.10686140512465137,
+        "n_a": 180,
+        "n_b": 244,
+        "significant_005": true
+      }
+    }
+  }
+}

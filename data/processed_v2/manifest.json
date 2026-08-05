@@ -1,18 +1,18 @@
 {
-  "num_concepts": 227,
-  "num_prompts": 681,
-  "num_untranslatable": 105,
+  "num_concepts": 212,
+  "num_prompts": 636,
+  "num_untranslatable": 90,
   "num_translatable": 122,
   "languages": [
+    "Danish",
+    "Hindi",
     "Russian",
+    "German",
+    "Spanish",
+    "Portuguese",
     "Arabic",
     "Korean",
-    "Spanish",
     "French",
-    "Hindi",
-    "Danish",
-    "Portuguese",
-    "German",
     "Japanese"
   ],
   "templates": [
@@ -21,38 +21,39 @@
     "comparison"
   ],
   "seed": 42,
+  "cleaned": true,
   "stats": {
-    "total": 681,
+    "total": 636,
     "by_language": {
+      "es": 66,
+      "pt": 60,
+      "da": 54,
+      "ru": 57,
+      "ja": 84,
+      "de": 87,
+      "hi": 51,
+      "ko": 60,
       "fr": 63,
-      "ru": 60,
-      "pt": 66,
-      "ko": 69,
-      "hi": 60,
-      "es": 69,
-      "ar": 57,
-      "ja": 90,
-      "de": 90,
-      "da": 57
+      "ar": 54
     },
     "by_translatability": {
-      "untranslatable": 315,
+      "untranslatable": 270,
       "translatable": 366
     },
     "by_template": {
-      "definition": 227,
-      "comparison": 227,
-      "usage": 227
+      "comparison": 212,
+      "definition": 212,
+      "usage": 212
     },
     "by_category": {
-      "social": 165,
-      "emotion": 123,
-      "habit": 78,
-      "concept": 120,
+      "time": 3,
       "nature": 102,
-      "philosophy": 33,
-      "aesthetic": 51,
-      "time": 9
+      "concept": 120,
+      "aesthetic": 45,
+      "social": 153,
+      "emotion": 108,
+      "habit": 75,
+      "philosophy": 30
     }
   }
 }

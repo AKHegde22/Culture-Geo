@@ -1,0 +1,1422 @@
+{
+  "n_concepts": 212,
+  "n_untranslatable": 90,
+  "n_translatable": 122,
+  "n_excluded": 15,
+  "exclusions": [
+    {
+      "language": "Arabic",
+      "word": "Taza",
+      "reason": "Near-direct English equivalent (freshness / fresh)",
+      "was_present": true,
+      "category": "aesthetic"
+    },
+    {
+      "language": "Danish",
+      "word": "Lykke",
+      "reason": "Direct English equivalent (happiness)",
+      "was_present": true,
+      "category": "emotion"
+    },
+    {
+      "language": "German",
+      "word": "Zeitgeist",
+      "reason": "Fully borrowed into English dictionaries as Zeitgeist",
+      "was_present": true,
+      "category": "philosophy"
+    },
+    {
+      "language": "Hindi",
+      "word": "Dil",
+      "reason": "Direct English equivalent (heart)",
+      "was_present": true,
+      "category": "emotion"
+    },
+    {
+      "language": "Hindi",
+      "word": "Dosti",
+      "reason": "Direct English equivalent (friendship)",
+      "was_present": true,
+      "category": "social"
+    },
+    {
+      "language": "Hindi",
+      "word": "Filhal",
+      "reason": "Near-direct English equivalent (for now / currently)",
+      "was_present": true,
+      "category": "time"
+    },
+    {
+      "language": "Japanese",
+      "word": "Kairos",
+      "reason": "Greek loanword mislabeled as Japanese untranslatable",
+      "was_present": true,
+      "category": "time"
+    },
+    {
+      "language": "Japanese",
+      "word": "Wabi",
+      "reason": "Redundant subset of Wabi-sabi",
+      "was_present": true,
+      "category": "aesthetic"
+    },
+    {
+      "language": "Korean",
+      "word": "Dinganeun",
+      "reason": "Poorly attested lexical item",
+      "was_present": true,
+      "category": "habit"
+    },
+    {
+      "language": "Korean",
+      "word": "Gyeolhon",
+      "reason": "Direct English equivalent (marriage)",
+      "was_present": true,
+      "category": "social"
+    },
+    {
+      "language": "Korean",
+      "word": "Jeongseon",
+      "reason": "Poorly attested / ambiguous lexical status",
+      "was_present": true,
+      "category": "emotion"
+    },
+    {
+      "language": "Portuguese",
+      "word": "Despedida",
+      "reason": "Direct English equivalent (farewell)",
+      "was_present": true,
+      "category": "emotion"
+    },
+    {
+      "language": "Portuguese",
+      "word": "Ilhado",
+      "reason": "Near-direct English equivalent (stranded / isolated)",
+      "was_present": true,
+      "category": "emotion"
+    },
+    {
+      "language": "Russian",
+      "word": "Davai",
+      "reason": "Colloquial discourse marker with clear English glosses",
+      "was_present": true,
+      "category": "social"
+    },
+    {
+      "language": "Spanish",
+      "word": "Tutear",
+      "reason": "Has a clear English gloss (address with informal tu)",
+      "was_present": true,
+      "category": "social"
+    }
+  ],
+  "by_language": {
+    "Arabic": {
+      "untranslatable": 6,
+      "translatable": 12
+    },
+    "Danish": {
+      "untranslatable": 8,
+      "translatable": 10
+    },
+    "French": {
+      "untranslatable": 9,
+      "translatable": 12
+    },
+    "German": {
+      "untranslatable": 15,
+      "translatable": 14
+    },
+    "Hindi": {
+      "untranslatable": 5,
+      "translatable": 12
+    },
+    "Japanese": {
+      "untranslatable": 14,
+      "translatable": 14
+    },
+    "Korean": {
+      "untranslatable": 8,
+      "translatable": 12
+    },
+    "Portuguese": {
+      "untranslatable": 8,
+      "translatable": 12
+    },
+    "Russian": {
+      "untranslatable": 7,
+      "translatable": 12
+    },
+    "Spanish": {
+      "untranslatable": 10,
+      "translatable": 12
+    }
+  },
+  "by_language_category": {
+    "Arabic": {
+      "untranslatable": {
+        "emotion": 2,
+        "concept": 1,
+        "social": 2,
+        "philosophy": 1
+      },
+      "translatable": {
+        "social": 4,
+        "philosophy": 1,
+        "habit": 2,
+        "concept": 3,
+        "nature": 2
+      }
+    },
+    "Danish": {
+      "untranslatable": {
+        "social": 3,
+        "emotion": 4,
+        "philosophy": 1
+      },
+      "translatable": {
+        "social": 2,
+        "habit": 3,
+        "concept": 3,
+        "nature": 2
+      }
+    },
+    "French": {
+      "untranslatable": {
+        "emotion": 4,
+        "concept": 3,
+        "social": 1,
+        "habit": 1
+      },
+      "translatable": {
+        "habit": 1,
+        "social": 2,
+        "aesthetic": 3,
+        "emotion": 1,
+        "concept": 2,
+        "nature": 3
+      }
+    },
+    "German": {
+      "untranslatable": {
+        "emotion": 8,
+        "nature": 1,
+        "concept": 3,
+        "habit": 1,
+        "social": 2
+      },
+      "translatable": {
+        "concept": 6,
+        "social": 1,
+        "emotion": 2,
+        "aesthetic": 2,
+        "nature": 3
+      }
+    },
+    "Hindi": {
+      "untranslatable": {
+        "concept": 2,
+        "aesthetic": 1,
+        "emotion": 1,
+        "social": 1
+      },
+      "translatable": {
+        "social": 3,
+        "habit": 2,
+        "philosophy": 3,
+        "nature": 3,
+        "concept": 1
+      }
+    },
+    "Japanese": {
+      "untranslatable": {
+        "habit": 1,
+        "aesthetic": 4,
+        "emotion": 1,
+        "nature": 1,
+        "philosophy": 3,
+        "social": 4
+      },
+      "translatable": {
+        "social": 4,
+        "habit": 3,
+        "aesthetic": 1,
+        "philosophy": 1,
+        "concept": 2,
+        "nature": 3
+      }
+    },
+    "Korean": {
+      "untranslatable": {
+        "emotion": 4,
+        "social": 4
+      },
+      "translatable": {
+        "habit": 4,
+        "social": 3,
+        "aesthetic": 1,
+        "nature": 3,
+        "concept": 1
+      }
+    },
+    "Portuguese": {
+      "untranslatable": {
+        "emotion": 3,
+        "concept": 1,
+        "social": 2,
+        "nature": 1,
+        "aesthetic": 1
+      },
+      "translatable": {
+        "social": 5,
+        "habit": 2,
+        "nature": 3,
+        "concept": 2
+      }
+    },
+    "Russian": {
+      "untranslatable": {
+        "emotion": 2,
+        "social": 2,
+        "habit": 1,
+        "aesthetic": 1,
+        "nature": 1
+      },
+      "translatable": {
+        "concept": 7,
+        "habit": 2,
+        "social": 1,
+        "nature": 2
+      }
+    },
+    "Spanish": {
+      "untranslatable": {
+        "social": 3,
+        "concept": 1,
+        "aesthetic": 1,
+        "time": 1,
+        "emotion": 4
+      },
+      "translatable": {
+        "habit": 2,
+        "social": 2,
+        "nature": 6,
+        "concept": 2
+      }
+    }
+  },
+  "char_length_summary": {
+    "untranslatable_mean": 8.811111111111112,
+    "translatable_mean": 5.901639344262295,
+    "untranslatable_native_mean": 7.388888888888889,
+    "translatable_native_mean": 4.975409836065574
+  },
+  "english_loanword_flags": [
+    {
+      "language": "Japanese",
+      "word": "Ikigai",
+      "note": "Popularized as an English lifestyle loanword"
+    },
+    {
+      "language": "German",
+      "word": "Schadenfreude",
+      "note": "Attested English loanword"
+    },
+    {
+      "language": "German",
+      "word": "Weltschmerz",
+      "note": "Attested literary English loanword"
+    },
+    {
+      "language": "Portuguese",
+      "word": "Saudade",
+      "note": "Occasionally borrowed; still primarily Portuguese"
+    },
+    {
+      "language": "Danish",
+      "word": "Hygge",
+      "note": "Widely borrowed into English lifestyle discourse"
+    }
+  ],
+  "control_matching": {
+    "n_pairs": 89,
+    "n_unmatched_untranslatable": 1,
+    "unmatched_untranslatable": [
+      "Erklarungsnot"
+    ],
+    "same_category_fraction": 0.4044943820224719,
+    "pairs": [
+      {
+        "untranslatable": "Tsundoku",
+        "translatable": "Bento",
+        "language": "Japanese",
+        "untrans_category": "habit",
+        "trans_category": "habit",
+        "same_category": true,
+        "char_len_u": 8,
+        "char_len_t": 5,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Wabi-sabi",
+        "translatable": "Kimono",
+        "language": "Japanese",
+        "untrans_category": "aesthetic",
+        "trans_category": "aesthetic",
+        "same_category": true,
+        "char_len_u": 9,
+        "char_len_t": 6,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Mono no aware",
+        "translatable": "Ryokan",
+        "language": "Japanese",
+        "untrans_category": "emotion",
+        "trans_category": "social",
+        "same_category": false,
+        "char_len_u": 13,
+        "char_len_t": 6,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Komorebi",
+        "translatable": "Mizu",
+        "language": "Japanese",
+        "untrans_category": "nature",
+        "trans_category": "nature",
+        "same_category": true,
+        "char_len_u": 8,
+        "char_len_t": 4,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Kintsugi",
+        "translatable": "Samurai",
+        "language": "Japanese",
+        "untrans_category": "aesthetic",
+        "trans_category": "social",
+        "same_category": false,
+        "char_len_u": 8,
+        "char_len_t": 7,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Ikigai",
+        "translatable": "Zen",
+        "language": "Japanese",
+        "untrans_category": "philosophy",
+        "trans_category": "philosophy",
+        "same_category": true,
+        "char_len_u": 6,
+        "char_len_t": 3,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Hanami",
+        "translatable": "Sensei",
+        "language": "Japanese",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 6,
+        "char_len_t": 6,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Schadenfreude",
+        "translatable": "Wanderlust",
+        "language": "German",
+        "untrans_category": "emotion",
+        "trans_category": "emotion",
+        "same_category": true,
+        "char_len_u": 13,
+        "char_len_t": 10,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Weltschmerz",
+        "translatable": "Angst",
+        "language": "German",
+        "untrans_category": "emotion",
+        "trans_category": "emotion",
+        "same_category": true,
+        "char_len_u": 11,
+        "char_len_t": 5,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Fernweh",
+        "translatable": "Handschuh",
+        "language": "German",
+        "untrans_category": "emotion",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 7,
+        "char_len_t": 9,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Waldeinsamkeit",
+        "translatable": "Wasser",
+        "language": "German",
+        "untrans_category": "nature",
+        "trans_category": "nature",
+        "same_category": true,
+        "char_len_u": 14,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Verschlimmbesserung",
+        "translatable": "Gestalt",
+        "language": "German",
+        "untrans_category": "concept",
+        "trans_category": "concept",
+        "same_category": true,
+        "char_len_u": 19,
+        "char_len_t": 7,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Kummerspeck",
+        "translatable": "Kindergarten",
+        "language": "German",
+        "untrans_category": "habit",
+        "trans_category": "social",
+        "same_category": false,
+        "char_len_u": 11,
+        "char_len_t": 12,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Fremdscham",
+        "translatable": "Kitsch",
+        "language": "German",
+        "untrans_category": "emotion",
+        "trans_category": "aesthetic",
+        "same_category": false,
+        "char_len_u": 10,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Torschlusspanik",
+        "translatable": "Doppelganger",
+        "language": "German",
+        "untrans_category": "emotion",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 15,
+        "char_len_t": 12,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Feierabend",
+        "translatable": "Poltergeist",
+        "language": "German",
+        "untrans_category": "social",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 10,
+        "char_len_t": 11,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Saudade",
+        "translatable": "Samba",
+        "language": "Portuguese",
+        "untrans_category": "emotion",
+        "trans_category": "social",
+        "same_category": false,
+        "char_len_u": 7,
+        "char_len_t": 5,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Desenrascanço",
+        "translatable": "Casa",
+        "language": "Portuguese",
+        "untrans_category": "concept",
+        "trans_category": "concept",
+        "same_category": true,
+        "char_len_u": 13,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Sobremesa",
+        "translatable": "Futebol",
+        "language": "Portuguese",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 9,
+        "char_len_t": 7,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Cafuné",
+        "translatable": "Feijoada",
+        "language": "Portuguese",
+        "untrans_category": "emotion",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 6,
+        "char_len_t": 8,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Levada",
+        "translatable": "Praia",
+        "language": "Portuguese",
+        "untrans_category": "nature",
+        "trans_category": "nature",
+        "same_category": true,
+        "char_len_u": 6,
+        "char_len_t": 5,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Jeong",
+        "translatable": "Soju",
+        "language": "Korean",
+        "untrans_category": "emotion",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 5,
+        "char_len_t": 4,
+        "script_u": "hangul",
+        "script_t": "hangul"
+      },
+      {
+        "untranslatable": "Han",
+        "translatable": "Bibimbap",
+        "language": "Korean",
+        "untrans_category": "emotion",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 3,
+        "char_len_t": 8,
+        "script_u": "hangul",
+        "script_t": "hangul"
+      },
+      {
+        "untranslatable": "Nunchi",
+        "translatable": "Taekwondo",
+        "language": "Korean",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 6,
+        "char_len_t": 9,
+        "script_u": "hangul",
+        "script_t": "hangul"
+      },
+      {
+        "untranslatable": "Palli-palli",
+        "translatable": "Chuseok",
+        "language": "Korean",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 11,
+        "char_len_t": 7,
+        "script_u": "hangul",
+        "script_t": "hangul"
+      },
+      {
+        "untranslatable": "Chemyon",
+        "translatable": "K-pop",
+        "language": "Korean",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 7,
+        "char_len_t": 5,
+        "script_u": "hangul",
+        "script_t": "hangul"
+      },
+      {
+        "untranslatable": "Tarab",
+        "translatable": "Habibi",
+        "language": "Arabic",
+        "untrans_category": "emotion",
+        "trans_category": "social",
+        "same_category": false,
+        "char_len_u": 5,
+        "char_len_t": 6,
+        "script_u": "arabic",
+        "script_t": "arabic"
+      },
+      {
+        "untranslatable": "Ya'aburnee",
+        "translatable": "Shukran",
+        "language": "Arabic",
+        "untrans_category": "emotion",
+        "trans_category": "social",
+        "same_category": false,
+        "char_len_u": 10,
+        "char_len_t": 7,
+        "script_u": "arabic",
+        "script_t": "arabic"
+      },
+      {
+        "untranslatable": "Khayyal",
+        "translatable": "Khamsa",
+        "language": "Arabic",
+        "untrans_category": "concept",
+        "trans_category": "concept",
+        "same_category": true,
+        "char_len_u": 7,
+        "char_len_t": 6,
+        "script_u": "arabic",
+        "script_t": "arabic"
+      },
+      {
+        "untranslatable": "Samar",
+        "translatable": "Inshallah",
+        "language": "Arabic",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 5,
+        "char_len_t": 9,
+        "script_u": "arabic",
+        "script_t": "arabic"
+      },
+      {
+        "untranslatable": "Nasib",
+        "translatable": "Maktub",
+        "language": "Arabic",
+        "untrans_category": "philosophy",
+        "trans_category": "philosophy",
+        "same_category": true,
+        "char_len_u": 5,
+        "char_len_t": 6,
+        "script_u": "arabic",
+        "script_t": "arabic"
+      },
+      {
+        "untranslatable": "Jugaad",
+        "translatable": "Kitaab",
+        "language": "Hindi",
+        "untrans_category": "concept",
+        "trans_category": "concept",
+        "same_category": true,
+        "char_len_u": 6,
+        "char_len_t": 6,
+        "script_u": "devanagari",
+        "script_t": "devanagari"
+      },
+      {
+        "untranslatable": "Garma-garam",
+        "translatable": "Namaste",
+        "language": "Hindi",
+        "untrans_category": "aesthetic",
+        "trans_category": "social",
+        "same_category": false,
+        "char_len_u": 11,
+        "char_len_t": 7,
+        "script_u": "devanagari",
+        "script_t": "devanagari"
+      },
+      {
+        "untranslatable": "Sukoon",
+        "translatable": "Masala",
+        "language": "Hindi",
+        "untrans_category": "emotion",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 6,
+        "char_len_t": 6,
+        "script_u": "devanagari",
+        "script_t": "devanagari"
+      },
+      {
+        "untranslatable": "Toska",
+        "translatable": "Sputnik",
+        "language": "Russian",
+        "untrans_category": "emotion",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 5,
+        "char_len_t": 7,
+        "script_u": "cyrillic",
+        "script_t": "cyrillic"
+      },
+      {
+        "untranslatable": "Pochemuchka",
+        "translatable": "Babushka",
+        "language": "Russian",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 11,
+        "char_len_t": 8,
+        "script_u": "cyrillic",
+        "script_t": "cyrillic"
+      },
+      {
+        "untranslatable": "Zapoi",
+        "translatable": "Vodka",
+        "language": "Russian",
+        "untrans_category": "habit",
+        "trans_category": "habit",
+        "same_category": true,
+        "char_len_u": 5,
+        "char_len_t": 5,
+        "script_u": "cyrillic",
+        "script_t": "cyrillic"
+      },
+      {
+        "untranslatable": "Vypyivat",
+        "translatable": "Matryoshka",
+        "language": "Russian",
+        "untrans_category": "social",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 8,
+        "char_len_t": 10,
+        "script_u": "cyrillic",
+        "script_t": "cyrillic"
+      },
+      {
+        "untranslatable": "Hygge",
+        "translatable": "Bakken",
+        "language": "Danish",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 5,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Forelsket",
+        "translatable": "Smorrebrod",
+        "language": "Danish",
+        "untrans_category": "emotion",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 9,
+        "char_len_t": 10,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Pyt",
+        "translatable": "Lego",
+        "language": "Danish",
+        "untrans_category": "emotion",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 3,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Trivsel",
+        "translatable": "Frikadeller",
+        "language": "Danish",
+        "untrans_category": "philosophy",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 7,
+        "char_len_t": 11,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Samfundssind",
+        "translatable": "Tivoli",
+        "language": "Danish",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 12,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Sobremesa",
+        "translatable": "Fiesta",
+        "language": "Spanish",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 9,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Estrenar",
+        "translatable": "Guitar",
+        "language": "Spanish",
+        "untrans_category": "concept",
+        "trans_category": "concept",
+        "same_category": true,
+        "char_len_u": 8,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Duende",
+        "translatable": "Siesta",
+        "language": "Spanish",
+        "untrans_category": "aesthetic",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 6,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Madrugada",
+        "translatable": "Canyon",
+        "language": "Spanish",
+        "untrans_category": "time",
+        "trans_category": "nature",
+        "same_category": false,
+        "char_len_u": 9,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Convivencia",
+        "translatable": "Plaza",
+        "language": "Spanish",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 11,
+        "char_len_t": 5,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Depaysement",
+        "translatable": "Tranquil",
+        "language": "French",
+        "untrans_category": "emotion",
+        "trans_category": "emotion",
+        "same_category": true,
+        "char_len_u": 11,
+        "char_len_t": 8,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "L'esprit de l'escalier",
+        "translatable": "Museum",
+        "language": "French",
+        "untrans_category": "concept",
+        "trans_category": "concept",
+        "same_category": true,
+        "char_len_u": 22,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Flaneur",
+        "translatable": "Restaurant",
+        "language": "French",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 7,
+        "char_len_t": 10,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Retrouvailles",
+        "translatable": "Croissant",
+        "language": "French",
+        "untrans_category": "emotion",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 13,
+        "char_len_t": 9,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Bricolage",
+        "translatable": "Maison",
+        "language": "French",
+        "untrans_category": "concept",
+        "trans_category": "concept",
+        "same_category": true,
+        "char_len_u": 9,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Mottainai",
+        "translatable": "Tempura",
+        "language": "Japanese",
+        "untrans_category": "philosophy",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 9,
+        "char_len_t": 7,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Otsukaresama",
+        "translatable": "Dojo",
+        "language": "Japanese",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 12,
+        "char_len_t": 4,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Shibui",
+        "translatable": "Sake",
+        "language": "Japanese",
+        "untrans_category": "aesthetic",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 6,
+        "char_len_t": 4,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Yugen",
+        "translatable": "Harakiri",
+        "language": "Japanese",
+        "untrans_category": "aesthetic",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 5,
+        "char_len_t": 8,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Ukiyo",
+        "translatable": "Inu",
+        "language": "Japanese",
+        "untrans_category": "philosophy",
+        "trans_category": "nature",
+        "same_category": false,
+        "char_len_u": 5,
+        "char_len_t": 3,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Shokunin",
+        "translatable": "Yama",
+        "language": "Japanese",
+        "untrans_category": "social",
+        "trans_category": "nature",
+        "same_category": false,
+        "char_len_u": 8,
+        "char_len_t": 4,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Omotenashi",
+        "translatable": "Hon",
+        "language": "Japanese",
+        "untrans_category": "social",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 10,
+        "char_len_t": 3,
+        "script_u": "cjk",
+        "script_t": "cjk"
+      },
+      {
+        "untranslatable": "Sehnsucht",
+        "translatable": "Rucksack",
+        "language": "German",
+        "untrans_category": "emotion",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 9,
+        "char_len_t": 8,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Geborgenheit",
+        "translatable": "Schmuck",
+        "language": "German",
+        "untrans_category": "emotion",
+        "trans_category": "aesthetic",
+        "same_category": false,
+        "char_len_u": 12,
+        "char_len_t": 7,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Backpfeifengesicht",
+        "translatable": "Haus",
+        "language": "German",
+        "untrans_category": "concept",
+        "trans_category": "concept",
+        "same_category": true,
+        "char_len_u": 18,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Schnapsidee",
+        "translatable": "Hund",
+        "language": "German",
+        "untrans_category": "concept",
+        "trans_category": "nature",
+        "same_category": false,
+        "char_len_u": 11,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Sturmfrei",
+        "translatable": "Berg",
+        "language": "German",
+        "untrans_category": "social",
+        "trans_category": "nature",
+        "same_category": false,
+        "char_len_u": 9,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Xodo",
+        "translatable": "Carnaval",
+        "language": "Portuguese",
+        "untrans_category": "emotion",
+        "trans_category": "social",
+        "same_category": false,
+        "char_len_u": 4,
+        "char_len_t": 8,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Fado",
+        "translatable": "Favela",
+        "language": "Portuguese",
+        "untrans_category": "aesthetic",
+        "trans_category": "social",
+        "same_category": false,
+        "char_len_u": 4,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Desbundar",
+        "translatable": "Capoeira",
+        "language": "Portuguese",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 9,
+        "char_len_t": 8,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Aegyo",
+        "translatable": "Hanbok",
+        "language": "Korean",
+        "untrans_category": "social",
+        "trans_category": "aesthetic",
+        "same_category": false,
+        "char_len_u": 5,
+        "char_len_t": 6,
+        "script_u": "hangul",
+        "script_t": "hangul"
+      },
+      {
+        "untranslatable": "Hwabyeong",
+        "translatable": "Kimchi",
+        "language": "Korean",
+        "untrans_category": "emotion",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 9,
+        "char_len_t": 6,
+        "script_u": "hangul",
+        "script_t": "hangul"
+      },
+      {
+        "untranslatable": "Kibun",
+        "translatable": "Makgeolli",
+        "language": "Korean",
+        "untrans_category": "emotion",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 5,
+        "char_len_t": 9,
+        "script_u": "hangul",
+        "script_t": "hangul"
+      },
+      {
+        "untranslatable": "Wasta",
+        "translatable": "Souk",
+        "language": "Arabic",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 5,
+        "char_len_t": 4,
+        "script_u": "arabic",
+        "script_t": "arabic"
+      },
+      {
+        "untranslatable": "Jootha",
+        "translatable": "Chai",
+        "language": "Hindi",
+        "untrans_category": "concept",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 6,
+        "char_len_t": 4,
+        "script_u": "devanagari",
+        "script_t": "devanagari"
+      },
+      {
+        "untranslatable": "Gherao",
+        "translatable": "Guru",
+        "language": "Hindi",
+        "untrans_category": "social",
+        "trans_category": "social",
+        "same_category": true,
+        "char_len_u": 6,
+        "char_len_t": 4,
+        "script_u": "devanagari",
+        "script_t": "devanagari"
+      },
+      {
+        "untranslatable": "Poshlost",
+        "translatable": "Kremlin",
+        "language": "Russian",
+        "untrans_category": "aesthetic",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 8,
+        "char_len_t": 7,
+        "script_u": "cyrillic",
+        "script_t": "cyrillic"
+      },
+      {
+        "untranslatable": "Rasputitsa",
+        "translatable": "Voda",
+        "language": "Russian",
+        "untrans_category": "nature",
+        "trans_category": "nature",
+        "same_category": true,
+        "char_len_u": 10,
+        "char_len_t": 4,
+        "script_u": "cyrillic",
+        "script_t": "cyrillic"
+      },
+      {
+        "untranslatable": "Perezhivanie",
+        "translatable": "Cosmonaut",
+        "language": "Russian",
+        "untrans_category": "emotion",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 12,
+        "char_len_t": 9,
+        "script_u": "cyrillic",
+        "script_t": "cyrillic"
+      },
+      {
+        "untranslatable": "Janteloven",
+        "translatable": "Noma",
+        "language": "Danish",
+        "untrans_category": "social",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 10,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Arbejdsglaede",
+        "translatable": "Hus",
+        "language": "Danish",
+        "untrans_category": "emotion",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 13,
+        "char_len_t": 3,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Morgenfrisk",
+        "translatable": "Vand",
+        "language": "Danish",
+        "untrans_category": "emotion",
+        "trans_category": "nature",
+        "same_category": false,
+        "char_len_u": 11,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Verguenza ajena",
+        "translatable": "Mosquito",
+        "language": "Spanish",
+        "untrans_category": "emotion",
+        "trans_category": "nature",
+        "same_category": false,
+        "char_len_u": 15,
+        "char_len_t": 8,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Antojo",
+        "translatable": "Chocolate",
+        "language": "Spanish",
+        "untrans_category": "emotion",
+        "trans_category": "habit",
+        "same_category": false,
+        "char_len_u": 6,
+        "char_len_t": 9,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Empalagar",
+        "translatable": "Tornado",
+        "language": "Spanish",
+        "untrans_category": "emotion",
+        "trans_category": "nature",
+        "same_category": false,
+        "char_len_u": 9,
+        "char_len_t": 7,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Desvelo",
+        "translatable": "Casa",
+        "language": "Spanish",
+        "untrans_category": "emotion",
+        "trans_category": "concept",
+        "same_category": false,
+        "char_len_u": 7,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Consuegro",
+        "translatable": "Agua",
+        "language": "Spanish",
+        "untrans_category": "social",
+        "trans_category": "nature",
+        "same_category": false,
+        "char_len_u": 9,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "L'appel du vide",
+        "translatable": "Ballet",
+        "language": "French",
+        "untrans_category": "emotion",
+        "trans_category": "aesthetic",
+        "same_category": false,
+        "char_len_u": 15,
+        "char_len_t": 6,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "J'adoube",
+        "translatable": "Cafe",
+        "language": "French",
+        "untrans_category": "concept",
+        "trans_category": "social",
+        "same_category": false,
+        "char_len_u": 8,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Spleen",
+        "translatable": "Bouquet",
+        "language": "French",
+        "untrans_category": "emotion",
+        "trans_category": "aesthetic",
+        "same_category": false,
+        "char_len_u": 6,
+        "char_len_t": 7,
+        "script_u": "latin",
+        "script_t": "latin"
+      },
+      {
+        "untranslatable": "Flanerie",
+        "translatable": "Frac",
+        "language": "French",
+        "untrans_category": "habit",
+        "trans_category": "aesthetic",
+        "same_category": false,
+        "char_len_u": 8,
+        "char_len_t": 4,
+        "script_u": "latin",
+        "script_t": "latin"
+      }
+    ],
+    "n_unused_controls": 33
+  },
+  "frozen": true,
+  "seed_note": "Cleaned set frozen before generation/probe significance tests."
+}

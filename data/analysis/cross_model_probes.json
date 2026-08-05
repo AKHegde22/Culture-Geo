@@ -1,0 +1,74 @@
+{
+  "llama-3-8b": {
+    "last_token": {
+      "peak_language_acc": 0.9984126984126984,
+      "peak_language_layer": 4,
+      "peak_translatability_acc": 0.9578073089700997,
+      "peak_translatability_layer": 12,
+      "peak_within_language_acc": 0.9352222222222222,
+      "language_minus_translatability": 0.04060538944259873
+    },
+    "concept_token": {
+      "peak_language_acc": 1.0,
+      "peak_language_layer": 30,
+      "peak_translatability_acc": 0.9435954226651901,
+      "peak_translatability_layer": 12,
+      "peak_within_language_acc": 0.8797777777777778,
+      "language_minus_translatability": 0.05640457733480986
+    }
+  },
+  "llama-3-8b-instruct": {
+    "last_token": {
+      "peak_language_acc": 1.0,
+      "peak_language_layer": 4,
+      "peak_translatability_acc": 0.9562938353636028,
+      "peak_translatability_layer": 14,
+      "peak_within_language_acc": 0.9415555555555555,
+      "language_minus_translatability": 0.043706164636397205
+    },
+    "concept_token": {
+      "peak_language_acc": 1.0,
+      "peak_language_layer": 24,
+      "peak_translatability_acc": 0.9403469915097823,
+      "peak_translatability_layer": 14,
+      "peak_within_language_acc": 0.8816666666666666,
+      "language_minus_translatability": 0.05965300849021771
+    }
+  },
+  "mistral-7b": {
+    "last_token": {
+      "peak_language_acc": 1.0,
+      "peak_language_layer": 4,
+      "peak_translatability_acc": 0.9529346622369879,
+      "peak_translatability_layer": 14,
+      "peak_within_language_acc": 0.933,
+      "language_minus_translatability": 0.04706533776301214
+    },
+    "concept_token": {
+      "peak_language_acc": 1.0,
+      "peak_language_layer": 22,
+      "peak_translatability_acc": 0.9512735326688816,
+      "peak_translatability_layer": 12,
+      "peak_within_language_acc": 0.8626666666666667,
+      "language_minus_translatability": 0.048726467331118406
+    }
+  },
+  "qwen-2.5-7b": {
+    "last_token": {
+      "peak_language_acc": 1.0,
+      "peak_language_layer": 2,
+      "peak_translatability_acc": 0.9389442598744925,
+      "peak_translatability_layer": 16,
+      "peak_within_language_acc": 0.9195555555555555,
+      "language_minus_translatability": 0.06105574012550752
+    },
+    "concept_token": {
+      "peak_language_acc": 1.0,
+      "peak_language_layer": 24,
+      "peak_translatability_acc": 0.9452565522332964,
+      "peak_translatability_layer": 14,
+      "peak_within_language_acc": 0.8374444444444444,
+      "language_minus_translatability": 0.05474344776670359
+    }
+  }
+}

@@ -20,12 +20,12 @@ We use mechanistic interpretability tools (residual stream analysis, logit lens,
 
 ## Key Research Questions
 
-1. **English Routing:** Does the model force untranslatable concepts into its English-centric latent space?
-2. **Clustering:** Do untranslatable concepts occupy isolated, language-specific clusters vs. overlapping with English-centric representations?
-3. **Trajectory:** How do activation trajectories differ between translatable and untranslatable concepts across layers?
-4. **Generation Quality:** Does forced English alignment correlate with worse cultural explanations?
+1. **Generation Faithfulness:** Do models produce weaker cultural explanations for untranslatable concepts than for matched translatable controls?
+2. **Language vs Translatability:** Is source language linearly recoverable from residual-stream activations far more than the untranslatable/translatable label—especially at the concept token?
+3. **English Routing (secondary):** Does the model force untranslatable concepts into its English-centric latent space more than translatable ones?
+4. **Trajectory / Clustering:** Do untranslatable concepts occupy isolated clusters or follow different layer-wise trajectories?
 
-The dataset contains **70 untranslatable concepts** and **82 translatable control concepts** across 10 languages, totaling **152 concepts** and **456 prompts** (3 templates per concept).
+The cleaned dataset contains **90 untranslatable concepts** and **122 translatable control concepts** across 10 languages, totaling **212 concepts** and **636 prompts** (3 templates per concept). Generation eval uses definition + comparison templates.
 
 ## Project Structure
 
@@ -288,12 +288,30 @@ Welch's t-test with Cohen's d effect sizes and 95% confidence intervals for all 
 - **"Deciphering Cultural Representations"** (Zou et al., ACL 2026) — SAE-based cultural feature analysis
 - **RomanLens** (2025) — Latent romanization as bridge between concept and language-specific space
 
+## Quick Path-B commands
+
+```bash
+# Cleaned dataset
+python scripts/01_build_dataset.py --output-dir data/processed_v2 --cleaned
+
+# Linear probes (Modal; needs activations on culture-geo-activations volume)
+modal run scripts/15_modal_probes.py --models all --layer-stride 2
+
+# Generation + faithfulness scoring (Modal)
+modal run scripts/16_modal_generation.py --models all
+
+# Figures + paper table
+python scripts/18_pathb_figures.py
+python scripts/19_fill_paper_tables.py
+```
+
 ## Paper
 
 The paper is being prepared for submission to **NewInML @ NeurIPS 2026**:
 - **Deadline:** August 29, 2026
 - **Format:** 2-8 pages (excluding references), NeurIPS workshop template
 - **Template:** See `paper/main.tex`
+
 
 ## License
 

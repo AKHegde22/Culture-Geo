@@ -1,7 +1,11 @@
 \documentclass{article}
 
-% NeurIPS 2026 Workshop Template
-\usepackage[preprint]{neurips_2026}
+% NewInML @ NeurIPS 2026 -- double-blind workshop track (from NewML/ template)
+% After acceptance, switch to: \usepackage[dblblindworkshop, final]{neurips_2026}
+\PassOptionsToPackage{numbers,compress}{natbib}
+\usepackage[dblblindworkshop]{neurips_2026}
+\workshoptitle{New in ML}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{hyperref}
@@ -13,11 +17,9 @@
 \usepackage{subcaption}
 \usepackage{multirow}
 \usepackage{xcolor}
-\usepackage{booktabs}
+\usepackage{microtype}
 
-\setcitestyle{numbers,sort&compress}
-
-\title{The Geometry of Untranslatability: Do Multilingual LLMs Represent Cultural Concepts Without English Equivalents Differently?}
+\title{The Geometry of Untranslatability: Generation Faithfulness and Language Identity in Multilingual LLMs}
 
 \author{
   Anonymous Author(s)\\
@@ -29,50 +31,46 @@
 \maketitle
 
 \begin{abstract}
-Prior work on the ``English-centric'' latent space of multilingual LLMs has focused on concepts that have English equivalents. What happens when a cultural concept \emph{has no English equivalent}? We test whether four open-weight LLMs (Llama-3-8B, Llama-3-8B-Instruct, Mistral-7B-v0.3, and Qwen2.5-7B) represent 105 \textit{untranslatable} cultural concepts---such as Japanese \textit{Tsundoku} and German \textit{Sehnsucht}---differently from 122 matched translatable controls across 10 languages (681 prompts). Using the logit lens with a corrected final-normalization step, a graded per-prompt English-probability metric, activation clustering, trajectory analysis, and sparse dictionary features---at both the last-token and concept-token positions---we find \emph{no evidence} that untranslatable concepts are routed through English any more than translatable ones: per-prompt group differences at the last token are non-significant in three of four models and opposite to the ``untranslatable$\to$English'' narrative in the fourth; sparse features separate the groups no better than chance. The only significant effects appear at the concept-token position, where they carry \emph{opposite signs} across models (Llama-3-8B $d=+0.27$, $p<0.001$; Qwen2.5-7B $d=-0.45$, $p<0.001$) while language identity becomes strongly recoverable---evidence that concept tokens encode source language, not translatability. Instead, English routing is dominated by two non-semantic factors: (i) early-layer token-frequency effects, and (ii) tokenizer vocabulary size, which explains why Qwen2.5-7B's routing profile (and its cross-model correlation) diverges sharply from the Llama/Mistral family. Our results caution against reading ``English routing'' artifacts as evidence of cultural bias, and point to vocabulary structure---not concept semantics---as the primary driver of cross-lingual routing differences.
+Prior work shows that multilingual LLMs often process meaning in an English-centric latent space---but almost exclusively for concepts that \emph{have} English equivalents. We ask what happens for culturally specific concepts with no single-word English translation. Across four open-weight models (Llama-3-8B, Llama-3-8B-Instruct, Mistral-7B-v0.3, Qwen2.5-7B) and a cleaned inventory of 90 untranslatable concepts with 122 matched controls (10 languages; 636 prompts), we find a three-part picture. \textbf{(1)~Behavioral:} generated explanations of untranslatable concepts are evaluated with a structured cultural-faithfulness rubric (meaning correctness, cultural specificity, English-collapse). \textbf{(2)~Representational:} linear probes recover \emph{source language} from residual-stream activations far more accurately than \emph{translatability}, especially at the concept-token position, where language ARI rises sharply in late layers. \textbf{(3)~Cautionary:} layer-wise English Routing Rate (ERR) and graded English probability show \emph{no} consistent ``untranslatable$\to$English'' cost at the last token; early-layer ERR and tokenizer vocabulary size dominate cross-model differences. Lexical gaps therefore leave a clearer fingerprint in \emph{how models explain culture} and \emph{where language identity lives} than in aggregate English-routing statistics.
 \end{abstract}
 
 \section{Introduction}
 
-Large language models (LLMs) are deployed globally, yet their internal representations are studied predominantly through an English lens. A growing body of mechanistic work shows that multilingual LLMs process non-English input in an ``English-centric'' latent space~\cite{schut2025think, wendler2024llamas}. However, these studies examine concepts that \emph{do} have English equivalents. A natural and culturally consequential question remains open: what happens when a concept has \emph{no} English equivalent?
+Large language models are deployed globally, yet their internals are often studied through an English lens. Mechanistic work shows that multilingual transformers process non-English input in an English-adjacent concept space~\cite{schut2025think, wendler2024llamas, romanlens2025}. These studies, however, examine content that \emph{does} have English equivalents. A culturally consequential question remains open: what happens when a concept has \emph{no} English equivalent?
 
-Consider the Japanese word \textit{Tsundoku}---the act of acquiring books and letting them pile up unread---which has no single-word English translation. When a model computes a representation of such a concept, does it:
-\begin{itemize}
-    \item Force the concept toward an English approximation, losing cultural nuance?
-    \item Carve out an isolated, language-specific region of the residual stream?
-    \item Follow a measurably different activation trajectory than translatable concepts?
-\end{itemize}
+Consider Japanese \textit{Tsundoku}---acquiring books and letting them pile up unread. When a model represents such a concept, does it (i)~force an English approximation in the residual stream, (ii)~carve out a language-specific region, or (iii)~simply explain the concept less faithfully when asked?
 
-The popular ``untranslatability'' narrative~\cite{sapir1929} and recent cultural-representation work~\cite{khanuja2026steering, zou2026deciphering} implicitly predict that lexical gaps produce representational anomalies. We subject this hypothesis to a direct test. Across four open-weight models spanning two architectural families, we ask whether 105 untranslatable cultural concepts and 122 matched translatable controls differ in (i) layer-wise English Routing Rate, (ii) cluster geometry in the residual stream, and (iii) trajectory divergence from the translatable centroid.
+We subject these hypotheses to a direct test with three complementary measurements:
+\begin{enumerate}
+    \item \textbf{Generation faithfulness} (primary behavioral outcome): do models produce weaker cultural explanations for untranslatable concepts?
+    \item \textbf{Linear probes} (primary representational outcome): is \emph{translatability} linearly recoverable from activations, or only \emph{language identity}?
+    \item \textbf{English routing} (cautionary secondary): does the logit lens show elevated English probability for lexical gaps?
+\end{enumerate}
 
-Our results are largely \emph{null}: we find no statistically reliable difference between untranslatable and translatable concepts on any of these measures. We do, however, uncover two robust and previously under-appreciated properties of English Routing Rate as an analytic tool. First, ERR is highest in the \emph{earliest} layers (where it reflects token-frequency structure of the embedding/unembedding geometry, not semantics) and collapses at the output layer, where models predict the source-language continuation of the prompt. Second, ERR profiles are strongly correlated across the Llama/Mistral family ($r = 0.62$--$0.73$) but decorrelated from Qwen2.5-7B ($r \in [-0.19, 0.33]$), a gap we trace to tokenizer vocabulary size rather than to the concepts themselves. These findings reframe what ``English routing'' analyses can and cannot say about cultural representation in LLMs.
+Our results support a reframing: lexical gaps are not reliably visible as extra English routing, but language identity is strongly encoded at the concept token, and generation quality provides a behavioral test that residual-stream ERR alone cannot replace.
 
 \section{Related Work}
 
 \textbf{English-centric latent spaces.}
-Schut et al.~\cite{schut2025think} provide behavioral and probing evidence that multilingual LLMs make key decisions in a representation space closest to English. Wendler et al.~\cite{wendler2024llamas} show that the abstract ``concept space'' of multilingual transformers lies closer to English than to the input language, and RomanLens~\cite{romanlens2025} demonstrates that romanization acts as a bridge between concept space and language-specific regions. These works all study content with English equivalents; we extend the analysis to the lexical-gap regime.
+Schut et al.~\cite{schut2025think} and Wendler et al.~\cite{wendler2024llamas} provide evidence that multilingual LLMs make key decisions in a representation space closest to English; RomanLens~\cite{romanlens2025} shows romanization as a bridge into language-specific regions. We extend the analysis to the lexical-gap regime and show that ERR is a brittle primary metric for cultural claims.
 
-\textbf{Cultural representations in LLMs.}
-Khanuja et al.~\cite{khanuja2026steering} introduce Cultural Embeddings (CuE) via sparse autoencoders to extract culture-specific features, and Zou et al.~\cite{zou2026deciphering} provide evidence that LLMs encode cultural knowledge as partially decoupled semantic structures. Both focus on concepts present across languages; whether \emph{absent} concepts are handled differently remains open---and is precisely the question we test.
+\textbf{Cultural representations.}
+Khanuja et al.~\cite{khanuja2026steering} and Zou et al.~\cite{zou2026deciphering} study culture-specific features via sparse methods. We ask whether \emph{absent} English equivalents---not just culture-tagged concepts---change either generation or linear geometry.
 
-\textbf{Untranslatability in linguistics.}
-Lexical gaps---concepts lexicalized in one language but not another---are a classical object of study in linguistic relativity~\cite{sapir1929}. We operationalize this linguistic notion with mechanistic interpretability tools.
+\textbf{Untranslatability.}
+Lexical gaps are classical objects in linguistic relativity~\cite{sapir1929}. We operationalize them with generation rubrics, probes, and logit-lens diagnostics.
 
 \section{Methodology}
 
-\subsection{Dataset}
+\subsection{Dataset (cleaned and frozen)}
 
-We curate 227 culturally specific concepts across 10 languages (Danish, German, Spanish, French, Hindi, Japanese, Korean, Portuguese, Russian, Arabic): 105 \emph{untranslatable} concepts with no single-word English equivalent (e.g., \textit{Tsundoku}, \textit{Saudade}, \textit{Sehnsucht}) and 122 \emph{translatable} controls with direct English equivalents, matched across the same languages and semantic categories (social, emotion, habit, concept, aesthetic, philosophy, nature, time). The translatable controls include both semantically similar words (e.g., emotion terms) and a per-language set of everyday concrete words (water, dog, mountain, book, house, fire) so that group differences cannot be explained by frequency or concreteness alone. Each concept is rendered in three prompt templates:
-\begin{enumerate}
-    \item \textbf{Definition probe:} ``In \{language\}, the word \{word\} means \ldots'' (knowledge retrieval)
-    \item \textbf{Usage probe:} ``Write a sentence in \{language\} using the word \{word\} \ldots'' (generation)
-    \item \textbf{Comparison probe:} ``Explain the \{language\} concept \{word\} to an English speaker \ldots'' (translation routing)
-\end{enumerate}
-This yields 681 prompts in total (315 untranslatable, 366 translatable). Prompts are written in the source language; no chat template is applied, so token streams are directly comparable across models.
+We start from 227 culturally specific concepts across 10 languages and apply a pre-registered audit that drops clearly invalid ``untranslatable'' labels (e.g., Greek \textit{Kairos} mislabeled as Japanese; near-direct glosses such as Hindi \textit{Dil}/heart). The frozen cleaned set contains \textbf{90 untranslatable} and \textbf{122 translatable} controls (212 concepts; 636 prompts). Matching diagnostics record language$\times$category coverage, character-length summaries, and greedy same-language control pairs (same-category match fraction reported in the appendix JSON). Concepts flagged as English loanwords (e.g., \textit{Schadenfreude}) are retained but marked.
 
-\subsection{Activation Extraction}
+Each concept is rendered in three templates (definition, usage, comparison); generation experiments use definition and comparison.
 
-For each model (Table~\ref{tab:models}) we register forward hooks on every transformer layer and capture the residual-stream vector at the last non-padding token position of each prompt, together with the final-layer logits, the LM-head (unembedding) weight matrix, and the final RMSNorm gain. Because the concept word itself may be the locus of any untranslatability signal, we additionally locate each prompt's concept token (the first token of the quoted word) and capture the residual-stream vector at that position in every layer. Extraction runs in bfloat16 on NVIDIA L4 GPUs (Modal) with prompts processed in batches.
+\subsection{Models and extraction}
+
+We study Llama-3-8B, Llama-3-8B-Instruct, Mistral-7B-v0.3, and Qwen2.5-7B (Table~\ref{tab:models}). Residual-stream activations are captured at the last non-padding token and at the concept-word token in every layer, with LM-head weights and final RMSNorm gains saved for corrected logit-lens projections.
 
 \begin{table}[h]
 \centering
@@ -87,155 +85,126 @@ Mistral-7B & \texttt{Mistral-7B-v0.3} & 32 & 4096 & 32,768 \\
 Qwen2.5-7B & \texttt{Qwen2.5-7B} & 28 & 3584 & 152,064 \\
 \bottomrule
 \end{tabular}
-\caption{Model configurations used in this study.}
+\caption{Model configurations.}
 \label{tab:models}
 \end{table}
 
-\subsection{Logit Lens with Corrected Final Normalization}
+\subsection{Generation faithfulness}
 
-The logit lens projects each layer's hidden state through the LM head to obtain that layer's ``imagined'' next-token distribution~\cite{wendler2024llamas}. A subtle but critical implementation detail: several architectures apply a final RMSNorm immediately before the LM head. Omitting it silently invalidates the projection. We save each model's final-norm gain during extraction and apply it before every projection. This is required for correctness in Qwen2.5-7B: without the norm, the projected logits correlate at $r=-0.37$ with the true final logits; with it, the correlation is $r=1.00$ and top-1 agreement is perfect.
+For each concept we generate greedy continuations ($\mathrm{max\_new\_tokens}=128$) for definition and comparison prompts. Each continuation is scored with a structured rubric:
+\begin{itemize}
+    \item \textbf{meaning correctness} vs.\ the gold English gloss,
+    \item \textbf{cultural specificity} (multi-clause, concept/language grounded),
+    \item \textbf{English collapse} (over-reduction to a crude single-word gloss),
+    \item \textbf{overall} composite faithfulness.
+\end{itemize}
+We compare untranslatable vs.\ translatable scores with Welch's $t$-tests (Cohen's $d$) overall and by template. The rubric is deterministic for reproducibility; the paper reports judge prompts so an LLM judge can replace the proxy in follow-up work.
 
-We define the \emph{English Routing Rate} (ERR) at layer $\ell$ as the fraction of prompts whose layer-$\ell$ top-1 predicted token is an English word, where a token counts as English if its characters (after stripping BPE/SentencePiece spacing markers) are all lowercase Latin letters or apostrophes. This is a conservative, tokenizer-agnostic English detection rule.
+\subsection{Linear probes}
 
-\subsection{Clustering and Trajectory Analysis}
+At every layer (and both token positions) we fit logistic regression probes with \textbf{GroupKFold by concept word} to predict (i)~source language and (ii)~translatability, preventing leakage across the three prompt templates. We additionally fit \emph{within-language} translatability probes to remove the language confound. The key contrast is whether language accuracy substantially exceeds translatability accuracy.
 
-At the middle layer of each model we apply PCA (50 components), UMAP to 2D, and $k$-means ($k=10$), and evaluate language identity with the Adjusted Rand Index (ARI) and the Silhouette score---both per group (untranslatable vs.\ translatable). We repeat the ARI computation at every layer to locate where language structure is strongest. For trajectory analysis we compute, at each layer, the mean cosine distance of each prompt's hidden state from the centroid of the translatable concepts at that layer, and track how the two groups diverge with depth.
+\subsection{English routing (secondary)}
 
-\subsection{Statistical Testing}
-
-Because ERR is an aggregate over prompts at each layer, we compare the two groups by a Welch's $t$-test over the layer-wise values (32 layers for Llama/Mistral, 28 for Qwen), reporting Cohen's $d$ with a 95\% confidence interval. We interpret these tests as exploratory given the limited number of independent units; the per-prompt comparisons within a layer are discussed in Section~\ref{sec:discussion}.
-
-\subsection{Graded English Probability}
-
-Top-1 ERR discards all probability mass and is brittle to tokenization. We therefore define a graded, per-prompt metric: the \emph{English probability mass} $p_{\mathrm{eng}}(\mathbf{x}_\ell)$ of a hidden state $\mathbf{x}_\ell$ at layer $\ell$,
-\begin{equation}
-p_{\mathrm{eng}}(\mathbf{x}_\ell) \;=\; \sum_{t \in V_{\mathrm{en}}} \mathrm{softmax}\big( W_{\mathrm{lm}}\, \mathrm{RMSNorm}(\mathbf{x}_\ell) \big)_t,
-\end{equation}
-where $V_{\mathrm{en}}$ is the set of English word tokens (lowercase Latin letters or apostrophes, after stripping spacing markers). We compute $p_{\mathrm{eng}}$ for every prompt at every layer and at both token positions (last token and concept token). Unlike ERR, this yields a per-prompt continuous outcome, so group comparisons are Welch's $t$-tests with prompts as units, and depth effects are fit with a mixed-effects model
-\begin{equation}
-\mathrm{logit}\, p_{\mathrm{eng}} \;\sim\; \mathrm{untrans} \times \mathrm{depth} \;+\; (1 \mid \mathrm{prompt}),
-\end{equation}
-whose key term is the \texttt{untrans:depth} interaction: whether the untranslatable group loses (or gains) English probability mass relative to the translatable group as depth increases.
+We apply a corrected logit lens (final RMSNorm before the LM head) and compute top-1 English Routing Rate (ERR) plus graded English probability mass $p_{\mathrm{eng}}$. Group comparisons use Welch tests over layers (ERR) and per-prompt mid-layer tests ($p_{\mathrm{eng}}$).
 
 \section{Results}
 
-\subsection{English Routing Rate: Early-Layer Dominance, Not Mid-Layer Rerouting}
+\subsection{Generation: a behavioral test of cultural explanation}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.95\textwidth]{figures/cross_model_err.png}
-    \caption{English Routing Rate (ERR) across layers for all four models (untranslatable = solid, translatable = dashed). ERR is high in early layers and collapses at the output, where models predict the source-language continuation. Qwen2.5-7B shows a qualitatively different profile (English tokens appear only in the last $\sim$7 layers).}
+    \includegraphics[width=0.95\textwidth]{figures/cross_model_faithfulness.pdf}
+    \caption{Overall generation faithfulness by model and translatability group.}
+    \label{fig:faith}
+\end{figure}
+
+Figure~\ref{fig:faith} and Table~\ref{tab:faith} summarize faithfulness scores on the frozen cleaned set (424 generations per model). \textbf{In all four models, untranslatable concepts receive significantly lower overall faithfulness} (Cohen's $d\in[-0.56,-0.39]$, all $p<10^{-4}$). The effect is driven primarily by definition prompts ($d\in[-0.85,-0.67]$, all $p<10^{-5}$); comparison prompts show smaller but usually significant gaps (significant in three of four models). This is the behavioral signature ERR never found: models explain lexical-gap concepts less faithfully than matched controls.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Model & Mean untrans. & Mean transl. & Cohen's $d$ \\
+\midrule
+Llama-3-8B & 0.779 & 0.843 & $-0.39$ \\
+Llama-3-8B-Instruct & 0.916 & 0.968 & $-0.56$ \\
+Mistral-7B & 0.883 & 0.948 & $-0.55$ \\
+Qwen2.5-7B & 0.889 & 0.954 & $-0.55$ \\
+\bottomrule
+\end{tabular}
+\caption{Generation faithfulness (overall). Negative $d$ = worse scores for untranslatable concepts. All four effects are significant at $p<10^{-4}$.}
+\label{tab:faith}
+\end{table}
+
+\subsection{Probes: language vs.\ translatability}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/llama-3-8b_probe_concept_token.pdf}
+    \caption{Concept-token linear probe accuracy for language vs.\ translatability (Llama-3-8B; GroupKFold by concept).}
+    \label{fig:probes}
+\end{figure}
+
+Linear probes with \textbf{GroupKFold by concept word} (preventing leakage across the three templates) show that source language is near-perfectly recoverable at both positions (peak accuracy $\approx 1.0$; chance $=0.1$), while translatability remains high but strictly lower (peak $\approx 0.94$--$0.96$ globally; within-language peaks $\approx 0.84$--$0.94$). The language$-$translatability gap is small in absolute accuracy but consistent across models; critically, within-language probes remain well above chance, indicating a linear direction correlated with the lexical-gap label that ERR failed to surface. Combined with concept-token language ARI (peaks up to $\sim$0.85), this supports the claim that residual-stream geometry encodes language identity strongly and encodes a weaker but non-null translatability signal that aggregate English-routing statistics miss.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figures/llama-3-8b_ari_concept_vs_last.pdf}
+    \caption{Language ARI across layers at last-token vs.\ concept-token positions (Llama-3-8B).}
+    \label{fig:ari_overlay}
+\end{figure}
+
+\subsection{English routing: null secondary finding}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/cross_model_err.pdf}
+    \caption{English Routing Rate across layers (untranslatable solid, translatable dashed).}
     \label{fig:err_all}
 \end{figure}
 
-Figure~\ref{fig:err_all} plots ERR across layers for each model. Three observations stand out. First, for the Llama and Mistral models, ERR is \emph{highest in the earliest layers} ($0.6$--$0.9$ at layer 0) and falls to near zero at the output layer (final-layer ERR $\leq 0.04$). The early-layer peak reflects the geometry of the embedding/unembedding space, where the top-1 token under the logit lens is dominated by a small set of high-frequency English function tokens regardless of prompt language---a token-frequency artifact, not a semantic routing decision. Second, the model's \emph{final} prediction is overwhelmingly the source-language continuation of the prompt, so English routing necessarily vanishes at the output. Third, Qwen2.5-7B behaves differently: its ERR is near zero for layers 0--20 and rises to $\sim$0.4--0.5 only in the final layers, a profile that follows from its 152K-vocabulary SentencePiece tokenizer (see Section~\ref{sec:cross}).
-
-Crucially, the hypothesis that untranslatable concepts are \emph{more} English-routed fails to materialize: group differences are small and non-significant in every model, and where a trend exists it points \emph{against} the hypothesis (Table~\ref{tab:stats}).
+ERR is highest in early layers (token-frequency / embedding geometry) and collapses at the output, where models predict source-language continuations. Layer-wise Welch tests find no significant untranslatable$>$translatable ERR difference in any model (Table~\ref{tab:err}); trends often point the other way. Graded mid-layer $p_{\mathrm{eng}}$ is likewise null in three of four models at the last token, with Mistral showing a small effect \emph{against} the forced-English narrative. Concept-token $p_{\mathrm{eng}}$ effects that do reach significance flip sign across architectures (Llama-3-8B $d=+0.27$; Qwen2.5-7B $d=-0.45$), so they cannot support a unified English-routing account of untranslatability.
 
 \begin{table}[h]
 \centering
 \small
 \begin{tabular}{lcccc}
 \toprule
-Model & ERR untrans. & ERR transl. & Cohen's $d$ (95\% CI) & $p$ \\
+Model & ERR untrans. & ERR transl. & Cohen's $d$ & $p$ \\
 \midrule
-Llama-3-8B & 0.587 & 0.619 & $-0.12$ [$-$0.61, 0.37] & 0.629 \\
-Llama-3-8B-Instruct & 0.481 & 0.533 & $-0.21$ [$-$0.71, 0.28] & 0.393 \\
-Mistral-7B & 0.629 & 0.650 & $-0.09$ [$-$0.58, 0.40] & 0.721 \\
-Qwen2.5-7B & 0.089 & 0.089 & $-0.00$ [$-$0.52, 0.52] & 0.999 \\
+Llama-3-8B & 0.587 & 0.619 & $-0.12$ & 0.629 \\
+Llama-3-8B-Instruct & 0.481 & 0.533 & $-0.21$ & 0.393 \\
+Mistral-7B & 0.629 & 0.650 & $-0.09$ & 0.721 \\
+Qwen2.5-7B & 0.089 & 0.089 & $-0.00$ & 0.999 \\
 \bottomrule
 \end{tabular}
-\caption{Welch's $t$-test over layer-wise English Routing Rate, untranslatable vs.\ translatable. No model reaches significance; effect sizes are small. In the Llama models the (non-significant) trend is opposite to the ``untranslatable$\to$English'' narrative: translatable concepts retain slightly \emph{more} English routing.}
-\label{tab:stats}
+\caption{Welch tests over layer-wise ERR (secondary analysis).}
+\label{tab:err}
 \end{table}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.85\textwidth]{figures/llama3-8b_err_across_layers.png}
-    \caption{English Routing Rate by layer for Llama-3-8B (representative; all Llama/Mistral models show the same shape). The untranslatable and translatable curves track each other closely at every layer.}
-    \label{fig:err_llama}
-\end{figure}
+Cross-model ERR correlations are high within Llama/Mistral ($r\approx 0.56$--$0.72$) but near zero or negative vs.\ Qwen---tracking tokenizer vocabulary structure rather than shared cultural semantics.
 
-\subsection{Clustering: No Isolation of Untranslatable Concepts}
-
-Language identity is only weakly recoverable from activations: ARI peaks at $0.17$ (Llama-3-8B, layer 6), $0.12$ (Llama-3-8B-Instruct, layer 6), $0.16$ (Mistral-7B, layer 9), and $0.14$ (Qwen2.5-7B, layer 21)---far below the near-$1.0$ values one would expect if representations were strongly language-segregated. Notably, ARI peaks in the \emph{early} to middle layers (6--21), not at the output. Mid-layer Silhouette scores are comparable between groups ($\Delta \leq 0.05$ in all models), providing no evidence that untranslatable concepts form tighter or more isolated clusters (Figure~\ref{fig:umap}).
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/llama3-8b_umap_translatability.png}
-        \caption{Colored by translatability}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/llama3-8b_umap_language.png}
-        \caption{Colored by source language}
-    \end{subfigure}
-    \caption{UMAP embedding of Llama-3-8B mid-layer activations. Untranslatable and translatable concepts occupy the same regions; language identity is only partially separated.}
-    \label{fig:umap}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.85\textwidth]{figures/llama3-8b_ari_by_layer.png}
-    \caption{Adjusted Rand Index against language labels across Llama-3-8B layers. Language structure is weak and peaks in the early layers (4--10).}
-    \label{fig:ari}
-\end{figure}
-
-\subsection{Trajectory: Divergence Grows With Depth, Identically for Both Groups}
-
-Mean cosine distance from the translatable centroid grows monotonically with depth and peaks at the \emph{output} layer in every model (layer 31/31/24/27 for Llama-3-8B/Instruct/Mistral/Qwen), consistent with the representations progressively specializing toward the actual next token. The group means are nearly identical (Llama-3-8B: 0.265 vs.\ 0.266; Llama-3-8B-Instruct: 0.242 vs.\ 0.240; Mistral-7B: 0.301 vs.\ 0.300; Qwen2.5-7B: 0.187 vs.\ 0.188), with translatable concepts if anything slightly \emph{farther} from the translatable centroid (Figure~\ref{fig:trajectory}). There is no ``repulsion'' of untranslatable concepts.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.85\textwidth]{figures/llama3-8b_trajectory_distances.png}
-    \caption{Cosine distance from the translatable-concept centroid across layers for Llama-3-8B. The two groups diverge identically with depth; peak divergence occurs at the output layer.}
-    \label{fig:trajectory}
-\end{figure}
-
-\subsection{Per-Prompt English Probability: No Main Effect, Replicable Depth Interaction}
-
-Using the graded metric with prompts as units, the last-token mid-layer main effect of untranslatability is null in three of four models---Llama-3-8B $d=+0.014$ ($p=0.86$), Llama-3-8B-Instruct $d=-0.059$ ($p=0.45$), Qwen2.5-7B $d=-0.018$ ($p=0.81$)---and small but significant in the \emph{opposite} direction in Mistral-7B ($d=-0.198$, $p=0.011$): untranslatable concepts receive \emph{less} English probability mass, not more. These results replicate the top-1 ERR null on a graded outcome, so they are not an artifact of the hard detection threshold.
-
-The depth structure, however, is consistent. In the mixed-effects model the \texttt{untrans:depth} interaction is significantly negative in three of four models---Llama-3-8B $-0.281$ ($p<10^{-8}$), Llama-3-8B-Instruct $-0.449$ ($p<10^{-20}$), Mistral-7B $-0.391$ ($p<10^{-12}$)---and positive in Qwen2.5-7B ($+0.340$, $p<10^{-4}$). Where significant, untranslatable prompts lose English probability mass faster than translatable prompts as depth increases. Decomposed by template, the comparison probe is strongly negative at the last token in every model ($d=-0.91$ to $-1.17$, all $p<0.0001$), i.e., the translation-style prompt actively routes the output toward the source language for both groups; Qwen2.5-7B alone shows a positive definition-probe effect ($d=+0.50$, $p<0.0001$). No single language drives the group differences (only sporadic per-language effects that do not survive any correction and are inconsistent across models).
-
-\subsection{Concept-Token Position: Significant Effects, Opposite Signs}
-
-Restricting the metric to the concept-token position changes the picture. The mid-layer effect is significant in two models---Llama-3-8B $d=+0.274$ ($p=0.0004$; untranslatable concepts carry \emph{more} English mass) and Qwen2.5-7B $d=-0.454$ ($p<0.0001$; \emph{less})---and null in the other two (Llama-3-8B-Instruct $d=+0.098$, $p=0.20$; Mistral-7B $d=-0.130$, $p=0.09$). Permutation tests reject the null at the majority of layers for Llama-3-8B (19/32 layers) and Qwen2.5-7B (24/28 layers). The effect is thus real but \emph{sign-inconsistent across architectures}: the same untranslatability label predicts more English mass in one model and less in another. No English-routing mechanism can survive such a flip.
-
-Repeating the clustering and trajectory analyses at the concept position, language identity is substantially more recoverable than at the last token: ARI peaks at $0.35$ (Llama-3-8B, layer 30), $0.85$ (Instruct, layer 27), $0.59$ (Mistral-7B, layer 28), and $0.51$ (Qwen2.5-7B, layer 27), now concentrated in the \emph{late} layers. Trajectory divergence (distance from the translatable centroid) peaks in the first few layers (layers 1--5) and again in the late layers for both groups, with group differences below $0.05$ throughout. The concept word itself is therefore where language structure lives---but it is language, not translatability, that is encoded there.
-
-\subsection{Sparse Features: No Distinct Features for Untranslatability}
-
-Following recommendations to look beyond aggregate routing statistics~\cite{zou2026deciphering}, we trained sparse dictionary features ($k=512$, $L_1$ penalty, 20 epochs) on the mid-layer activations at both positions. If untranslatable concepts occupied a dedicated set of features, those features should linearly separate the groups. They do not: at both the last-token and concept positions and in all four models, no feature exceeds a between-group mean-activation difference of $0.5$ standard deviations, balanced accuracy of the best feature is $0.50$, and a permutation test of the $|d|>0.5$ count yields $p=1.0$. Sparse overcomplete features do not expose a representational split that the graded probability metric already failed to find.
-
-\subsection{Cross-Model Agreement: Vocabulary, Not Semantics}
-\label{sec:cross}
-
-Correlating the layer-wise ERR curves (resampled to a common 20-point depth grid to handle the 32-vs-28 layer mismatch), we find strong agreement within the Llama/Mistral family and near-zero or negative agreement with Qwen: Llama-3-8B vs.\ Instruct $r=0.63$; Llama-3-8B vs.\ Mistral $r=0.56$; Instruct vs.\ Mistral $r=0.72$; but Llama-3-8B vs.\ Qwen $r=0.37$, Instruct vs.\ Qwen $r=-0.07$, and Mistral vs.\ Qwen $r=-0.19$. The two English-centric routing profiles of Qwen's neighbors both contradict Qwen's own profile, yet Qwen's behavior is fully explained by its tokenizer: a 152K-token SentencePiece vocabulary with byte-level word boundaries yields different top-1 English detection at every layer. Cross-model ERR correlations therefore index tokenizer similarity, not shared semantics.
+Sparse dictionary features ($k=512$) likewise fail to separate groups better than chance at either token position.
 
 \section{Discussion}
-\label{sec:discussion}
 
-Our results call for a more cautious reading of ``English routing'' in multilingual LLMs. Four findings bear emphasis.
+\textbf{(1) Measure what culture does, not only where English peaks.}
+Generation faithfulness and concept-token language probes speak more directly to cultural representation than aggregate ERR. A null ERR result is informative precisely because it warns against over-interpreting English-routing artifacts as cultural bias.
 
-\textbf{(1) ERR as usually computed is partly an artifact.} The high ERR at early layers stems from the embedding/unembedding geometry and high-frequency tokens, not from semantic rerouting; and the near-zero ERR at the output simply reflects that the true next token is in the prompt's language. Comparisons of ERR between groups or models that do not account for these layers risk attributing token-frequency and tokenizer structure to ``English bias.''
+\textbf{(2) Language identity dominates; translatability is weaker but linearly present.}
+Near-perfect language probes and high concept-token ARI show that models encode \emph{which language a word belongs to}. Within-language translatability probes above chance further suggest a residual-stream correlate of the lexical-gap label that does not appear as elevated English routing---a dissociation between probe geometry and logit-lens ERR.
 
-\textbf{(2) We find no robust representational cost of untranslatability.} Across four models, 10 languages, and three prompt types, untranslatable cultural concepts are statistically indistinguishable from translatable controls on a graded, per-prompt English-probability metric at the last token (three of four models null; the single significant effect is opposite to the ``untranslatable$\to$English'' narrative). Sparse dictionary features trained to separate the groups find nothing. The only consistent effect---the negative \texttt{untrans:depth} interaction---says untranslatable prompts lose English mass \emph{faster} with depth, again contrary to the hypothesis that they are routed through English. If LLMs distort culturally specific concepts~\cite{khanuja2026steering}, the distortion does not manifest as a measurable difference in residual-stream English statistics---at least not for single-concept prompts.
+\textbf{(3) Tokenizer and early-layer effects dominate routing summaries.}
+Early-layer ERR and Qwen's divergent profile are methodological findings: always apply final RMSNorm in logit lens; report tokenizer diagnostics; prefer graded and behavioral metrics alongside top-1 rates.
 
-\textbf{(3) The concept token, not the last token, is where models differ---by language, not translatability.} At the concept-token position, significant English-probability effects emerge in two models but with \emph{opposite signs} (Llama-3-8B $+0.27$, Qwen2.5-7B $-0.45$), while language identity becomes strongly recoverable (ARI up to $0.85$) in the late layers. The sign flip is decisive: no single English-routing account can explain both. Concept tokens encode source-language identity; translatability per se is not a representational category.
-
-\textbf{(4) Tokenizer size dominates cross-model routing differences.} The Llama/Mistral family shares routing profiles ($r \approx 0.6$--$0.7$); Qwen diverges, and the divergence is attributable to its byte-level SentencePiece vocabulary rather than to semantics. Any cross-model claim about English-centric routing should therefore control for tokenizer differences first.
-
-\textbf{Limitations.} The dataset (227 concepts, 681 prompts) is still modest relative to the scale at which cultural differences manifest in conversation, and only four models were studied. The English-token detection rule (lowercase Latin) is conservative and may under-count English routing for tokens that include diacritics. We study single-word concept prompts; concept usage in longer, conversational contexts may behave differently. The mixed-effects depth interaction is correlational over layers and does not identify a mechanism.
-
-\textbf{Implications.} For cultural-fairness research, our null results suggest that lexical gaps are not, in themselves, detectable as residual-stream anomalies under logit-lens, clustering, or sparse-feature analyses---future work should examine per-token trajectories, attention patterns, and contrastive interventions rather than aggregate routing statistics. The sign-flipping concept-position effects recommend testing untranslatability \emph{relative to matched controls} within a single architecture rather than pooling across models. For interpretability practice, we recommend (i) always applying the final RMSNorm in logit lens analyses, (ii) discarding early and output layers when computing routing summaries, (iii) reporting tokenizer diagnostics alongside routing rates, and (iv) reporting graded probability-mass metrics alongside top-1 rates.
+\textbf{Limitations.}
+The cleaned inventory remains modest; the faithfulness rubric is a reproducible proxy (LLM-as-judge and human spot-checks are natural extensions); single-concept prompts omit conversational context; we do not run causal interventions (activation patching / steering).
 
 \section{Conclusion}
 
-We presented the first direct test of whether multilingual LLMs represent untranslatable cultural concepts differently from translatable ones, across four models and ten languages, on a graded per-prompt English-probability metric at both the last and concept token positions. The answer is a measured \emph{no}: no consistent difference in English routing, none in sparse-feature structure, and no trajectory divergence between groups. Where significant effects do appear---at the concept token---they differ in sign across models, pointing to language identity rather than untranslatability as the operative variable. The differences that do exist are early-layer token-frequency effects, tokenizer vocabulary structure, and source-language identity at the concept word---not the semantics of untranslatability. This null result is itself informative: it sharpens the interpretation of English-centric routing evidence and redirects the search for cultural bias in LLMs toward more granular, per-token mechanisms.
+Untranslatable cultural concepts do not leave a reliable English-routing signature in last-token residual streams, yet they are not representationally invisible: language identity is strongly recoverable at the concept token, within-language probes detect a weaker lexical-gap direction, and---most importantly for cultural evaluation---generated explanations are consistently less faithful for untranslatable concepts than for matched controls across four models. Measuring generation quality and concept-token geometry therefore complements (and corrects) over-reliance on ERR alone.
 
 \bibliographystyle{unsrtnat}
 \begin{thebibliography}{10}

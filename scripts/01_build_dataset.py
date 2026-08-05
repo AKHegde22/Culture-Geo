@@ -45,6 +45,11 @@ def main():
         default=42,
         help="Random seed (default: 42)"
     )
+    parser.add_argument(
+        "--cleaned",
+        action="store_true",
+        help="Apply Path-B audit exclusions and write matching diagnostics",
+    )
     args = parser.parse_args()
 
     print("=" * 60)
@@ -55,6 +60,7 @@ def main():
         output_dir=args.output_dir,
         num_concepts_per_language=args.num_concepts_per_language,
         seed=args.seed,
+        cleaned=args.cleaned,
     )
 
     print("\n" + "=" * 60)

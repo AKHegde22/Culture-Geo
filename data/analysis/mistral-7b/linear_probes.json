@@ -1,0 +1,4201 @@
+{
+  "model": "mistral-7b",
+  "cleaned": true,
+  "n_keep": 636,
+  "positions": {
+    "last_token": {
+      "n_prompts_kept": 636,
+      "n_prompts_total": 681,
+      "language_label_map": {
+        "Arabic": 0,
+        "Danish": 1,
+        "French": 2,
+        "German": 3,
+        "Hindi": 4,
+        "Japanese": 5,
+        "Korean": 6,
+        "Portuguese": 7,
+        "Russian": 8,
+        "Spanish": 9
+      },
+      "translatability_label_map": {
+        "translatable": 0,
+        "untranslatable": 1
+      },
+      "language_probe": {
+        "0": {
+          "accuracy_mean": 0.9779623477297896,
+          "accuracy_std": 0.0115921685315205,
+          "auc_mean": 0.9983889388713949,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "2": {
+          "accuracy_mean": 0.9936877076411961,
+          "accuracy_std": 0.005929724437639006,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "4": {
+          "accuracy_mean": 1.0,
+          "accuracy_std": 0.0,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "6": {
+          "accuracy_mean": 1.0,
+          "accuracy_std": 0.0,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "8": {
+          "accuracy_mean": 1.0,
+          "accuracy_std": 0.0,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "10": {
+          "accuracy_mean": 0.9984126984126984,
+          "accuracy_std": 0.0031746031746031633,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "12": {
+          "accuracy_mean": 0.9952380952380953,
+          "accuracy_std": 0.003888078956798681,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "14": {
+          "accuracy_mean": 0.9811000369139904,
+          "accuracy_std": 0.006334380520140665,
+          "auc_mean": 0.9998011695906432,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "16": {
+          "accuracy_mean": 0.9858250276854928,
+          "accuracy_std": 0.0032146978305023755,
+          "auc_mean": 0.9995715832791856,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "18": {
+          "accuracy_mean": 0.9905500184569952,
+          "accuracy_std": 0.009205878518737626,
+          "auc_mean": 0.9998099415204678,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "20": {
+          "accuracy_mean": 0.9874492432631967,
+          "accuracy_std": 0.00941487688804494,
+          "auc_mean": 0.9996039136302294,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "22": {
+          "accuracy_mean": 0.9796234772978959,
+          "accuracy_std": 0.013612005806103594,
+          "auc_mean": 0.9997660652105097,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "24": {
+          "accuracy_mean": 0.9921742340346992,
+          "accuracy_std": 0.007017154419906671,
+          "auc_mean": 0.9999122807017542,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "26": {
+          "accuracy_mean": 0.9717238833517904,
+          "accuracy_std": 0.013732500576500774,
+          "auc_mean": 0.9995534562902983,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "28": {
+          "accuracy_mean": 0.9811369509043928,
+          "accuracy_std": 0.006307217343385786,
+          "auc_mean": 0.9997189983505773,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "30": {
+          "accuracy_mean": 0.9795865633074936,
+          "accuracy_std": 0.007938310508079777,
+          "auc_mean": 0.9995409023508438,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        }
+      },
+      "translatability_probe": {
+        "0": {
+          "accuracy_mean": 0.6793650793650794,
+          "accuracy_std": 0.031983240761285545,
+          "auc_mean": 0.7273154580240351,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "2": {
+          "accuracy_mean": 0.6936138796603913,
+          "accuracy_std": 0.03425192658220724,
+          "auc_mean": 0.767836424675606,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "4": {
+          "accuracy_mean": 0.8178294573643411,
+          "accuracy_std": 0.028953843167324852,
+          "auc_mean": 0.9055902396282512,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "6": {
+          "accuracy_mean": 0.9121816168327797,
+          "accuracy_std": 0.02419328399634057,
+          "auc_mean": 0.9690539409691457,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "8": {
+          "accuracy_mean": 0.9201919527500924,
+          "accuracy_std": 0.03604034459274856,
+          "auc_mean": 0.9775048634493079,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "10": {
+          "accuracy_mean": 0.9358803986710964,
+          "accuracy_std": 0.0405115866761415,
+          "auc_mean": 0.9841264168652083,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "12": {
+          "accuracy_mean": 0.9466961978589886,
+          "accuracy_std": 0.021001238278011827,
+          "auc_mean": 0.9902313485734539,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "14": {
+          "accuracy_mean": 0.9529346622369879,
+          "accuracy_std": 0.01975122717663654,
+          "auc_mean": 0.9912361660792459,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "16": {
+          "accuracy_mean": 0.9497231450719823,
+          "accuracy_std": 0.013673432362465975,
+          "auc_mean": 0.9897327006254881,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "18": {
+          "accuracy_mean": 0.9388335179032854,
+          "accuracy_std": 0.03952204273598903,
+          "auc_mean": 0.9855270147872487,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "20": {
+          "accuracy_mean": 0.9246216315983758,
+          "accuracy_std": 0.031820330783552106,
+          "auc_mean": 0.9722929128845308,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "22": {
+          "accuracy_mean": 0.9153193060169805,
+          "accuracy_std": 0.04236359288404116,
+          "auc_mean": 0.968979259784328,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "24": {
+          "accuracy_mean": 0.9104835732742711,
+          "accuracy_std": 0.03532882953020741,
+          "auc_mean": 0.969852636173299,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "26": {
+          "accuracy_mean": 0.9166851236618678,
+          "accuracy_std": 0.0282606914526734,
+          "auc_mean": 0.9700392620158702,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "28": {
+          "accuracy_mean": 0.916795865633075,
+          "accuracy_std": 0.024303146369049088,
+          "auc_mean": 0.9716787071494674,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "30": {
+          "accuracy_mean": 0.9043189368770763,
+          "accuracy_std": 0.031414131159666014,
+          "auc_mean": 0.9652034936762032,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        }
+      },
+      "translatability_within_language": {
+        "0": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.43888888888888894,
+              "accuracy_std": 0.21759062252851263,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.6,
+              "accuracy_std": 0.2030629653610785,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.8166666666666668,
+              "accuracy_std": 0.14337208778404378,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.7866666666666667,
+              "accuracy_std": 0.1525746123890833,
+              "auc_mean": 0.8484567901234568,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7611111111111111,
+              "accuracy_std": 0.2119864892037657,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.7622222222222221,
+              "accuracy_std": 0.05777777777777782,
+              "auc_mean": 0.8666666666666666,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.31666666666666665,
+              "accuracy_std": 0.313581462037113,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.45,
+              "accuracy_std": 0.23921166824012205,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.7166666666666667,
+              "accuracy_std": 0.08498365855987976,
+              "auc_mean": 0.725925925925926,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.77,
+              "accuracy_std": 0.1654623152798781,
+              "auc_mean": 0.875925925925926,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.6418888888888888,
+          "accuracy_std": 0.1696350840138769,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "2": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.49444444444444446,
+              "accuracy_std": 0.18036314534164363,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.6055555555555555,
+              "accuracy_std": 0.2313406979295224,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9166666666666666,
+              "accuracy_std": 0.12909944487358058,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9333333333333332,
+              "accuracy_std": 0.08888888888888889,
+              "auc_mean": 0.9527777777777778,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7611111111111111,
+              "accuracy_std": 0.2119864892037657,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8377777777777778,
+              "accuracy_std": 0.1092284953550623,
+              "auc_mean": 0.8944444444444445,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.4,
+              "accuracy_std": 0.2260776661041756,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.4666666666666667,
+              "accuracy_std": 0.17159383568311667,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.7333333333333333,
+              "accuracy_std": 0.14337208778404378,
+              "auc_mean": 0.7092592592592593,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.8833333333333332,
+              "accuracy_std": 0.11832159566199234,
+              "auc_mean": 0.9685185185185186,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.7032222222222222,
+          "accuracy_std": 0.18823970140537616,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "4": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.538888888888889,
+              "accuracy_std": 0.2341256389522831,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.6222222222222223,
+              "accuracy_std": 0.25190631219454745,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9333333333333333,
+              "accuracy_std": 0.09718253158075502,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9533333333333334,
+              "accuracy_std": 0.042397297840753155,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.8,
+              "accuracy_std": 0.17159383568311665,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8400000000000001,
+              "accuracy_std": 0.09391354048495752,
+              "auc_mean": 0.9413580246913581,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.55,
+              "accuracy_std": 0.23921166824012205,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.6166666666666666,
+              "accuracy_std": 0.17950549357115014,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.75,
+              "accuracy_std": 0.13944333775567924,
+              "auc_mean": 0.9037037037037038,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.95,
+              "accuracy_std": 0.09999999999999999,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.7554444444444445,
+          "accuracy_std": 0.1561832178272179,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "6": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.6611111111111111,
+              "accuracy_std": 0.15752718754175363,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.7500000000000001,
+              "accuracy_std": 0.20487876571761973,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9033333333333333,
+              "accuracy_std": 0.09797958971132711,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9888888888888889,
+              "accuracy_std": 0.022222222222222233,
+              "auc_mean": 0.9950617283950617,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7944444444444444,
+              "accuracy_std": 0.1547598697464902,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8933333333333333,
+              "accuracy_std": 0.08793937305515277,
+              "auc_mean": 0.9595679012345679,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.7166666666666667,
+              "accuracy_std": 0.08498365855987976,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.8666666666666666,
+              "accuracy_std": 0.13540064007726602,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.8166666666666667,
+              "accuracy_std": 0.13333333333333336,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.95,
+              "accuracy_std": 0.09999999999999999,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8341111111111111,
+          "accuracy_std": 0.09970951636790235,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "8": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.1224744871391589,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.8555555555555555,
+              "accuracy_std": 0.2154524381073924,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.86,
+              "accuracy_std": 0.11575836902790225,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9422222222222223,
+              "accuracy_std": 0.035416394334464966,
+              "auc_mean": 0.9972222222222221,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.8388888888888889,
+              "accuracy_std": 0.17427096823731245,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.9155555555555555,
+              "accuracy_std": 0.08391647817110756,
+              "auc_mean": 0.9790123456790123,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.2,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.9333333333333333,
+              "accuracy_std": 0.08164965809277258,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9277777777777778,
+              "accuracy_std": 0.098757715747951,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 1.0,
+              "accuracy_std": 0.0,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.9023333333333333,
+          "accuracy_std": 0.048644464747978115,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "10": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.8944444444444445,
+              "accuracy_std": 0.09686442096757052,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.9055555555555556,
+              "accuracy_std": 0.08888888888888888,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.8766666666666666,
+              "accuracy_std": 0.10413666234542206,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9777777777777779,
+              "accuracy_std": 0.027216552697590882,
+              "auc_mean": 0.9916666666666668,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.8777777777777779,
+              "accuracy_std": 0.19372884193514103,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8800000000000001,
+              "accuracy_std": 0.10456258094238749,
+              "auc_mean": 0.975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8333333333333334,
+              "accuracy_std": 0.14907119849998596,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.097182531580755,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.961111111111111,
+              "accuracy_std": 0.048432210483785286,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 1.0,
+              "accuracy_std": 0.0,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.9106666666666667,
+          "accuracy_std": 0.04958892747776524,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "12": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.8944444444444445,
+              "accuracy_std": 0.09686442096757052,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.8555555555555554,
+              "accuracy_std": 0.1545603082582617,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9066666666666666,
+              "accuracy_std": 0.09345230512584124,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9666666666666666,
+              "accuracy_std": 0.04444444444444447,
+              "auc_mean": 0.9922839506172838,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.861111111111111,
+              "accuracy_std": 0.1859244503409057,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.9155555555555555,
+              "accuracy_std": 0.08391647817110756,
+              "auc_mean": 0.9666666666666668,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8666666666666668,
+              "accuracy_std": 0.19436506316151,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.8666666666666666,
+              "accuracy_std": 0.09999999999999999,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9833333333333332,
+              "accuracy_std": 0.03333333333333335,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 1.0,
+              "accuracy_std": 0.0,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.9116666666666665,
+          "accuracy_std": 0.05104403811573387,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "14": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.8722222222222221,
+              "accuracy_std": 0.1077262190536962,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.9222222222222222,
+              "accuracy_std": 0.09686442096757052,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9533333333333334,
+              "accuracy_std": 0.06531972647421808,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9666666666666666,
+              "accuracy_std": 0.027216552697590882,
+              "auc_mean": 0.9925925925925926,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.8555555555555555,
+              "accuracy_std": 0.14207457613938243,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.9266666666666667,
+              "accuracy_std": 0.09043106644167022,
+              "auc_mean": 0.9888888888888889,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.9166666666666666,
+              "accuracy_std": 0.12909944487358058,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.9166666666666666,
+              "accuracy_std": 0.09128709291752769,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 1.0,
+              "accuracy_std": 0.0,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 1.0,
+              "accuracy_std": 0.0,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.933,
+          "accuracy_std": 0.04572340352193427,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "16": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.13333333333333336,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.08888888888888888,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9099999999999999,
+              "accuracy_std": 0.08273115763993903,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9666666666666666,
+              "accuracy_std": 0.027216552697590882,
+              "auc_mean": 0.9817901234567902,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.8722222222222221,
+              "accuracy_std": 0.0816496580927726,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8911111111111112,
+              "accuracy_std": 0.10193195503270859,
+              "auc_mean": 0.9685185185185186,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.9333333333333333,
+              "accuracy_std": 0.08164965809277258,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.11055415967851333,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 1.0,
+              "accuracy_std": 0.0,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9833333333333332,
+              "accuracy_std": 0.03333333333333335,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.9156666666666664,
+          "accuracy_std": 0.05098644215819157,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "18": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.8666666666666668,
+              "accuracy_std": 0.12472191289246472,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.08888888888888888,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.8933333333333333,
+              "accuracy_std": 0.10252370999486464,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9555555555555555,
+              "accuracy_std": 0.041573970964154924,
+              "auc_mean": 0.9891975308641975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.05443310539518171,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.888888888888889,
+              "accuracy_std": 0.08777074514725113,
+              "auc_mean": 0.9657407407407408,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.9166666666666667,
+              "accuracy_std": 0.07453559924999298,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.8333333333333334,
+              "accuracy_std": 0.11785113019775792,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9833333333333332,
+              "accuracy_std": 0.03333333333333335,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9833333333333332,
+              "accuracy_std": 0.03333333333333335,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.907111111111111,
+          "accuracy_std": 0.04997085570363068,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "20": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.7944444444444445,
+              "accuracy_std": 0.17881641043812313,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.888888888888889,
+              "accuracy_std": 0.10686324478706302,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.8966666666666667,
+              "accuracy_std": 0.10241527663824812,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9088888888888889,
+              "accuracy_std": 0.0745024649521787,
+              "auc_mean": 0.9756172839506172,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.8222222222222222,
+              "accuracy_std": 0.09718253158075499,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8800000000000001,
+              "accuracy_std": 0.10456258094238749,
+              "auc_mean": 0.9209876543209876,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.11055415967851333,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.7833333333333332,
+              "accuracy_std": 0.1130388330520878,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9666666666666666,
+              "accuracy_std": 0.04082482904638632,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.97,
+              "accuracy_std": 0.037118429085533484,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8761111111111111,
+          "accuracy_std": 0.0612810767722824,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "22": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.7166666666666666,
+              "accuracy_std": 0.17777777777777778,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.8833333333333332,
+              "accuracy_std": 0.10599324460188285,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.8966666666666667,
+              "accuracy_std": 0.10241527663824812,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9066666666666666,
+              "accuracy_std": 0.0771722460186015,
+              "auc_mean": 0.9777777777777779,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.8166666666666667,
+              "accuracy_std": 0.08888888888888888,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8822222222222222,
+              "accuracy_std": 0.09777777777777777,
+              "auc_mean": 0.9382716049382717,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.0816496580927726,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.7333333333333333,
+              "accuracy_std": 0.16158932858054428,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9833333333333332,
+              "accuracy_std": 0.03333333333333335,
+              "auc_mean": 0.9925925925925926,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9533333333333335,
+              "accuracy_std": 0.06531972647421806,
+              "auc_mean": 0.9944444444444445,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8622222222222222,
+          "accuracy_std": 0.08185352771872452,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "24": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.7555555555555555,
+              "accuracy_std": 0.22180516419641255,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.8555555555555555,
+              "accuracy_std": 0.12957670877434002,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.8633333333333333,
+              "accuracy_std": 0.11661903789690603,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.8844444444444445,
+              "accuracy_std": 0.0790686527762542,
+              "auc_mean": 0.9675925925925926,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.8166666666666667,
+              "accuracy_std": 0.08888888888888888,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8777777777777779,
+              "accuracy_std": 0.09054021683317051,
+              "auc_mean": 0.9277777777777778,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.097182531580755,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.7499999999999999,
+              "accuracy_std": 0.15811388300841897,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9833333333333332,
+              "accuracy_std": 0.03333333333333335,
+              "auc_mean": 0.9925925925925926,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9533333333333335,
+              "accuracy_std": 0.06531972647421806,
+              "auc_mean": 0.9851851851851852,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.859,
+          "accuracy_std": 0.07059963627367574,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "26": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.7777777777777779,
+              "accuracy_std": 0.19325030145473426,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.08888888888888888,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.8966666666666667,
+              "accuracy_std": 0.10241527663824812,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.8844444444444445,
+              "accuracy_std": 0.09338622839755865,
+              "auc_mean": 0.9583333333333334,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7777777777777778,
+              "accuracy_std": 0.060858061945018485,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8911111111111112,
+              "accuracy_std": 0.0711111111111111,
+              "auc_mean": 0.9422839506172839,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8166666666666667,
+              "accuracy_std": 0.12247448713915891,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.7666666666666666,
+              "accuracy_std": 0.13333333333333333,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9666666666666666,
+              "accuracy_std": 0.04082482904638632,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9533333333333335,
+              "accuracy_std": 0.06531972647421806,
+              "auc_mean": 0.9851851851851852,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8631111111111112,
+          "accuracy_std": 0.06972220008853124,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "28": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.7166666666666667,
+              "accuracy_std": 0.20214894887400278,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.8777777777777779,
+              "accuracy_std": 0.10183501544346309,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.8800000000000001,
+              "accuracy_std": 0.09030811456096045,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9111111111111111,
+              "accuracy_std": 0.090267093384844,
+              "auc_mean": 0.9567901234567902,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7666666666666666,
+              "accuracy_std": 0.0888888888888889,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8777777777777779,
+              "accuracy_std": 0.09054021683317051,
+              "auc_mean": 0.9268518518518519,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.11055415967851334,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.12472191289246469,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9111111111111111,
+              "accuracy_std": 0.05386310952684809,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9533333333333335,
+              "accuracy_std": 0.06531972647421806,
+              "auc_mean": 0.9833333333333334,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8527777777777779,
+          "accuracy_std": 0.07048377801283759,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "30": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.7500000000000001,
+              "accuracy_std": 0.20487876571761973,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.861111111111111,
+              "accuracy_std": 0.08606629658238703,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.8966666666666667,
+              "accuracy_std": 0.10241527663824812,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9444444444444443,
+              "accuracy_std": 0.04969039949999535,
+              "auc_mean": 0.9586419753086421,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.8444444444444444,
+              "accuracy_std": 0.11992796191623835,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8666666666666666,
+              "accuracy_std": 0.04919098582484143,
+              "auc_mean": 0.9515432098765432,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8166666666666667,
+              "accuracy_std": 0.11055415967851334,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.75,
+              "accuracy_std": 0.17480147469502524,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9222222222222222,
+              "accuracy_std": 0.0812707713240433,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9233333333333335,
+              "accuracy_std": 0.10088497300281037,
+              "auc_mean": 0.9833333333333334,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8575555555555556,
+          "accuracy_std": 0.06531745838878275,
+          "n_languages": 10,
+          "chance": 0.5
+        }
+      },
+      "peak_language": {
+        "layer": 4,
+        "accuracy": 1.0
+      },
+      "peak_translatability": {
+        "layer": 14,
+        "accuracy": 0.9529346622369879
+      },
+      "peak_within_language": {
+        "layer": 14,
+        "accuracy": 0.933
+      },
+      "chance_language": 0.1,
+      "chance_translatability": 0.5,
+      "cv": "GroupKFold by concept_word",
+      "summary": {
+        "peak_language_acc": 1.0,
+        "peak_language_layer": 4,
+        "peak_translatability_acc": 0.9529346622369879,
+        "peak_translatability_layer": 14,
+        "peak_within_language_acc": 0.933,
+        "language_minus_translatability": 0.04706533776301214
+      }
+    },
+    "concept_token": {
+      "n_prompts_kept": 636,
+      "n_prompts_total": 681,
+      "language_label_map": {
+        "Arabic": 0,
+        "Danish": 1,
+        "French": 2,
+        "German": 3,
+        "Hindi": 4,
+        "Japanese": 5,
+        "Korean": 6,
+        "Portuguese": 7,
+        "Russian": 8,
+        "Spanish": 9
+      },
+      "translatability_label_map": {
+        "translatable": 0,
+        "untranslatable": 1
+      },
+      "language_probe": {
+        "0": {
+          "accuracy_mean": 0.5607973421926911,
+          "accuracy_std": 0.06018549641721121,
+          "auc_mean": 0.8596405044270542,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "2": {
+          "accuracy_mean": 0.9164267257290515,
+          "accuracy_std": 0.033894079439612215,
+          "auc_mean": 0.9966332117092351,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "4": {
+          "accuracy_mean": 0.9213362864525655,
+          "accuracy_std": 0.020785035198242895,
+          "auc_mean": 0.9947873161060296,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "6": {
+          "accuracy_mean": 0.9306386120339608,
+          "accuracy_std": 0.019965794308022578,
+          "auc_mean": 0.9953736109028506,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "8": {
+          "accuracy_mean": 0.9606496862310816,
+          "accuracy_std": 0.008705286349023407,
+          "auc_mean": 0.9990165608703621,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "10": {
+          "accuracy_mean": 0.9307493540051679,
+          "accuracy_std": 0.02370596805220126,
+          "auc_mean": 0.9977345762316523,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "12": {
+          "accuracy_mean": 0.9135105204872647,
+          "accuracy_std": 0.026028839651765386,
+          "auc_mean": 0.9955842972977476,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "14": {
+          "accuracy_mean": 0.9039497969730528,
+          "accuracy_std": 0.03595991110865681,
+          "auc_mean": 0.9949224176943474,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "16": {
+          "accuracy_mean": 0.9653746770025841,
+          "accuracy_std": 0.012793027890845549,
+          "auc_mean": 0.999505906716433,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "18": {
+          "accuracy_mean": 0.9827980804724991,
+          "accuracy_std": 0.011323272540685162,
+          "auc_mean": 0.9998684210526315,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "20": {
+          "accuracy_mean": 0.9968253968253968,
+          "accuracy_std": 0.003888078956798681,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "22": {
+          "accuracy_mean": 1.0,
+          "accuracy_std": 0.0,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "24": {
+          "accuracy_mean": 1.0,
+          "accuracy_std": 0.0,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "26": {
+          "accuracy_mean": 1.0,
+          "accuracy_std": 0.0,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "28": {
+          "accuracy_mean": 1.0,
+          "accuracy_std": 0.0,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "30": {
+          "accuracy_mean": 1.0,
+          "accuracy_std": 0.0,
+          "auc_mean": 1.0,
+          "chance": 0.1,
+          "n_classes": 10,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        }
+      },
+      "translatability_probe": {
+        "0": {
+          "accuracy_mean": 0.682576596530085,
+          "accuracy_std": 0.08795012114427223,
+          "auc_mean": 0.7637894310223744,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "2": {
+          "accuracy_mean": 0.8337024732373569,
+          "accuracy_std": 0.042319921901996786,
+          "auc_mean": 0.9168423120089788,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "4": {
+          "accuracy_mean": 0.8963824289405684,
+          "accuracy_std": 0.02646957057547027,
+          "auc_mean": 0.9619396367836913,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "6": {
+          "accuracy_mean": 0.9371723883351791,
+          "accuracy_std": 0.017527966115985207,
+          "auc_mean": 0.9876862681394846,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "8": {
+          "accuracy_mean": 0.9386489479512736,
+          "accuracy_std": 0.019060491671273664,
+          "auc_mean": 0.9939191755107935,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "10": {
+          "accuracy_mean": 0.9465854558877815,
+          "accuracy_std": 0.026027269066424694,
+          "auc_mean": 0.9922308136596636,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "12": {
+          "accuracy_mean": 0.9512735326688816,
+          "accuracy_std": 0.027838876207084452,
+          "auc_mean": 0.9932864053136958,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "14": {
+          "accuracy_mean": 0.9497600590623847,
+          "accuracy_std": 0.03979156946522311,
+          "auc_mean": 0.9933470507544582,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "16": {
+          "accuracy_mean": 0.9466961978589886,
+          "accuracy_std": 0.035053794287592956,
+          "auc_mean": 0.991436026936027,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "18": {
+          "accuracy_mean": 0.9419342930970839,
+          "accuracy_std": 0.032455270753193086,
+          "auc_mean": 0.9822064274978505,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "20": {
+          "accuracy_mean": 0.9200442967884829,
+          "accuracy_std": 0.04545241088659375,
+          "auc_mean": 0.9741008230452675,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "22": {
+          "accuracy_mean": 0.8997416020671836,
+          "accuracy_std": 0.05317093535294675,
+          "auc_mean": 0.9668451670703133,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "24": {
+          "accuracy_mean": 0.9059431524547804,
+          "accuracy_std": 0.04014243281489391,
+          "auc_mean": 0.9651631946495494,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "26": {
+          "accuracy_mean": 0.9105204872646734,
+          "accuracy_std": 0.030700902225555434,
+          "auc_mean": 0.9674076666601034,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "28": {
+          "accuracy_mean": 0.9010705057216686,
+          "accuracy_std": 0.019504774079757613,
+          "auc_mean": 0.9630409848977101,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        },
+        "30": {
+          "accuracy_mean": 0.8853820598006644,
+          "accuracy_std": 0.021655019151473505,
+          "auc_mean": 0.9555885823800054,
+          "chance": 0.5,
+          "n_classes": 2,
+          "n_samples": 636,
+          "n_splits": 5,
+          "cv": "group"
+        }
+      },
+      "translatability_within_language": {
+        "0": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.6666666666666667,
+              "accuracy_std": 0.22973414586817037,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.3,
+              "accuracy_std": 0.24494897427831783,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.5900000000000001,
+              "accuracy_std": 0.34985711369071804,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.6533333333333333,
+              "accuracy_std": 0.10873004286866729,
+              "auc_mean": 0.8555555555555555,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.65,
+              "accuracy_std": 0.2260776661041756,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.6333333333333334,
+              "accuracy_std": 0.2270584848790187,
+              "auc_mean": 0.85,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.6,
+              "accuracy_std": 0.2,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.45,
+              "accuracy_std": 0.29154759474226505,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.5166666666666667,
+              "accuracy_std": 0.2603416558635551,
+              "auc_mean": 0.6000000000000001,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.6900000000000001,
+              "accuracy_std": 0.17435595774162696,
+              "auc_mean": 0.9,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.575,
+          "accuracy_std": 0.11501932204827348,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "2": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.6666666666666667,
+              "accuracy_std": 0.22973414586817037,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.3,
+              "accuracy_std": 0.24494897427831783,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.7233333333333334,
+              "accuracy_std": 0.2935605180840533,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.7755555555555556,
+              "accuracy_std": 0.1248010762853242,
+              "auc_mean": 0.975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.65,
+              "accuracy_std": 0.2260776661041756,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.7733333333333333,
+              "accuracy_std": 0.17576639940697947,
+              "auc_mean": 0.9555555555555555,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.65,
+              "accuracy_std": 0.3,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.5666666666666667,
+              "accuracy_std": 0.1855921454276674,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.7,
+              "accuracy_std": 0.2505549396395485,
+              "auc_mean": 0.7333333333333334,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9333333333333333,
+              "accuracy_std": 0.08432740427115676,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.673888888888889,
+          "accuracy_std": 0.1559314901795966,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "4": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.6,
+              "accuracy_std": 0.1615893285805443,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.4666666666666667,
+              "accuracy_std": 0.3231786571610886,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9099999999999999,
+              "accuracy_std": 0.11135528725660043,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.8711111111111112,
+              "accuracy_std": 0.11124436454030068,
+              "auc_mean": 0.9694444444444444,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.19436506316151003,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.9533333333333334,
+              "accuracy_std": 0.06531972647421808,
+              "auc_mean": 0.975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.6166666666666667,
+              "accuracy_std": 0.2505549396395485,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.17159383568311667,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.19436506316151003,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 1.0,
+              "accuracy_std": 0.0,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.7767777777777778,
+          "accuracy_std": 0.16150255129277083,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "6": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.6666666666666667,
+              "accuracy_std": 0.22973414586817037,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.6833333333333333,
+              "accuracy_std": 0.2494438257849294,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9166666666666667,
+              "accuracy_std": 0.10540925533894598,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9222222222222222,
+              "accuracy_std": 0.09686442096757052,
+              "auc_mean": 0.975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7611111111111111,
+              "accuracy_std": 0.17356110390903678,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.9155555555555555,
+              "accuracy_std": 0.103661367019472,
+              "auc_mean": 0.975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.7333333333333333,
+              "accuracy_std": 0.3045944480416177,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.7666666666666667,
+              "accuracy_std": 0.2068278940998476,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.8333333333333334,
+              "accuracy_std": 0.21081851067789195,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9833333333333332,
+              "accuracy_std": 0.03333333333333335,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8182222222222222,
+          "accuracy_std": 0.10571706941375215,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "8": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.7166666666666667,
+              "accuracy_std": 0.26666666666666666,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.7,
+              "accuracy_std": 0.26666666666666666,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9166666666666667,
+              "accuracy_std": 0.10540925533894598,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.8955555555555555,
+              "accuracy_std": 0.0898833262940297,
+              "auc_mean": 0.975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.19436506316151003,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.9266666666666667,
+              "accuracy_std": 0.09043106644167022,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8333333333333333,
+              "accuracy_std": 0.21081851067789198,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.75,
+              "accuracy_std": 0.16666666666666669,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9222222222222223,
+              "accuracy_std": 0.09686442096757052,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 1.0,
+              "accuracy_std": 0.0,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8444444444444444,
+          "accuracy_std": 0.09736782747479014,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "10": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.7166666666666667,
+              "accuracy_std": 0.26666666666666666,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.7444444444444444,
+              "accuracy_std": 0.2154524381073924,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.95,
+              "accuracy_std": 0.09999999999999999,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9222222222222222,
+              "accuracy_std": 0.09686442096757052,
+              "auc_mean": 0.975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.19436506316151003,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.9355555555555556,
+              "accuracy_std": 0.07316478948068589,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8666666666666668,
+              "accuracy_std": 0.19436506316151,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.11303883305208781,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.961111111111111,
+              "accuracy_std": 0.048432210483785286,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.95,
+              "accuracy_std": 0.09999999999999999,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8613333333333333,
+          "accuracy_std": 0.09037890062958469,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "12": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.7166666666666667,
+              "accuracy_std": 0.26666666666666666,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.7444444444444444,
+              "accuracy_std": 0.2154524381073924,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 1.0,
+              "accuracy_std": 0.0,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.13333333333333333,
+              "auc_mean": 0.9700617283950617,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.19436506316151003,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.9488888888888889,
+              "accuracy_std": 0.0774915367740564,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8666666666666668,
+              "accuracy_std": 0.19436506316151,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.8,
+              "accuracy_std": 0.11303883305208781,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.20000000000000004,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9666666666666668,
+              "accuracy_std": 0.06666666666666665,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8626666666666667,
+          "accuracy_std": 0.09242708170281463,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "14": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.7,
+              "accuracy_std": 0.2505549396395485,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.7444444444444444,
+              "accuracy_std": 0.2154524381073924,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9833333333333334,
+              "accuracy_std": 0.03333333333333335,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.13333333333333333,
+              "auc_mean": 0.9697530864197532,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.19436506316151003,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.96,
+              "accuracy_std": 0.07999999999999999,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8333333333333333,
+              "accuracy_std": 0.21081851067789198,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.8,
+              "accuracy_std": 0.14529663145135577,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.20000000000000004,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 1.0,
+              "accuracy_std": 0.0,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8604444444444445,
+          "accuracy_std": 0.09856526320723298,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "16": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.6,
+              "accuracy_std": 0.1615893285805443,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.7,
+              "accuracy_std": 0.26666666666666666,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9333333333333333,
+              "accuracy_std": 0.08164965809277258,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9111111111111111,
+              "accuracy_std": 0.11439589045541111,
+              "auc_mean": 0.950925925925926,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.19436506316151003,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.9488888888888889,
+              "accuracy_std": 0.0774915367740564,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8333333333333334,
+              "accuracy_std": 0.20412414523193148,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.8166666666666668,
+              "accuracy_std": 0.1699673171197595,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.8555555555555555,
+              "accuracy_std": 0.19751543149590198,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9833333333333332,
+              "accuracy_std": 0.03333333333333335,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8365555555555556,
+          "accuracy_std": 0.11282396426992027,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "18": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.65,
+              "accuracy_std": 0.2260776661041756,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.6333333333333334,
+              "accuracy_std": 0.3055050463303894,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.95,
+              "accuracy_std": 0.06666666666666667,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9222222222222222,
+              "accuracy_std": 0.09686442096757052,
+              "auc_mean": 0.9592592592592591,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7166666666666666,
+              "accuracy_std": 0.16329931618554522,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8755555555555554,
+              "accuracy_std": 0.08177053107988486,
+              "auc_mean": 0.9703703703703704,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8166666666666668,
+              "accuracy_std": 0.1855921454276674,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.7833333333333333,
+              "accuracy_std": 0.19436506316151,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.8055555555555556,
+              "accuracy_std": 0.18592445034090566,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9833333333333332,
+              "accuracy_std": 0.03333333333333335,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8136666666666666,
+          "accuracy_std": 0.11519500374968038,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "20": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.65,
+              "accuracy_std": 0.2260776661041756,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.5833333333333334,
+              "accuracy_std": 0.25819888974716115,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9400000000000001,
+              "accuracy_std": 0.05228129047119374,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.9222222222222222,
+              "accuracy_std": 0.07535922203472517,
+              "auc_mean": 0.9537037037037038,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.6944444444444444,
+              "accuracy_std": 0.12668615834434865,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8911111111111112,
+              "accuracy_std": 0.0711111111111111,
+              "auc_mean": 0.975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8666666666666668,
+              "accuracy_std": 0.17159383568311665,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.9166666666666666,
+              "accuracy_std": 0.12909944487358058,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.8777777777777779,
+              "accuracy_std": 0.19372884193514103,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9666666666666668,
+              "accuracy_std": 0.06666666666666665,
+              "auc_mean": 0.9944444444444445,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8308888888888889,
+          "accuracy_std": 0.12875069219519072,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "22": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.65,
+              "accuracy_std": 0.2260776661041756,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.5222222222222223,
+              "accuracy_std": 0.2872818549743977,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9199999999999999,
+              "accuracy_std": 0.16,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.8977777777777778,
+              "accuracy_std": 0.06340152274527601,
+              "auc_mean": 0.975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.6277777777777778,
+              "accuracy_std": 0.08888888888888888,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8422222222222222,
+              "accuracy_std": 0.0808595795496011,
+              "auc_mean": 0.9626543209876545,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8333333333333333,
+              "accuracy_std": 0.13944333775567927,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.16158932858054428,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.20000000000000004,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.97,
+              "accuracy_std": 0.037118429085533484,
+              "auc_mean": 0.9944444444444445,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8063333333333335,
+          "accuracy_std": 0.14306439023421033,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "24": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.65,
+              "accuracy_std": 0.2260776661041756,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.5055555555555555,
+              "accuracy_std": 0.27577052546646347,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9066666666666666,
+              "accuracy_std": 0.18666666666666665,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.8755555555555556,
+              "accuracy_std": 0.07993824777157754,
+              "auc_mean": 0.961111111111111,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.6499999999999999,
+              "accuracy_std": 0.1077262190536962,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8511111111111112,
+              "accuracy_std": 0.1027041778514786,
+              "auc_mean": 0.9839506172839506,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.1224744871391589,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.16158932858054428,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9166666666666667,
+              "accuracy_std": 0.16666666666666663,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9533333333333335,
+              "accuracy_std": 0.06531972647421806,
+              "auc_mean": 0.9888888888888889,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8058888888888889,
+          "accuracy_std": 0.1416586490105923,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "26": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.638888888888889,
+              "accuracy_std": 0.19083960041464076,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.5277777777777779,
+              "accuracy_std": 0.2545875386086578,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9066666666666666,
+              "accuracy_std": 0.18666666666666665,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.8511111111111113,
+              "accuracy_std": 0.08905539959783945,
+              "auc_mean": 0.9583333333333334,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7388888888888888,
+              "accuracy_std": 0.14656562175858798,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8733333333333333,
+              "accuracy_std": 0.09625070145647874,
+              "auc_mean": 0.9975308641975309,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.1224744871391589,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.16158932858054428,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.20000000000000004,
+              "auc_mean": 1.0,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9199999999999999,
+              "accuracy_std": 0.12927146286443544,
+              "auc_mean": 0.9833333333333334,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8106666666666668,
+          "accuracy_std": 0.12606602228716757,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "28": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.5833333333333333,
+              "accuracy_std": 0.14907119849998596,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.5055555555555556,
+              "accuracy_std": 0.2655067365633005,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.96,
+              "accuracy_std": 0.07999999999999999,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.8622222222222223,
+              "accuracy_std": 0.07456871882472228,
+              "auc_mean": 0.9641975308641975,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7166666666666666,
+              "accuracy_std": 0.12957670877434,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8844444444444445,
+              "accuracy_std": 0.10051718113687681,
+              "auc_mean": 0.9851851851851852,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.85,
+              "accuracy_std": 0.1224744871391589,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.9,
+              "accuracy_std": 0.13333333333333336,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.8833333333333332,
+              "accuracy_std": 0.19436506316151,
+              "auc_mean": 0.9944444444444445,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9366666666666668,
+              "accuracy_std": 0.09683892697555967,
+              "auc_mean": 0.9833333333333334,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.8082222222222223,
+          "accuracy_std": 0.14650428721658457,
+          "n_languages": 10,
+          "chance": 0.5
+        },
+        "30": {
+          "by_language": {
+            "Arabic": {
+              "accuracy_mean": 0.6,
+              "accuracy_std": 0.1615893285805443,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Danish": {
+              "accuracy_mean": 0.55,
+              "accuracy_std": 0.20816659994661327,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 54,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "French": {
+              "accuracy_mean": 0.9133333333333333,
+              "accuracy_std": 0.1107549848389077,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 63,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "German": {
+              "accuracy_mean": 0.8622222222222223,
+              "accuracy_std": 0.07456871882472228,
+              "auc_mean": 0.9537037037037036,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 87,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Hindi": {
+              "accuracy_mean": 0.7166666666666666,
+              "accuracy_std": 0.16329931618554522,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 51,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Japanese": {
+              "accuracy_mean": 0.8688888888888888,
+              "accuracy_std": 0.15305933651308945,
+              "auc_mean": 0.9777777777777779,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 84,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Korean": {
+              "accuracy_mean": 0.8166666666666668,
+              "accuracy_std": 0.16158932858054428,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Portuguese": {
+              "accuracy_mean": 0.7666666666666667,
+              "accuracy_std": 0.2068278940998476,
+              "auc_mean": NaN,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 60,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Russian": {
+              "accuracy_mean": 0.8833333333333332,
+              "accuracy_std": 0.1545603082582617,
+              "auc_mean": 0.9833333333333334,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 57,
+              "n_splits": 5,
+              "cv": "group"
+            },
+            "Spanish": {
+              "accuracy_mean": 0.9199999999999999,
+              "accuracy_std": 0.12927146286443544,
+              "auc_mean": 0.9833333333333334,
+              "chance": 0.5,
+              "n_classes": 2,
+              "n_samples": 66,
+              "n_splits": 5,
+              "cv": "group"
+            }
+          },
+          "accuracy_mean": 0.7897777777777777,
+          "accuracy_std": 0.12352917384214732,
+          "n_languages": 10,
+          "chance": 0.5
+        }
+      },
+      "peak_language": {
+        "layer": 22,
+        "accuracy": 1.0
+      },
+      "peak_translatability": {
+        "layer": 12,
+        "accuracy": 0.9512735326688816
+      },
+      "peak_within_language": {
+        "layer": 12,
+        "accuracy": 0.8626666666666667
+      },
+      "chance_language": 0.1,
+      "chance_translatability": 0.5,
+      "cv": "GroupKFold by concept_word",
+      "summary": {
+        "peak_language_acc": 1.0,
+        "peak_language_layer": 22,
+        "peak_translatability_acc": 0.9512735326688816,
+        "peak_translatability_layer": 12,
+        "peak_within_language_acc": 0.8626666666666667,
+        "language_minus_translatability": 0.048726467331118406
+      }
+    }
+  }
+}

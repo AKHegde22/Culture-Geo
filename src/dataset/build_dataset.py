@@ -24,6 +24,7 @@ def build_dataset(
     output_dir: str = "data/processed",
     num_concepts_per_language: Optional[int] = None,
     seed: int = 42,
+    cleaned: bool = False,
 ) -> dict:
     """
     Build the complete dataset.
@@ -32,13 +33,20 @@ def build_dataset(
         output_dir: Directory to write output files
         num_concepts_per_language: If set, sample this many concepts per language
         seed: Random seed for reproducibility
+        cleaned: If True, apply the frozen Path-B audit exclusions and write
+            matching diagnostics.
 
     Returns:
         Dictionary with dataset statistics
     """
     os.makedirs(output_dir, exist_ok=True)
 
-    concepts = ALL_CONCEPTS
+    if cleaned:
+        from src.dataset.audit import cleaned_concepts, matching_diagnostics
+
+        concepts = cleaned_concepts()
+    else:
+        concepts = list(ALL_CONCEPTS)
 
     # Optionally subsample per language
     if num_concepts_per_language is not None:
@@ -93,11 +101,27 @@ def build_dataset(
         "languages": list(set(c["language"] for c in concepts)),
         "templates": [t.name for t in ALL_TEMPLATES],
         "seed": seed,
+        "cleaned": cleaned,
         "stats": stats,
     }
     manifest_path = os.path.join(output_dir, "manifest.json")
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
+
+    if cleaned:
+        from src.dataset.audit import matching_diagnostics
+
+        diagnostics = matching_diagnostics(concepts)
+        diag_path = os.path.join(output_dir, "matching_diagnostics.json")
+        with open(diag_path, "w", encoding="utf-8") as f:
+            json.dump(diagnostics, f, indent=2, ensure_ascii=False)
+        manifest["matching_diagnostics_path"] = diag_path
+        print(f"  Matching diagnostics: {diag_path}")
+        print(
+            f"  Excluded: {diagnostics['n_excluded']} | "
+            f"same-category match frac: "
+            f"{diagnostics['control_matching']['same_category_fraction']:.2f}"
+        )
 
     print(f"Dataset built successfully:")
     print(f"  Concepts: {manifest['num_concepts']}")
@@ -120,10 +144,16 @@ if __name__ == "__main__":
     parser.add_argument("--num-concepts-per-language", type=int, default=None,
                         help="Sample N concepts per language (default: all)")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
+    parser.add_argument(
+        "--cleaned",
+        action="store_true",
+        help="Apply Path-B audit exclusions and write matching diagnostics",
+    )
     args = parser.parse_args()
 
     build_dataset(
         output_dir=args.output_dir,
         num_concepts_per_language=args.num_concepts_per_language,
         seed=args.seed,
+        cleaned=args.cleaned,
     )

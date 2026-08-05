@@ -1,23 +1,34 @@
 """
 Evaluation metrics for generation quality.
+
+Path B uses the structured cultural-faithfulness rubric in
+`src.analysis.faithfulness`. This module re-exports those helpers and keeps
+ROUGE-L as a secondary lexical overlap metric against gold meanings.
 """
 
 from typing import Dict, List, Optional
 
 import numpy as np
 
+from src.analysis.faithfulness import (
+    JUDGE_SYSTEM_PROMPT,
+    aggregate_faithfulness,
+    build_judge_user_prompt,
+    rule_based_scores,
+    score_generation,
+    welch_group_test,
+)
+
 
 def compute_rouge_l(prediction: str, reference: str) -> float:
-    """
-    Compute ROUGE-L F1 score between prediction and reference.
-    """
+    """Compute ROUGE-L F1 score between prediction and reference."""
     try:
         from rouge_score import rouge_scorer
+
         scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=True)
         scores = scorer.score(reference, prediction)
         return scores["rougeL"].fmeasure
     except ImportError:
-        # Fallback: simple token overlap
         pred_tokens = set(prediction.lower().split())
         ref_tokens = set(reference.lower().split())
         if not ref_tokens:
@@ -35,58 +46,39 @@ def compute_cultural_faithfulness(
     concept_word: str,
     language: str,
     meaning: str,
+    translatability: str = "untranslatable",
 ) -> float:
-    """
-    Simple heuristic for cultural faithfulness.
-
-    Checks if the prediction:
-    1. Mentions the concept word
-    2. References the source language
-    3. Captures key aspects of the meaning
-
-    This is a simplified proxy - for the paper, human evaluation is preferred.
-    """
-    score = 0.0
-
-    # Check if concept word is mentioned
-    if concept_word.lower() in prediction.lower():
-        score += 0.3
-
-    # Check if source language is mentioned
-    if language.lower() in prediction.lower():
-        score += 0.2
-
-    # Check key meaning words
-    if meaning:
-        meaning_words = set(meaning.lower().split())
-        pred_words = set(prediction.lower().split())
-        overlap = meaning_words & pred_words
-        score += min(0.5, len(overlap) / max(len(meaning_words), 1) * 0.5)
-
-    return min(1.0, score)
+    """Return overall faithfulness score from the Path-B rubric."""
+    return score_generation(
+        prediction, concept_word, language, meaning, translatability
+    )["overall"]
 
 
 def compute_translation_quality(
     predictions: List[str],
     references: List[str],
 ) -> Dict[str, float]:
-    """
-    Compute translation quality metrics across a set of predictions.
-
-    Args:
-        predictions: List of model-generated explanations
-        references: List of reference translations/explanations
-
-    Returns:
-        Dictionary of aggregate metrics
-    """
+    """Aggregate ROUGE-L against gold meanings (secondary metric)."""
     rouge_scores = []
     for pred, ref in zip(predictions, references):
         rouge_scores.append(compute_rouge_l(pred, ref))
 
     return {
-        "rouge_l_mean": float(np.mean(rouge_scores)),
-        "rouge_l_std": float(np.std(rouge_scores)),
-        "rouge_l_median": float(np.median(rouge_scores)),
+        "rouge_l_mean": float(np.mean(rouge_scores)) if rouge_scores else 0.0,
+        "rouge_l_std": float(np.std(rouge_scores)) if rouge_scores else 0.0,
+        "rouge_l_median": float(np.median(rouge_scores)) if rouge_scores else 0.0,
         "n_samples": len(predictions),
     }
+
+
+__all__ = [
+    "JUDGE_SYSTEM_PROMPT",
+    "aggregate_faithfulness",
+    "build_judge_user_prompt",
+    "compute_cultural_faithfulness",
+    "compute_rouge_l",
+    "compute_translation_quality",
+    "rule_based_scores",
+    "score_generation",
+    "welch_group_test",
+]

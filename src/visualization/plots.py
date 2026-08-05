@@ -463,3 +463,133 @@ def plot_cross_model_silhouette(
         print(f"  Saved: {output_path}")
 
     return fig
+
+
+def plot_probe_accuracy_curves(
+    language_by_layer: Dict[str, Dict],
+    transl_by_layer: Dict[str, Dict],
+    output_path: Optional[str] = None,
+    title: str = "Linear probe accuracy: language vs translatability",
+    chance_language: float = 0.1,
+) -> plt.Figure:
+    """Overlay language and translatability probe accuracy across layers."""
+    setup_style()
+    fig, ax = plt.subplots(figsize=(9, 5))
+
+    def _curve(by_layer: Dict[str, Dict]):
+        layers = sorted(int(k) for k in by_layer.keys())
+        vals = [by_layer[str(l)].get("accuracy_mean", np.nan) for l in layers]
+        return layers, vals
+
+    lang_l, lang_v = _curve(language_by_layer)
+    tr_l, tr_v = _curve(transl_by_layer)
+    ax.plot(lang_l, lang_v, marker="o", linewidth=2, markersize=4, label="Language", color="#2C3E50")
+    ax.plot(tr_l, tr_v, marker="s", linewidth=2, markersize=4, label="Translatability", color="#E74C3C")
+    ax.axhline(chance_language, color="#2C3E50", linestyle="--", alpha=0.4, label=f"Chance lang ({chance_language:.2f})")
+    ax.axhline(0.5, color="#E74C3C", linestyle="--", alpha=0.4, label="Chance transl (0.50)")
+    ax.set_xlabel("Layer")
+    ax.set_ylabel("CV accuracy")
+    ax.set_title(title)
+    ax.set_ylim(0, 1.05)
+    ax.legend(fontsize=8)
+    ax.grid(True, alpha=0.3)
+
+    if output_path:
+        os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+        fig.savefig(output_path, bbox_inches="tight")
+        print(f"  Saved: {output_path}")
+    return fig
+
+
+def plot_concept_vs_last_ari(
+    ari_last: Dict,
+    ari_concept: Dict,
+    output_path: Optional[str] = None,
+    title: str = "Language ARI: last-token vs concept-token",
+) -> plt.Figure:
+    setup_style()
+    fig, ax = plt.subplots(figsize=(9, 5))
+
+    def _as_int_keys(d):
+        return {int(k): float(v) for k, v in d.items()}
+
+    last = _as_int_keys(ari_last)
+    concept = _as_int_keys(ari_concept)
+    if last:
+        layers = sorted(last.keys())
+        ax.plot(layers, [last[l] for l in layers], marker="o", label="Last token", linewidth=2, markersize=4)
+    if concept:
+        layers = sorted(concept.keys())
+        ax.plot(layers, [concept[l] for l in layers], marker="s", label="Concept token", linewidth=2, markersize=4)
+    ax.set_xlabel("Layer")
+    ax.set_ylabel("Adjusted Rand Index (language)")
+    ax.set_title(title)
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+
+    if output_path:
+        os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+        fig.savefig(output_path, bbox_inches="tight")
+        print(f"  Saved: {output_path}")
+    return fig
+
+
+def plot_faithfulness_by_group(
+    faithfulness_by_model: Dict[str, Dict],
+    output_path: Optional[str] = None,
+    title: str = "Generation faithfulness: untranslatable vs translatable",
+) -> plt.Figure:
+    """Bar chart of mean overall faithfulness per model and group."""
+    setup_style()
+    models = list(faithfulness_by_model.keys())
+    fig, ax = plt.subplots(figsize=(9, 5))
+    x = np.arange(len(models))
+    width = 0.35
+
+    u_means, t_means = [], []
+    for mk in models:
+        overall = faithfulness_by_model[mk].get("overall_untrans_vs_trans", {})
+        u_means.append(overall.get("mean_a", 0.0))
+        t_means.append(overall.get("mean_b", 0.0))
+
+    ax.bar(x - width / 2, u_means, width, label="Untranslatable", color=TRANSLATABILITY_COLORS["untranslatable"], alpha=0.85)
+    ax.bar(x + width / 2, t_means, width, label="Translatable", color=TRANSLATABILITY_COLORS["translatable"], alpha=0.85)
+    ax.set_xticks(x)
+    ax.set_xticklabels(models, fontsize=9)
+    ax.set_ylabel("Overall faithfulness")
+    ax.set_title(title)
+    ax.set_ylim(0, 1.05)
+    ax.legend()
+    ax.grid(True, alpha=0.3, axis="y")
+
+    if output_path:
+        os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+        fig.savefig(output_path, bbox_inches="tight")
+        print(f"  Saved: {output_path}")
+    return fig
+
+
+def plot_faithfulness_effect_sizes(
+    faithfulness_by_model: Dict[str, Dict],
+    output_path: Optional[str] = None,
+    title: str = "Faithfulness effect size (Cohen's d, untrans − trans)",
+) -> plt.Figure:
+    setup_style()
+    models = list(faithfulness_by_model.keys())
+    ds = [
+        faithfulness_by_model[mk].get("overall_untrans_vs_trans", {}).get("cohens_d", 0.0)
+        for mk in models
+    ]
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    colors = ["#E74C3C" if d < 0 else "#27AE60" for d in ds]
+    ax.barh(models, ds, color=colors, alpha=0.85)
+    ax.axvline(0, color="black", linewidth=1)
+    ax.set_xlabel("Cohen's d")
+    ax.set_title(title)
+    ax.grid(True, alpha=0.3, axis="x")
+
+    if output_path:
+        os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+        fig.savefig(output_path, bbox_inches="tight")
+        print(f"  Saved: {output_path}")
+    return fig

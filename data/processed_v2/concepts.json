@@ -6,7 +6,11 @@
     "language_code": "ja",
     "meaning": "Buying books and letting them pile up unread",
     "category": "habit",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 8,
+    "native_char_len": 3
   },
   {
     "word": "Wabi-sabi",
@@ -15,7 +19,11 @@
     "language_code": "ja",
     "meaning": "Finding beauty in imperfection and impermanence",
     "category": "aesthetic",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 9,
+    "native_char_len": 2
   },
   {
     "word": "Mono no aware",
@@ -24,7 +32,11 @@
     "language_code": "ja",
     "meaning": "The bittersweet awareness of transience",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 13,
+    "native_char_len": 4
   },
   {
     "word": "Komorebi",
@@ -33,7 +45,11 @@
     "language_code": "ja",
     "meaning": "Sunlight filtering through tree leaves",
     "category": "nature",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 8,
+    "native_char_len": 4
   },
   {
     "word": "Kintsugi",
@@ -42,7 +58,11 @@
     "language_code": "ja",
     "meaning": "Repairing pottery with gold, embracing breakage",
     "category": "aesthetic",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 8,
+    "native_char_len": 3
   },
   {
     "word": "Ikigai",
@@ -51,25 +71,12 @@
     "language_code": "ja",
     "meaning": "A reason for being; the thing that gets you out of bed",
     "category": "philosophy",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Kairos",
-    "native_script": "カイロス",
-    "language": "Japanese",
-    "language_code": "ja",
-    "meaning": "The right or opportune moment (borrowed from Greek, culturally adapted)",
-    "category": "time",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Wabi",
-    "native_script": "侘",
-    "language": "Japanese",
-    "language_code": "ja",
-    "meaning": "Rustic beauty found in simplicity and imperfection",
-    "category": "aesthetic",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": true,
+    "loanword_note": "Popularized as an English lifestyle loanword",
+    "script_type": "cjk",
+    "char_len": 6,
+    "native_char_len": 4
   },
   {
     "word": "Hanami",
@@ -78,7 +85,11 @@
     "language_code": "ja",
     "meaning": "The tradition of enjoying the transient beauty of flowers",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 6,
+    "native_char_len": 2
   },
   {
     "word": "Schadenfreude",
@@ -87,7 +98,12 @@
     "language_code": "de",
     "meaning": "Pleasure derived from another's misfortune",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": true,
+    "loanword_note": "Attested English loanword",
+    "script_type": "latin",
+    "char_len": 13,
+    "native_char_len": 13
   },
   {
     "word": "Weltschmerz",
@@ -96,7 +112,12 @@
     "language_code": "de",
     "meaning": "World-weariness; sadness about the world's imperfection",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": true,
+    "loanword_note": "Attested literary English loanword",
+    "script_type": "latin",
+    "char_len": 11,
+    "native_char_len": 11
   },
   {
     "word": "Fernweh",
@@ -105,7 +126,11 @@
     "language_code": "de",
     "meaning": "An ache for distant places; the opposite of homesickness",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Waldeinsamkeit",
@@ -114,16 +139,11 @@
     "language_code": "de",
     "meaning": "The feeling of being alone in the woods",
     "category": "nature",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Zeitgeist",
-    "native_script": "Zeitgeist",
-    "language": "German",
-    "language_code": "de",
-    "meaning": "The defining spirit or mood of a particular period",
-    "category": "philosophy",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 14,
+    "native_char_len": 14
   },
   {
     "word": "Verschlimmbesserung",
@@ -132,7 +152,11 @@
     "language_code": "de",
     "meaning": "An intended improvement that makes things worse",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 19,
+    "native_char_len": 19
   },
   {
     "word": "Kummerspeck",
@@ -141,7 +165,11 @@
     "language_code": "de",
     "meaning": "Excess weight gained from emotional overeating",
     "category": "habit",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 11,
+    "native_char_len": 11
   },
   {
     "word": "Fremdscham",
@@ -150,7 +178,11 @@
     "language_code": "de",
     "meaning": "Secondhand embarrassment; vicarious shame for someone else",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 10,
+    "native_char_len": 10
   },
   {
     "word": "Torschlusspanik",
@@ -159,7 +191,11 @@
     "language_code": "de",
     "meaning": "Panic about diminishing opportunities as one ages",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 15,
+    "native_char_len": 15
   },
   {
     "word": "Feierabend",
@@ -168,7 +204,11 @@
     "language_code": "de",
     "meaning": "The end of the workday; the joy of finishing work",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 10,
+    "native_char_len": 10
   },
   {
     "word": "Saudade",
@@ -177,7 +217,12 @@
     "language_code": "pt",
     "meaning": "Deep emotional longing for something absent",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": true,
+    "loanword_note": "Occasionally borrowed; still primarily Portuguese",
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Desenrascanço",
@@ -186,7 +231,11 @@
     "language_code": "pt",
     "meaning": "Improvising a clever solution to a problem",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 13,
+    "native_char_len": 13
   },
   {
     "word": "Sobremesa",
@@ -195,7 +244,11 @@
     "language_code": "pt",
     "meaning": "The time spent lingering at the table after a meal",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Cafuné",
@@ -204,7 +257,11 @@
     "language_code": "pt",
     "meaning": "Tenderly running fingers through a loved one's hair",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Levada",
@@ -213,25 +270,11 @@
     "language_code": "pt",
     "meaning": "An irrigation channel; a traditional walk along one",
     "category": "nature",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Despedida",
-    "native_script": "Despedida",
-    "language": "Portuguese",
-    "language_code": "pt",
-    "meaning": "A farewell that carries the weight of uncertain return",
-    "category": "emotion",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Ilhado",
-    "native_script": "Ilhado",
-    "language": "Portuguese",
-    "language_code": "pt",
-    "meaning": "Feeling isolated or abandoned on an island",
-    "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Jeong",
@@ -240,7 +283,11 @@
     "language_code": "ko",
     "meaning": "A deep bond of affection and attachment",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 5,
+    "native_char_len": 1
   },
   {
     "word": "Han",
@@ -249,7 +296,11 @@
     "language_code": "ko",
     "meaning": "Collective grief and resentment from historical oppression",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 3,
+    "native_char_len": 1
   },
   {
     "word": "Nunchi",
@@ -258,7 +309,11 @@
     "language_code": "ko",
     "meaning": "The ability to read the room and gauge others' moods",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 6,
+    "native_char_len": 2
   },
   {
     "word": "Palli-palli",
@@ -267,25 +322,11 @@
     "language_code": "ko",
     "meaning": "The hurry-hurry culture; urgency to act quickly",
     "category": "social",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Dinganeun",
-    "native_script": "디나느",
-    "language": "Korean",
-    "language_code": "ko",
-    "meaning": "The act of wandering through streets without purpose",
-    "category": "habit",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Jeongseon",
-    "native_script": "정선",
-    "language": "Korean",
-    "language_code": "ko",
-    "meaning": "A pure, unspoken emotional connection",
-    "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 11,
+    "native_char_len": 4
   },
   {
     "word": "Chemyon",
@@ -294,16 +335,11 @@
     "language_code": "ko",
     "meaning": "Social face; the balance between dignity and reputation",
     "category": "social",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Gyeolhon",
-    "native_script": "결혼",
-    "language": "Korean",
-    "language_code": "ko",
-    "meaning": "The deeply communal nature of Korean marriage",
-    "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 7,
+    "native_char_len": 2
   },
   {
     "word": "Tarab",
@@ -312,7 +348,11 @@
     "language_code": "ar",
     "meaning": "Musical ecstasy that transcends the performance",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 5,
+    "native_char_len": 3
   },
   {
     "word": "Ya'aburnee",
@@ -321,16 +361,11 @@
     "language_code": "ar",
     "meaning": "I hope I die before you so I don't have to live without you",
     "category": "emotion",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Taza",
-    "native_script": "تازة",
-    "language": "Arabic",
-    "language_code": "ar",
-    "meaning": "The freshness of something newly made or experienced",
-    "category": "aesthetic",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 10,
+    "native_char_len": 7
   },
   {
     "word": "Khayyal",
@@ -339,7 +374,11 @@
     "language_code": "ar",
     "meaning": "A state of vivid imagination and daydreaming",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 7,
+    "native_char_len": 4
   },
   {
     "word": "Samar",
@@ -348,7 +387,11 @@
     "language_code": "ar",
     "meaning": "Late-night conversation under the stars",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 5,
+    "native_char_len": 3
   },
   {
     "word": "Nasib",
@@ -357,7 +400,11 @@
     "language_code": "ar",
     "meaning": "One's destined share in life; fate's allocation",
     "category": "philosophy",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 5,
+    "native_char_len": 4
   },
   {
     "word": "Jugaad",
@@ -366,7 +413,11 @@
     "language_code": "hi",
     "meaning": "A flexible approach to problem-solving using limited resources",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Garma-garam",
@@ -375,34 +426,11 @@
     "language_code": "hi",
     "meaning": "Freshly made and piping hot; the thrill of immediacy",
     "category": "aesthetic",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Dosti",
-    "native_script": "दोस्ती",
-    "language": "Hindi",
-    "language_code": "hi",
-    "meaning": "A deep, loyal friendship bond",
-    "category": "social",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Filhal",
-    "native_script": "फ़िलहाल",
-    "language": "Hindi",
-    "language_code": "hi",
-    "meaning": "Right now, in this moment; temporary present state",
-    "category": "time",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Dil",
-    "native_script": "दिल",
-    "language": "Hindi",
-    "language_code": "hi",
-    "meaning": "Heart; the center of all emotion and decision-making",
-    "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 11,
+    "native_char_len": 8
   },
   {
     "word": "Sukoon",
@@ -411,7 +439,11 @@
     "language_code": "hi",
     "meaning": "Deep peace and contentment; the absence of worry",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 6,
+    "native_char_len": 5
   },
   {
     "word": "Toska",
@@ -420,7 +452,11 @@
     "language_code": "ru",
     "meaning": "Spiritual anguish without a specific cause",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Pochemuchka",
@@ -429,16 +465,11 @@
     "language_code": "ru",
     "meaning": "A child who asks too many questions",
     "category": "social",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Davai",
-    "native_script": "Давай",
-    "language": "Russian",
-    "language_code": "ru",
-    "meaning": "Let's go / come on; a versatile expression of encouragement",
-    "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 11,
+    "native_char_len": 9
   },
   {
     "word": "Zapoi",
@@ -447,7 +478,11 @@
     "language_code": "ru",
     "meaning": "A prolonged period of uninterrupted drinking",
     "category": "habit",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Vypyivat",
@@ -456,7 +491,11 @@
     "language_code": "ru",
     "meaning": "The ritual of drinking together as a social bond",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 8,
+    "native_char_len": 8
   },
   {
     "word": "Hygge",
@@ -465,7 +504,12 @@
     "language_code": "da",
     "meaning": "Cozy togetherness and warm atmosphere",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": true,
+    "loanword_note": "Widely borrowed into English lifestyle discourse",
+    "script_type": "latin",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Forelsket",
@@ -474,7 +518,11 @@
     "language_code": "da",
     "meaning": "The euphoria of falling in love",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Pyt",
@@ -483,16 +531,11 @@
     "language_code": "da",
     "meaning": "A verbal expression for letting go of frustration",
     "category": "emotion",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Lykke",
-    "native_script": "Lykke",
-    "language": "Danish",
-    "language_code": "da",
-    "meaning": "Happiness that comes from small, everyday moments",
-    "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 3,
+    "native_char_len": 3
   },
   {
     "word": "Trivsel",
@@ -501,7 +544,11 @@
     "language_code": "da",
     "meaning": "The state of thriving and flourishing in life",
     "category": "philosophy",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Samfundssind",
@@ -510,7 +557,11 @@
     "language_code": "da",
     "meaning": "Community-mindedness; civic-mindedness for the common good",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 12,
+    "native_char_len": 12
   },
   {
     "word": "Sobremesa",
@@ -519,7 +570,11 @@
     "language_code": "es",
     "meaning": "Time spent lingering at the table after a meal",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Estrenar",
@@ -528,7 +583,11 @@
     "language_code": "es",
     "meaning": "To use or wear something for the first time",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 8,
+    "native_char_len": 8
   },
   {
     "word": "Duende",
@@ -537,16 +596,11 @@
     "language_code": "es",
     "meaning": "A heightened state of emotion and authenticity in art",
     "category": "aesthetic",
-    "translatability": "untranslatable"
-  },
-  {
-    "word": "Tutear",
-    "native_script": "Tutear",
-    "language": "Spanish",
-    "language_code": "es",
-    "meaning": "To address someone informally (tuteo vs. usted)",
-    "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Madrugada",
@@ -555,7 +609,11 @@
     "language_code": "es",
     "meaning": "The early hours before dawn",
     "category": "time",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Convivencia",
@@ -564,7 +622,11 @@
     "language_code": "es",
     "meaning": "The art of living together in harmony",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 11,
+    "native_char_len": 11
   },
   {
     "word": "Depaysement",
@@ -573,7 +635,11 @@
     "language_code": "fr",
     "meaning": "The feeling of being a foreigner; disorientation in a new place",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 11,
+    "native_char_len": 11
   },
   {
     "word": "L'esprit de l'escalier",
@@ -582,7 +648,11 @@
     "language_code": "fr",
     "meaning": "Thinking of the perfect reply too late",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 22,
+    "native_char_len": 22
   },
   {
     "word": "Flaneur",
@@ -591,7 +661,11 @@
     "language_code": "fr",
     "meaning": "A person who wanders the streets observing life",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Retrouvailles",
@@ -600,7 +674,11 @@
     "language_code": "fr",
     "meaning": "The joy of reuniting after a long separation",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 13,
+    "native_char_len": 13
   },
   {
     "word": "Bricolage",
@@ -609,7 +687,11 @@
     "language_code": "fr",
     "meaning": "Improvising with whatever materials are at hand",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Mottainai",
@@ -618,7 +700,11 @@
     "language_code": "ja",
     "meaning": "A sense of regret over waste; nothing should be wasted",
     "category": "philosophy",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 9,
+    "native_char_len": 4
   },
   {
     "word": "Otsukaresama",
@@ -627,7 +713,11 @@
     "language_code": "ja",
     "meaning": "Acknowledging someone's hard work; 'you've done well'",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 12,
+    "native_char_len": 4
   },
   {
     "word": "Shibui",
@@ -636,7 +726,11 @@
     "language_code": "ja",
     "meaning": "Aesthetically restrained, subtle and understated",
     "category": "aesthetic",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 6,
+    "native_char_len": 2
   },
   {
     "word": "Yugen",
@@ -645,7 +739,11 @@
     "language_code": "ja",
     "meaning": "A profound, mysterious sense of the beauty of the universe",
     "category": "aesthetic",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 5,
+    "native_char_len": 2
   },
   {
     "word": "Ukiyo",
@@ -654,7 +752,11 @@
     "language_code": "ja",
     "meaning": "The floating world; living in the moment",
     "category": "philosophy",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 5,
+    "native_char_len": 2
   },
   {
     "word": "Shokunin",
@@ -663,7 +765,11 @@
     "language_code": "ja",
     "meaning": "A craftsman's total dedication to mastery of their art",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 8,
+    "native_char_len": 2
   },
   {
     "word": "Omotenashi",
@@ -672,7 +778,11 @@
     "language_code": "ja",
     "meaning": "Wholehearted hospitality that anticipates a guest's needs",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 10,
+    "native_char_len": 5
   },
   {
     "word": "Sehnsucht",
@@ -681,7 +791,11 @@
     "language_code": "de",
     "meaning": "An intense, restless longing for something distant",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Geborgenheit",
@@ -690,7 +804,11 @@
     "language_code": "de",
     "meaning": "The feeling of being sheltered and completely safe",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 12,
+    "native_char_len": 12
   },
   {
     "word": "Backpfeifengesicht",
@@ -699,7 +817,11 @@
     "language_code": "de",
     "meaning": "A face that seems to invite a slap",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 18,
+    "native_char_len": 18
   },
   {
     "word": "Schnapsidee",
@@ -708,7 +830,11 @@
     "language_code": "de",
     "meaning": "A wild idea conceived in drunkenness",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 11,
+    "native_char_len": 11
   },
   {
     "word": "Sturmfrei",
@@ -717,7 +843,11 @@
     "language_code": "de",
     "meaning": "Having the house entirely to oneself",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Erklarungsnot",
@@ -726,7 +856,11 @@
     "language_code": "de",
     "meaning": "The awkward pressure of having to explain something",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 13,
+    "native_char_len": 13
   },
   {
     "word": "Xodo",
@@ -735,7 +869,11 @@
     "language_code": "pt",
     "meaning": "A pet name for someone deeply cherished",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Fado",
@@ -744,7 +882,11 @@
     "language_code": "pt",
     "meaning": "A melancholic music genre expressing resignation and fate",
     "category": "aesthetic",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Desbundar",
@@ -753,7 +895,11 @@
     "language_code": "pt",
     "meaning": "To lose all inhibition and let loose completely",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Aegyo",
@@ -762,7 +908,11 @@
     "language_code": "ko",
     "meaning": "Cute, endearing behavior used to charm someone",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 5,
+    "native_char_len": 2
   },
   {
     "word": "Hwabyeong",
@@ -771,7 +921,11 @@
     "language_code": "ko",
     "meaning": "Suppressed anger that manifests as an illness",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 9,
+    "native_char_len": 2
   },
   {
     "word": "Kibun",
@@ -780,7 +934,11 @@
     "language_code": "ko",
     "meaning": "The subtle, holistic state of one's mood",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 5,
+    "native_char_len": 2
   },
   {
     "word": "Wasta",
@@ -789,7 +947,11 @@
     "language_code": "ar",
     "meaning": "Influence or connections used to get things done",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Jootha",
@@ -798,7 +960,11 @@
     "language_code": "hi",
     "meaning": "Food or drink contaminated by another's touch",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 6,
+    "native_char_len": 4
   },
   {
     "word": "Gherao",
@@ -807,7 +973,11 @@
     "language_code": "hi",
     "meaning": "A protest tactic of surrounding and trapping someone",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 6,
+    "native_char_len": 5
   },
   {
     "word": "Poshlost",
@@ -816,7 +986,11 @@
     "language_code": "ru",
     "meaning": "Banal vulgarity that masquerades as deep meaning",
     "category": "aesthetic",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 8,
+    "native_char_len": 8
   },
   {
     "word": "Rasputitsa",
@@ -825,7 +999,11 @@
     "language_code": "ru",
     "meaning": "The season when roads become impassable mud",
     "category": "nature",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 10,
+    "native_char_len": 9
   },
   {
     "word": "Perezhivanie",
@@ -834,7 +1012,11 @@
     "language_code": "ru",
     "meaning": "An emotionally lived-through experience",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 12,
+    "native_char_len": 11
   },
   {
     "word": "Janteloven",
@@ -843,7 +1025,11 @@
     "language_code": "da",
     "meaning": "The unspoken law of not thinking you are better than others",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 10,
+    "native_char_len": 10
   },
   {
     "word": "Arbejdsglaede",
@@ -852,7 +1038,11 @@
     "language_code": "da",
     "meaning": "Joy and satisfaction found in one's work",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 13,
+    "native_char_len": 12
   },
   {
     "word": "Morgenfrisk",
@@ -861,7 +1051,11 @@
     "language_code": "da",
     "meaning": "Feeling fresh and energetic in the morning",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 11,
+    "native_char_len": 11
   },
   {
     "word": "Verguenza ajena",
@@ -870,7 +1064,11 @@
     "language_code": "es",
     "meaning": "Secondhand embarrassment felt for someone else",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 15,
+    "native_char_len": 15
   },
   {
     "word": "Antojo",
@@ -879,7 +1077,11 @@
     "language_code": "es",
     "meaning": "A sudden, capricious craving",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Empalagar",
@@ -888,7 +1090,11 @@
     "language_code": "es",
     "meaning": "To be overwhelmed by something excessively sweet or clingy",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Desvelo",
@@ -897,7 +1103,11 @@
     "language_code": "es",
     "meaning": "Sleeplessness caused by worry or excitement",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Consuegro",
@@ -906,7 +1116,11 @@
     "language_code": "es",
     "meaning": "The relationship between a child's parents and their in-laws",
     "category": "social",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "L'appel du vide",
@@ -915,7 +1129,11 @@
     "language_code": "fr",
     "meaning": "The urge to jump when looking from a great height",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 15,
+    "native_char_len": 15
   },
   {
     "word": "J'adoube",
@@ -924,7 +1142,11 @@
     "language_code": "fr",
     "meaning": "The chess declaration 'I adjust', signaling no move intent",
     "category": "concept",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 8,
+    "native_char_len": 8
   },
   {
     "word": "Spleen",
@@ -933,7 +1155,11 @@
     "language_code": "fr",
     "meaning": "A poetic melancholy peculiar to the French Romantics",
     "category": "emotion",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Flanerie",
@@ -942,7 +1168,11 @@
     "language_code": "fr",
     "meaning": "The art of strolling idly and observing urban life",
     "category": "habit",
-    "translatability": "untranslatable"
+    "translatability": "untranslatable",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 8,
+    "native_char_len": 8
   },
   {
     "word": "Ryokan",
@@ -952,7 +1182,11 @@
     "meaning": "Traditional Japanese inn",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "traditional inn"
+    "english_equivalent": "traditional inn",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 6,
+    "native_char_len": 2
   },
   {
     "word": "Bento",
@@ -962,7 +1196,11 @@
     "meaning": "A packed lunch in a box",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "packed lunch"
+    "english_equivalent": "packed lunch",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 5,
+    "native_char_len": 2
   },
   {
     "word": "Kimono",
@@ -972,7 +1210,11 @@
     "meaning": "Traditional Japanese garment",
     "category": "aesthetic",
     "translatability": "translatable",
-    "english_equivalent": "traditional garment"
+    "english_equivalent": "traditional garment",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 6,
+    "native_char_len": 2
   },
   {
     "word": "Samurai",
@@ -982,7 +1224,11 @@
     "meaning": "A Japanese warrior",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "warrior"
+    "english_equivalent": "warrior",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 7,
+    "native_char_len": 1
   },
   {
     "word": "Sensei",
@@ -992,7 +1238,11 @@
     "meaning": "Teacher or master",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "teacher"
+    "english_equivalent": "teacher",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 6,
+    "native_char_len": 2
   },
   {
     "word": "Tempura",
@@ -1002,7 +1252,11 @@
     "meaning": "Deep-fried battered vegetables or seafood",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "fried food"
+    "english_equivalent": "fried food",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 7,
+    "native_char_len": 3
   },
   {
     "word": "Sake",
@@ -1012,7 +1266,11 @@
     "meaning": "Japanese rice wine",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "rice wine"
+    "english_equivalent": "rice wine",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 4,
+    "native_char_len": 1
   },
   {
     "word": "Dojo",
@@ -1022,7 +1280,11 @@
     "meaning": "A training hall for martial arts",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "training hall"
+    "english_equivalent": "training hall",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 4,
+    "native_char_len": 2
   },
   {
     "word": "Zen",
@@ -1032,7 +1294,11 @@
     "meaning": "A school of Mahayana Buddhism",
     "category": "philosophy",
     "translatability": "translatable",
-    "english_equivalent": "meditation"
+    "english_equivalent": "meditation",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 3,
+    "native_char_len": 1
   },
   {
     "word": "Harakiri",
@@ -1042,7 +1308,11 @@
     "meaning": "Ritual suicide by disembowelment",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "ritual suicide"
+    "english_equivalent": "ritual suicide",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 8,
+    "native_char_len": 3
   },
   {
     "word": "Handschuh",
@@ -1052,7 +1322,11 @@
     "meaning": "A glove (hand-shoe)",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "glove"
+    "english_equivalent": "glove",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Kindergarten",
@@ -1062,7 +1336,11 @@
     "meaning": "A preschool for young children",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "preschool"
+    "english_equivalent": "preschool",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 12,
+    "native_char_len": 12
   },
   {
     "word": "Wanderlust",
@@ -1072,7 +1350,11 @@
     "meaning": "A strong desire to travel",
     "category": "emotion",
     "translatability": "translatable",
-    "english_equivalent": "wanderlust"
+    "english_equivalent": "wanderlust",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 10,
+    "native_char_len": 10
   },
   {
     "word": "Angst",
@@ -1082,7 +1364,11 @@
     "meaning": "Fear or anxiety",
     "category": "emotion",
     "translatability": "translatable",
-    "english_equivalent": "anxiety"
+    "english_equivalent": "anxiety",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Kitsch",
@@ -1092,7 +1378,11 @@
     "meaning": "Tacky or tasteless art",
     "category": "aesthetic",
     "translatability": "translatable",
-    "english_equivalent": "tacky art"
+    "english_equivalent": "tacky art",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Gestalt",
@@ -1102,7 +1392,11 @@
     "meaning": "An organized whole; form",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "form"
+    "english_equivalent": "form",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Doppelganger",
@@ -1112,7 +1406,11 @@
     "meaning": "A look-alike of a living person",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "look-alike"
+    "english_equivalent": "look-alike",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 12,
+    "native_char_len": 12
   },
   {
     "word": "Poltergeist",
@@ -1122,7 +1420,11 @@
     "meaning": "A noisy ghost",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "ghost"
+    "english_equivalent": "ghost",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 11,
+    "native_char_len": 11
   },
   {
     "word": "Rucksack",
@@ -1132,7 +1434,11 @@
     "meaning": "A backpack",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "backpack"
+    "english_equivalent": "backpack",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 8,
+    "native_char_len": 8
   },
   {
     "word": "Schmuck",
@@ -1142,7 +1448,11 @@
     "meaning": "Jewelry",
     "category": "aesthetic",
     "translatability": "translatable",
-    "english_equivalent": "jewelry"
+    "english_equivalent": "jewelry",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Samba",
@@ -1152,7 +1462,11 @@
     "meaning": "A Brazilian dance and music genre",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "dance"
+    "english_equivalent": "dance",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Futebol",
@@ -1162,7 +1476,11 @@
     "meaning": "Soccer",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "soccer"
+    "english_equivalent": "soccer",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Feijoada",
@@ -1172,7 +1490,11 @@
     "meaning": "A bean stew with meat",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "bean stew"
+    "english_equivalent": "bean stew",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 8,
+    "native_char_len": 8
   },
   {
     "word": "Carnaval",
@@ -1182,7 +1504,11 @@
     "meaning": "The pre-Lenten festival",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "carnival"
+    "english_equivalent": "carnival",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 8,
+    "native_char_len": 8
   },
   {
     "word": "Praia",
@@ -1192,7 +1518,11 @@
     "meaning": "Beach",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "beach"
+    "english_equivalent": "beach",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Favela",
@@ -1202,7 +1532,11 @@
     "meaning": "A Brazilian shantytown",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "slum"
+    "english_equivalent": "slum",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Capoeira",
@@ -1212,7 +1546,11 @@
     "meaning": "Afro-Brazilian martial art dance",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "martial art"
+    "english_equivalent": "martial art",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 8,
+    "native_char_len": 8
   },
   {
     "word": "Café",
@@ -1222,7 +1560,11 @@
     "meaning": "Coffee or coffee shop",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "coffee"
+    "english_equivalent": "coffee",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Soju",
@@ -1232,7 +1574,11 @@
     "meaning": "Korean distilled spirit",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "distilled spirit"
+    "english_equivalent": "distilled spirit",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 4,
+    "native_char_len": 2
   },
   {
     "word": "Bibimbap",
@@ -1242,7 +1588,11 @@
     "meaning": "Mixed rice bowl",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "rice bowl"
+    "english_equivalent": "rice bowl",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 8,
+    "native_char_len": 3
   },
   {
     "word": "Taekwondo",
@@ -1252,7 +1602,11 @@
     "meaning": "Korean martial art",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "martial art"
+    "english_equivalent": "martial art",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 9,
+    "native_char_len": 3
   },
   {
     "word": "Chuseok",
@@ -1262,7 +1616,11 @@
     "meaning": "Korean harvest festival",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "harvest festival"
+    "english_equivalent": "harvest festival",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 7,
+    "native_char_len": 2
   },
   {
     "word": "Hanbok",
@@ -1272,7 +1630,11 @@
     "meaning": "Traditional Korean clothing",
     "category": "aesthetic",
     "translatability": "translatable",
-    "english_equivalent": "traditional clothing"
+    "english_equivalent": "traditional clothing",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 6,
+    "native_char_len": 2
   },
   {
     "word": "Kimchi",
@@ -1282,7 +1644,11 @@
     "meaning": "Fermented cabbage dish",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "fermented food"
+    "english_equivalent": "fermented food",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 6,
+    "native_char_len": 2
   },
   {
     "word": "K-pop",
@@ -1292,7 +1658,11 @@
     "meaning": "Korean popular music",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "pop music"
+    "english_equivalent": "pop music",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 5,
+    "native_char_len": 3
   },
   {
     "word": "Makgeolli",
@@ -1302,7 +1672,11 @@
     "meaning": "Korean rice wine",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "rice wine"
+    "english_equivalent": "rice wine",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 9,
+    "native_char_len": 3
   },
   {
     "word": "Habibi",
@@ -1312,7 +1686,11 @@
     "meaning": "My beloved/darling",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "darling"
+    "english_equivalent": "darling",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 6,
+    "native_char_len": 5
   },
   {
     "word": "Shukran",
@@ -1322,7 +1700,11 @@
     "meaning": "Thank you",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "thank you"
+    "english_equivalent": "thank you",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 7,
+    "native_char_len": 4
   },
   {
     "word": "Maktub",
@@ -1332,7 +1714,11 @@
     "meaning": "It is written (fate)",
     "category": "philosophy",
     "translatability": "translatable",
-    "english_equivalent": "destiny"
+    "english_equivalent": "destiny",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 6,
+    "native_char_len": 5
   },
   {
     "word": "Inshallah",
@@ -1342,7 +1728,11 @@
     "meaning": "God willing",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "god willing"
+    "english_equivalent": "god willing",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 9,
+    "native_char_len": 11
   },
   {
     "word": "Souk",
@@ -1352,7 +1742,11 @@
     "meaning": "A marketplace",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "market"
+    "english_equivalent": "market",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 4,
+    "native_char_len": 3
   },
   {
     "word": "Qahwa",
@@ -1362,7 +1756,11 @@
     "meaning": "Coffee",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "coffee"
+    "english_equivalent": "coffee",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 5,
+    "native_char_len": 4
   },
   {
     "word": "Khamsa",
@@ -1372,7 +1770,11 @@
     "meaning": "Five; a protective hand symbol",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "hand symbol"
+    "english_equivalent": "hand symbol",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 6,
+    "native_char_len": 4
   },
   {
     "word": "Shisha",
@@ -1382,7 +1784,11 @@
     "meaning": "Hookah or water pipe",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "water pipe"
+    "english_equivalent": "water pipe",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 6,
+    "native_char_len": 4
   },
   {
     "word": "Namaste",
@@ -1392,7 +1798,11 @@
     "meaning": "A respectful greeting",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "greeting"
+    "english_equivalent": "greeting",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 7,
+    "native_char_len": 6
   },
   {
     "word": "Masala",
@@ -1402,7 +1812,11 @@
     "meaning": "A blend of spices",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "spice blend"
+    "english_equivalent": "spice blend",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 6,
+    "native_char_len": 5
   },
   {
     "word": "Chai",
@@ -1412,7 +1826,11 @@
     "meaning": "Tea",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "tea"
+    "english_equivalent": "tea",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 4,
+    "native_char_len": 3
   },
   {
     "word": "Yoga",
@@ -1422,7 +1840,11 @@
     "meaning": "A spiritual and physical practice",
     "category": "philosophy",
     "translatability": "translatable",
-    "english_equivalent": "yoga"
+    "english_equivalent": "yoga",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 4,
+    "native_char_len": 3
   },
   {
     "word": "Guru",
@@ -1432,7 +1854,11 @@
     "meaning": "A spiritual teacher",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "teacher"
+    "english_equivalent": "teacher",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Avatar",
@@ -1442,7 +1868,11 @@
     "meaning": "A divine descent or incarnation",
     "category": "philosophy",
     "translatability": "translatable",
-    "english_equivalent": "incarnation"
+    "english_equivalent": "incarnation",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 6,
+    "native_char_len": 5
   },
   {
     "word": "Karma",
@@ -1452,7 +1882,11 @@
     "meaning": "Action and its consequences",
     "category": "philosophy",
     "translatability": "translatable",
-    "english_equivalent": "karma"
+    "english_equivalent": "karma",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 5,
+    "native_char_len": 4
   },
   {
     "word": "Pundit",
@@ -1462,7 +1896,11 @@
     "meaning": "A learned person or scholar",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "scholar"
+    "english_equivalent": "scholar",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 6,
+    "native_char_len": 5
   },
   {
     "word": "Sputnik",
@@ -1472,7 +1910,11 @@
     "meaning": "A fellow traveler; satellite",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "satellite"
+    "english_equivalent": "satellite",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Vodka",
@@ -1482,7 +1924,11 @@
     "meaning": "A distilled alcoholic beverage",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "spirit"
+    "english_equivalent": "spirit",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Babushka",
@@ -1492,7 +1938,11 @@
     "meaning": "Grandmother",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "grandmother"
+    "english_equivalent": "grandmother",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 8,
+    "native_char_len": 7
   },
   {
     "word": "Matryoshka",
@@ -1502,7 +1952,11 @@
     "meaning": "A nesting doll",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "nesting doll"
+    "english_equivalent": "nesting doll",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 10,
+    "native_char_len": 8
   },
   {
     "word": "Kremlin",
@@ -1512,7 +1966,11 @@
     "meaning": "A fortress or citadel",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "fortress"
+    "english_equivalent": "fortress",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 7,
+    "native_char_len": 6
   },
   {
     "word": "Cosmonaut",
@@ -1522,7 +1980,11 @@
     "meaning": "A Russian astronaut",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "astronaut"
+    "english_equivalent": "astronaut",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Pirozhki",
@@ -1532,7 +1994,11 @@
     "meaning": "Small baked or fried buns",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "pastry"
+    "english_equivalent": "pastry",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 8,
+    "native_char_len": 7
   },
   {
     "word": "Samovar",
@@ -1542,7 +2008,11 @@
     "meaning": "A heated metal container for water",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "kettle"
+    "english_equivalent": "kettle",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Bakken",
@@ -1552,7 +2022,11 @@
     "meaning": "The oldest operating amusement park",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "amusement park"
+    "english_equivalent": "amusement park",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Smorrebrod",
@@ -1562,7 +2036,11 @@
     "meaning": "An open-faced sandwich",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "sandwich"
+    "english_equivalent": "sandwich",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 10,
+    "native_char_len": 10
   },
   {
     "word": "Lego",
@@ -1572,7 +2050,11 @@
     "meaning": "Interlocking plastic bricks",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "toy bricks"
+    "english_equivalent": "toy bricks",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Frikadeller",
@@ -1582,7 +2064,11 @@
     "meaning": "Danish meatballs",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "meatballs"
+    "english_equivalent": "meatballs",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 11,
+    "native_char_len": 11
   },
   {
     "word": "Tivoli",
@@ -1592,7 +2078,11 @@
     "meaning": "A garden in Copenhagen",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "garden"
+    "english_equivalent": "garden",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Noma",
@@ -1602,7 +2092,11 @@
     "meaning": "A new Nordic cuisine restaurant",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "restaurant"
+    "english_equivalent": "restaurant",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Siesta",
@@ -1612,7 +2106,11 @@
     "meaning": "An afternoon nap",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "afternoon nap"
+    "english_equivalent": "afternoon nap",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Fiesta",
@@ -1622,7 +2120,11 @@
     "meaning": "A party or festival",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "party"
+    "english_equivalent": "party",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Canyon",
@@ -1632,7 +2134,11 @@
     "meaning": "A deep gorge",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "gorge"
+    "english_equivalent": "gorge",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 5
   },
   {
     "word": "Plaza",
@@ -1642,7 +2148,11 @@
     "meaning": "A public square",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "square"
+    "english_equivalent": "square",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Mosquito",
@@ -1652,7 +2162,11 @@
     "meaning": "A small flying insect",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "mosquito"
+    "english_equivalent": "mosquito",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 8,
+    "native_char_len": 8
   },
   {
     "word": "Guitar",
@@ -1662,7 +2176,11 @@
     "meaning": "A stringed musical instrument",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "guitar"
+    "english_equivalent": "guitar",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 8
   },
   {
     "word": "Chocolate",
@@ -1672,7 +2190,11 @@
     "meaning": "A cacao-based food",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "chocolate"
+    "english_equivalent": "chocolate",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Tornado",
@@ -1682,7 +2204,11 @@
     "meaning": "A violent windstorm",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "tornado"
+    "english_equivalent": "tornado",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Croissant",
@@ -1692,7 +2218,11 @@
     "meaning": "A crescent-shaped pastry",
     "category": "habit",
     "translatability": "translatable",
-    "english_equivalent": "pastry"
+    "english_equivalent": "pastry",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 9,
+    "native_char_len": 9
   },
   {
     "word": "Restaurant",
@@ -1702,7 +2232,11 @@
     "meaning": "A place to eat meals",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "restaurant"
+    "english_equivalent": "restaurant",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 10,
+    "native_char_len": 10
   },
   {
     "word": "Ballet",
@@ -1712,7 +2246,11 @@
     "meaning": "A form of dance",
     "category": "aesthetic",
     "translatability": "translatable",
-    "english_equivalent": "dance"
+    "english_equivalent": "dance",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Cafe",
@@ -1722,7 +2260,11 @@
     "meaning": "A coffeehouse",
     "category": "social",
     "translatability": "translatable",
-    "english_equivalent": "coffeehouse"
+    "english_equivalent": "coffeehouse",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Bouquet",
@@ -1732,7 +2274,11 @@
     "meaning": "A flower arrangement",
     "category": "aesthetic",
     "translatability": "translatable",
-    "english_equivalent": "flower arrangement"
+    "english_equivalent": "flower arrangement",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Frac",
@@ -1742,7 +2288,11 @@
     "meaning": "A morning coat or dress coat",
     "category": "aesthetic",
     "translatability": "translatable",
-    "english_equivalent": "coat"
+    "english_equivalent": "coat",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Tranquil",
@@ -1752,7 +2302,11 @@
     "meaning": "Calm and peaceful",
     "category": "emotion",
     "translatability": "translatable",
-    "english_equivalent": "calm"
+    "english_equivalent": "calm",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 8,
+    "native_char_len": 10
   },
   {
     "word": "Museum",
@@ -1762,7 +2316,11 @@
     "meaning": "A building housing historical artifacts",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "museum"
+    "english_equivalent": "museum",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 5
   },
   {
     "word": "Mizu",
@@ -1772,7 +2330,11 @@
     "meaning": "Water",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "water"
+    "english_equivalent": "water",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 4,
+    "native_char_len": 1
   },
   {
     "word": "Inu",
@@ -1782,7 +2344,11 @@
     "meaning": "Dog",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "dog"
+    "english_equivalent": "dog",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 3,
+    "native_char_len": 1
   },
   {
     "word": "Yama",
@@ -1792,7 +2358,11 @@
     "meaning": "Mountain",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "mountain"
+    "english_equivalent": "mountain",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 4,
+    "native_char_len": 1
   },
   {
     "word": "Hon",
@@ -1802,7 +2372,11 @@
     "meaning": "Book",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "book"
+    "english_equivalent": "book",
+    "english_loanword": false,
+    "script_type": "cjk",
+    "char_len": 3,
+    "native_char_len": 1
   },
   {
     "word": "Haus",
@@ -1812,7 +2386,11 @@
     "meaning": "House",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "house"
+    "english_equivalent": "house",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Wasser",
@@ -1822,7 +2400,11 @@
     "meaning": "Water",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "water"
+    "english_equivalent": "water",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Hund",
@@ -1832,7 +2414,11 @@
     "meaning": "Dog",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "dog"
+    "english_equivalent": "dog",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Berg",
@@ -1842,7 +2428,11 @@
     "meaning": "Mountain",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "mountain"
+    "english_equivalent": "mountain",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Casa",
@@ -1852,7 +2442,11 @@
     "meaning": "House",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "house"
+    "english_equivalent": "house",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Agua",
@@ -1862,7 +2456,11 @@
     "meaning": "Water",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "water"
+    "english_equivalent": "water",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Cao",
@@ -1872,7 +2470,11 @@
     "meaning": "Dog",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "dog"
+    "english_equivalent": "dog",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 3,
+    "native_char_len": 3
   },
   {
     "word": "Livro",
@@ -1882,7 +2484,11 @@
     "meaning": "Book",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "book"
+    "english_equivalent": "book",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Mul",
@@ -1892,7 +2498,11 @@
     "meaning": "Water",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "water"
+    "english_equivalent": "water",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 3,
+    "native_char_len": 1
   },
   {
     "word": "Gae",
@@ -1902,7 +2512,11 @@
     "meaning": "Dog",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "dog"
+    "english_equivalent": "dog",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 3,
+    "native_char_len": 1
   },
   {
     "word": "San",
@@ -1912,7 +2526,11 @@
     "meaning": "Mountain",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "mountain"
+    "english_equivalent": "mountain",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 3,
+    "native_char_len": 1
   },
   {
     "word": "Chaek",
@@ -1922,7 +2540,11 @@
     "meaning": "Book",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "book"
+    "english_equivalent": "book",
+    "english_loanword": false,
+    "script_type": "hangul",
+    "char_len": 5,
+    "native_char_len": 1
   },
   {
     "word": "Bayt",
@@ -1932,7 +2554,11 @@
     "meaning": "House",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "house"
+    "english_equivalent": "house",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 4,
+    "native_char_len": 3
   },
   {
     "word": "Maa",
@@ -1942,7 +2568,11 @@
     "meaning": "Water",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "water"
+    "english_equivalent": "water",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 3,
+    "native_char_len": 3
   },
   {
     "word": "Kitab",
@@ -1952,7 +2582,11 @@
     "meaning": "Book",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "book"
+    "english_equivalent": "book",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 5,
+    "native_char_len": 4
   },
   {
     "word": "Nar",
@@ -1962,7 +2596,11 @@
     "meaning": "Fire",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "fire"
+    "english_equivalent": "fire",
+    "english_loanword": false,
+    "script_type": "arabic",
+    "char_len": 3,
+    "native_char_len": 3
   },
   {
     "word": "Paani",
@@ -1972,7 +2610,11 @@
     "meaning": "Water",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "water"
+    "english_equivalent": "water",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 5,
+    "native_char_len": 4
   },
   {
     "word": "Kutta",
@@ -1982,7 +2624,11 @@
     "meaning": "Dog",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "dog"
+    "english_equivalent": "dog",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 5,
+    "native_char_len": 6
   },
   {
     "word": "Kitaab",
@@ -1992,7 +2638,11 @@
     "meaning": "Book",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "book"
+    "english_equivalent": "book",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 6,
+    "native_char_len": 5
   },
   {
     "word": "Pahad",
@@ -2002,7 +2652,11 @@
     "meaning": "Mountain",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "mountain"
+    "english_equivalent": "mountain",
+    "english_loanword": false,
+    "script_type": "devanagari",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Dom",
@@ -2012,7 +2666,11 @@
     "meaning": "House",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "house"
+    "english_equivalent": "house",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 3,
+    "native_char_len": 3
   },
   {
     "word": "Voda",
@@ -2022,7 +2680,11 @@
     "meaning": "Water",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "water"
+    "english_equivalent": "water",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Sobaka",
@@ -2032,7 +2694,11 @@
     "meaning": "Dog",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "dog"
+    "english_equivalent": "dog",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Kniga",
@@ -2042,7 +2708,11 @@
     "meaning": "Book",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "book"
+    "english_equivalent": "book",
+    "english_loanword": false,
+    "script_type": "cyrillic",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Hus",
@@ -2052,7 +2722,11 @@
     "meaning": "House",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "house"
+    "english_equivalent": "house",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 3,
+    "native_char_len": 3
   },
   {
     "word": "Vand",
@@ -2062,7 +2736,11 @@
     "meaning": "Water",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "water"
+    "english_equivalent": "water",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Hund",
@@ -2072,7 +2750,11 @@
     "meaning": "Dog",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "dog"
+    "english_equivalent": "dog",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Bog",
@@ -2082,7 +2764,11 @@
     "meaning": "Book",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "book"
+    "english_equivalent": "book",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 3,
+    "native_char_len": 3
   },
   {
     "word": "Casa",
@@ -2092,7 +2778,11 @@
     "meaning": "House",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "house"
+    "english_equivalent": "house",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Agua",
@@ -2102,7 +2792,11 @@
     "meaning": "Water",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "water"
+    "english_equivalent": "water",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 4,
+    "native_char_len": 4
   },
   {
     "word": "Perro",
@@ -2112,7 +2806,11 @@
     "meaning": "Dog",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "dog"
+    "english_equivalent": "dog",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Montana",
@@ -2122,7 +2820,11 @@
     "meaning": "Mountain",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "mountain"
+    "english_equivalent": "mountain",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 7,
+    "native_char_len": 7
   },
   {
     "word": "Maison",
@@ -2132,7 +2834,11 @@
     "meaning": "House",
     "category": "concept",
     "translatability": "translatable",
-    "english_equivalent": "house"
+    "english_equivalent": "house",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 6,
+    "native_char_len": 6
   },
   {
     "word": "Eau",
@@ -2142,7 +2848,11 @@
     "meaning": "Water",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "water"
+    "english_equivalent": "water",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 3,
+    "native_char_len": 3
   },
   {
     "word": "Chien",
@@ -2152,7 +2862,11 @@
     "meaning": "Dog",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "dog"
+    "english_equivalent": "dog",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 5,
+    "native_char_len": 5
   },
   {
     "word": "Montagne",
@@ -2162,6 +2876,10 @@
     "meaning": "Mountain",
     "category": "nature",
     "translatability": "translatable",
-    "english_equivalent": "mountain"
+    "english_equivalent": "mountain",
+    "english_loanword": false,
+    "script_type": "latin",
+    "char_len": 8,
+    "native_char_len": 8
   }
 ]
