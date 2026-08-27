@@ -1,0 +1,18 @@
+{
+  "unconstrained_cleaned": {
+    "accuracy": 0.7502768549280178,
+    "accuracy_std": 0.07942446291931934,
+    "balanced_accuracy": 0.7603284251119564,
+    "auroc": 0.8336046381462342,
+    "normalized_above_chance": 0.5005537098560355,
+    "n_samples": 636
+  },
+  "strict_matched": {
+    "accuracy": 0.4169117647058823,
+    "accuracy_std": 0.13138123690909864,
+    "balanced_accuracy": 0.422041847041847,
+    "auroc": 0.4173448773448773,
+    "normalized_above_chance": -0.16617647058823537,
+    "n_samples": 246
+  }
+}

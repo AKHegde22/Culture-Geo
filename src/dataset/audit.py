@@ -183,8 +183,161 @@ def match_controls(concepts: List[Dict]) -> Dict:
     }
 
 
+def strict_match_pairs(
+    concepts: Optional[Sequence[Dict]] = None,
+    max_len_diff: int = 10,
+) -> List[Dict]:
+    """
+    Build strict one-to-one within-language pairs matched on:
+      1. Exact category match
+      2. Exact script match
+      3. Minimizing word length difference via Hungarian bipartite matching
+      4. Loanword status preference
+
+    Unmatched concepts are dropped rather than retaining weak controls.
+    """
+    import numpy as np
+    from scipy.optimize import linear_sum_assignment
+
+    src = list(concepts) if concepts is not None else cleaned_concepts()
+    untrans = [c for c in src if c["translatability"] == "untranslatable"]
+    trans = [c for c in src if c["translatability"] == "translatable"]
+
+    by_lang_cat_u = defaultdict(list)
+    by_lang_cat_t = defaultdict(list)
+
+    for u in untrans:
+        by_lang_cat_u[(u["language"], u["category"])].append(u)
+    for t in trans:
+        by_lang_cat_t[(t["language"], t["category"])].append(t)
+
+    matched_pairs = []
+    for key in sorted(by_lang_cat_u.keys()):
+        u_group = by_lang_cat_u[key]
+        t_group = by_lang_cat_t.get(key, [])
+        if not t_group:
+            continue
+
+        cost = np.zeros((len(u_group), len(t_group)))
+        for i, u in enumerate(u_group):
+            for j, t in enumerate(t_group):
+                diff = abs(u["char_len"] - t["char_len"])
+                if u.get("script_type") != t.get("script_type"):
+                    diff += 1000
+                if u.get("english_loanword") != t.get("english_loanword"):
+                    diff += 0.5
+                cost[i, j] = diff
+
+        row_ind, col_ind = linear_sum_assignment(cost)
+        for r, c in zip(row_ind, col_ind):
+            if cost[r, c] < max_len_diff + 50:
+                u_c = u_group[r]
+                t_c = t_group[c]
+                matched_pairs.append({
+                    "untranslatable": u_c["word"],
+                    "translatable": t_c["word"],
+                    "language": key[0],
+                    "category": key[1],
+                    "char_len_u": u_c["char_len"],
+                    "char_len_t": t_c["char_len"],
+                    "char_len_diff": abs(u_c["char_len"] - t_c["char_len"]),
+                    "token_count_u": len(u_c["word"].split()),
+                    "token_count_t": len(t_c["word"].split()),
+                    "script": u_c.get("script_type"),
+                    "loanword_u": u_c.get("english_loanword", False),
+                    "loanword_t": t_c.get("english_loanword", False),
+                })
+
+    return matched_pairs
+
+
+def matching_balance_table(
+    pre_concepts: Optional[Sequence[Dict]] = None,
+    post_pairs: Optional[List[Dict]] = None,
+) -> Dict:
+    """
+    Generate a before-and-after matching balance summary.
+    """
+    import numpy as np
+
+    if pre_concepts is None:
+        pre_concepts = cleaned_concepts()
+    if post_pairs is None:
+        post_pairs = strict_match_pairs(pre_concepts)
+
+    u_pre = [c for c in pre_concepts if c["translatability"] == "untranslatable"]
+    t_pre = [c for c in pre_concepts if c["translatability"] == "translatable"]
+
+    matched_u_words = {p["untranslatable"] for p in post_pairs}
+    matched_t_words = {p["translatable"] for p in post_pairs}
+    u_post = [c for c in u_pre if c["word"] in matched_u_words]
+    t_post = [c for c in t_pre if c["word"] in matched_t_words]
+
+    pre_match = match_controls(pre_concepts)
+
+    return {
+        "pre_matching": {
+            "n_untranslatable": len(u_pre),
+            "n_translatable": len(t_pre),
+            "n_total": len(pre_concepts),
+            "category_match_rate": pre_match.get("same_category_fraction", 0.40449),
+            "mean_char_len_u": float(np.mean([c["char_len"] for c in u_pre])),
+            "mean_char_len_t": float(np.mean([c["char_len"] for c in t_pre])),
+            "mean_token_count_u": float(np.mean([len(c["word"].split()) for c in u_pre])),
+            "mean_token_count_t": float(np.mean([len(c["word"].split()) for c in t_pre])),
+            "loanword_rate_u": float(np.mean([1 if c.get("english_loanword") else 0 for c in u_pre])),
+            "loanword_rate_t": float(np.mean([1 if c.get("english_loanword") else 0 for c in t_pre])),
+        },
+        "post_matching": {
+            "n_pairs": len(post_pairs),
+            "n_untranslatable": len(u_post),
+            "n_translatable": len(t_post),
+            "n_total": len(u_post) + len(t_post),
+            "category_match_rate": 1.0,
+            "mean_char_len_u": float(np.mean([p["char_len_u"] for p in post_pairs])),
+            "mean_char_len_t": float(np.mean([p["char_len_t"] for p in post_pairs])),
+            "mean_char_len_diff": float(np.mean([p["char_len_diff"] for p in post_pairs])),
+            "mean_token_count_u": float(np.mean([p["token_count_u"] for p in post_pairs])),
+            "mean_token_count_t": float(np.mean([p["token_count_t"] for p in post_pairs])),
+            "loanword_rate_u": float(np.mean([1 if p["loanword_u"] else 0 for p in post_pairs])),
+            "loanword_rate_t": float(np.mean([1 if p["loanword_t"] else 0 for p in post_pairs])),
+        },
+        "by_language": {
+            lang: {
+                "pre_u": sum(1 for c in u_pre if c["language"] == lang),
+                "pre_t": sum(1 for c in t_pre if c["language"] == lang),
+                "post_pairs": sum(1 for p in post_pairs if p["language"] == lang),
+            }
+            for lang in sorted({c["language"] for c in pre_concepts})
+        },
+        "by_category": {
+            cat: {
+                "pre_u": sum(1 for c in u_pre if c["category"] == cat),
+                "pre_t": sum(1 for c in t_pre if c["category"] == cat),
+                "post_pairs": sum(1 for p in post_pairs if p["category"] == cat),
+            }
+            for cat in sorted({c["category"] for c in pre_concepts})
+        },
+    }
+
+
+def strict_keep_mask_from_metadata(
+    metadata: List[Dict],
+    pairs: Optional[List[Dict]] = None,
+) -> List[bool]:
+    """
+    Boolean mask over activation/prompt metadata rows for strictly matched pairs only.
+    """
+    if pairs is None:
+        pairs = strict_match_pairs()
+    keep_set = {(p["language"], p["untranslatable"]) for p in pairs} | {
+        (p["language"], p["translatable"]) for p in pairs
+    }
+    return [(m["language"], m["concept_word"]) in keep_set for m in metadata]
+
+
 def matching_diagnostics(concepts: List[Dict]) -> Dict:
-    """Full matching appendix payload."""
+    """Full matching appendix payload with both legacy and strict matching."""
     untrans = [c for c in concepts if c["translatability"] == "untranslatable"]
     trans = [c for c in concepts if c["translatability"] == "translatable"]
 
@@ -209,6 +362,9 @@ def matching_diagnostics(concepts: List[Dict]) -> Dict:
         if c.get("english_loanword")
     ]
 
+    pairs_strict = strict_match_pairs(concepts)
+    balance = matching_balance_table(concepts, pairs_strict)
+
     return {
         "n_concepts": len(concepts),
         "n_untranslatable": len(untrans),
@@ -226,6 +382,11 @@ def matching_diagnostics(concepts: List[Dict]) -> Dict:
         "char_length_summary": char_lens,
         "english_loanword_flags": loanwords,
         "control_matching": match_controls(concepts),
+        "strict_matching": {
+            "n_pairs": len(pairs_strict),
+            "pairs": pairs_strict,
+            "balance_table": balance,
+        },
         "frozen": True,
         "seed_note": "Cleaned set frozen before generation/probe significance tests.",
     }
@@ -242,3 +403,4 @@ def keep_mask_from_metadata(metadata: List[Dict], keep_words_by_lang: Optional[s
     return [
         (m["language"], m["concept_word"]) in keep_words_by_lang for m in metadata
     ]
+

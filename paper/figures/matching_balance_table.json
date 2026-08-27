@@ -1,0 +1,122 @@
+{
+  "pre_matching": {
+    "n_untranslatable": 90,
+    "n_translatable": 122,
+    "n_total": 212,
+    "category_match_rate": 0.4044943820224719,
+    "mean_char_len_u": 8.811111111111112,
+    "mean_char_len_t": 5.901639344262295,
+    "mean_token_count_u": 1.0777777777777777,
+    "mean_token_count_t": 1.0,
+    "loanword_rate_u": 0.05555555555555555,
+    "loanword_rate_t": 0.0
+  },
+  "post_matching": {
+    "n_pairs": 41,
+    "n_untranslatable": 41,
+    "n_translatable": 41,
+    "n_total": 82,
+    "category_match_rate": 1.0,
+    "mean_char_len_u": 8.487804878048781,
+    "mean_char_len_t": 6.7317073170731705,
+    "mean_char_len_diff": 2.292682926829268,
+    "mean_token_count_u": 1.0,
+    "mean_token_count_t": 1.0,
+    "loanword_rate_u": 0.024390243902439025,
+    "loanword_rate_t": 0.0
+  },
+  "by_language": {
+    "Arabic": {
+      "pre_u": 6,
+      "pre_t": 12,
+      "post_pairs": 4
+    },
+    "Danish": {
+      "pre_u": 8,
+      "pre_t": 10,
+      "post_pairs": 2
+    },
+    "French": {
+      "pre_u": 9,
+      "pre_t": 12,
+      "post_pairs": 5
+    },
+    "German": {
+      "pre_u": 15,
+      "pre_t": 14,
+      "post_pairs": 7
+    },
+    "Hindi": {
+      "pre_u": 5,
+      "pre_t": 12,
+      "post_pairs": 2
+    },
+    "Japanese": {
+      "pre_u": 14,
+      "pre_t": 14,
+      "post_pairs": 8
+    },
+    "Korean": {
+      "pre_u": 8,
+      "pre_t": 12,
+      "post_pairs": 3
+    },
+    "Portuguese": {
+      "pre_u": 8,
+      "pre_t": 12,
+      "post_pairs": 4
+    },
+    "Russian": {
+      "pre_u": 7,
+      "pre_t": 12,
+      "post_pairs": 3
+    },
+    "Spanish": {
+      "pre_u": 10,
+      "pre_t": 12,
+      "post_pairs": 3
+    }
+  },
+  "by_category": {
+    "aesthetic": {
+      "pre_u": 8,
+      "pre_t": 7,
+      "post_pairs": 1
+    },
+    "concept": {
+      "pre_u": 11,
+      "pre_t": 29,
+      "post_pairs": 9
+    },
+    "emotion": {
+      "pre_u": 33,
+      "pre_t": 3,
+      "post_pairs": 3
+    },
+    "habit": {
+      "pre_u": 4,
+      "pre_t": 21,
+      "post_pairs": 3
+    },
+    "nature": {
+      "pre_u": 4,
+      "pre_t": 30,
+      "post_pairs": 4
+    },
+    "philosophy": {
+      "pre_u": 5,
+      "pre_t": 5,
+      "post_pairs": 2
+    },
+    "social": {
+      "pre_u": 24,
+      "pre_t": 27,
+      "post_pairs": 19
+    },
+    "time": {
+      "pre_u": 1,
+      "pre_t": 0,
+      "post_pairs": 0
+    }
+  }
+}

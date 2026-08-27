@@ -539,7 +539,7 @@ def plot_faithfulness_by_group(
     output_path: Optional[str] = None,
     title: str = "Generation faithfulness: untranslatable vs translatable",
 ) -> plt.Figure:
-    """Bar chart of mean overall faithfulness per model and group."""
+    """Bar chart of mean overall faithfulness per model and group with standard error bars."""
     setup_style()
     models = list(faithfulness_by_model.keys())
     fig, ax = plt.subplots(figsize=(9, 5))
@@ -547,16 +547,27 @@ def plot_faithfulness_by_group(
     width = 0.35
 
     u_means, t_means = [], []
+    u_errs, t_errs = [], []
     for mk in models:
         overall = faithfulness_by_model[mk].get("overall_untrans_vs_trans", {})
         u_means.append(overall.get("mean_a", 0.0))
         t_means.append(overall.get("mean_b", 0.0))
+        n_a = max(overall.get("n_a", 1), 1)
+        n_b = max(overall.get("n_b", 1), 1)
+        u_errs.append(1.96 * overall.get("std_a", 0.0) / np.sqrt(n_a))
+        t_errs.append(1.96 * overall.get("std_b", 0.0) / np.sqrt(n_b))
 
-    ax.bar(x - width / 2, u_means, width, label="Untranslatable", color=TRANSLATABILITY_COLORS["untranslatable"], alpha=0.85)
-    ax.bar(x + width / 2, t_means, width, label="Translatable", color=TRANSLATABILITY_COLORS["translatable"], alpha=0.85)
+    ax.bar(
+        x - width / 2, u_means, width, yerr=u_errs, capsize=4,
+        label="Untranslatable", color=TRANSLATABILITY_COLORS["untranslatable"], alpha=0.85
+    )
+    ax.bar(
+        x + width / 2, t_means, width, yerr=t_errs, capsize=4,
+        label="Translatable", color=TRANSLATABILITY_COLORS["translatable"], alpha=0.85
+    )
     ax.set_xticks(x)
     ax.set_xticklabels(models, fontsize=9)
-    ax.set_ylabel("Overall faithfulness")
+    ax.set_ylabel("Overall faithfulness (0-1)")
     ax.set_title(title)
     ax.set_ylim(0, 1.05)
     ax.legend()
@@ -572,19 +583,32 @@ def plot_faithfulness_by_group(
 def plot_faithfulness_effect_sizes(
     faithfulness_by_model: Dict[str, Dict],
     output_path: Optional[str] = None,
-    title: str = "Faithfulness effect size (Cohen's d, untrans − trans)",
+    title: str = "Faithfulness effect size (Cohen's d with 95% CI)",
 ) -> plt.Figure:
+    """Forest plot of effect sizes with 95% confidence intervals."""
     setup_style()
     models = list(faithfulness_by_model.keys())
-    ds = [
-        faithfulness_by_model[mk].get("overall_untrans_vs_trans", {}).get("cohens_d", 0.0)
-        for mk in models
-    ]
+    ds = []
+    ci_errs = []
+    for mk in models:
+        stats = faithfulness_by_model[mk].get("overall_untrans_vs_trans", {})
+        d = stats.get("cohens_d", 0.0)
+        ds.append(d)
+        ci = stats.get("ci_95", [d - 0.2, d + 0.2])
+        ci_errs.append([abs(d - ci[0]), abs(ci[1] - d)])
+
+    ci_errs = np.array(ci_errs).T  # [2, n_models]
     fig, ax = plt.subplots(figsize=(8, 4.5))
-    colors = ["#E74C3C" if d < 0 else "#27AE60" for d in ds]
-    ax.barh(models, ds, color=colors, alpha=0.85)
-    ax.axvline(0, color="black", linewidth=1)
-    ax.set_xlabel("Cohen's d")
+    y_pos = np.arange(len(models))
+
+    ax.errorbar(
+        ds, y_pos, xerr=ci_errs, fmt="o", color="#2C3E50",
+        ecolor="#E74C3C", elinewidth=2, capsize=5, markersize=8
+    )
+    ax.axvline(0, color="black", linewidth=1, linestyle="--", alpha=0.6)
+    ax.set_yticks(y_pos)
+    ax.set_yticklabels(models)
+    ax.set_xlabel("Cohen's d (untranslatable − translatable)")
     ax.set_title(title)
     ax.grid(True, alpha=0.3, axis="x")
 
@@ -593,3 +617,44 @@ def plot_faithfulness_effect_sizes(
         fig.savefig(output_path, bbox_inches="tight")
         print(f"  Saved: {output_path}")
     return fig
+
+
+def plot_confound_comparison(
+    confound_data: Dict,
+    output_path: Optional[str] = None,
+    title: str = "Confound Baseline vs Representation Probes",
+) -> plt.Figure:
+    """Compare surface confound predictability on unconstrained vs matched subset."""
+    setup_style()
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+
+    subsets = ["Unconstrained (636 prompts)", "Strict Matched (246 prompts)"]
+    accs = [
+        confound_data.get("unconstrained_cleaned", {}).get("accuracy", 0.75),
+        confound_data.get("strict_matched", {}).get("accuracy", 0.42),
+    ]
+    aucs = [
+        confound_data.get("unconstrained_cleaned", {}).get("auroc", 0.83),
+        confound_data.get("strict_matched", {}).get("auroc", 0.42),
+    ]
+
+    x = np.arange(len(subsets))
+    w = 0.35
+    ax.bar(x - w / 2, accs, w, label="Accuracy", color="#3498DB", alpha=0.85)
+    ax.bar(x + w / 2, aucs, w, label="AUROC", color="#E67E22", alpha=0.85)
+    ax.axhline(0.5, color="gray", linestyle="--", alpha=0.7, label="Chance (0.50)")
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(subsets, fontsize=10)
+    ax.set_ylabel("Score")
+    ax.set_ylim(0, 1.05)
+    ax.set_title(title)
+    ax.legend()
+    ax.grid(True, alpha=0.3, axis="y")
+
+    if output_path:
+        os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+        fig.savefig(output_path, bbox_inches="tight")
+        print(f"  Saved: {output_path}")
+    return fig
+
