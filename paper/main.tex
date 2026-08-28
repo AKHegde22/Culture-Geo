@@ -19,6 +19,9 @@
 \usepackage{xcolor}
 \usepackage{microtype}
 \usepackage{nicefrac}
+\usepackage{array}
+\usepackage{ragged2e}
+\captionsetup[table]{font=small}
 
 \title{The Geometry of Untranslatability:\\
 Generation Faithfulness and Language Identity in Multilingual LLMs}
@@ -33,20 +36,20 @@ Generation Faithfulness and Language Identity in Multilingual LLMs}
 \maketitle
 
 \begin{abstract}
-Do multilingual large language models (LLMs) truly ``think in English'', or is this conclusion an artifact of studying concepts that have direct English equivalents? While recent mechanistic investigations reveal that intermediate transformer representations frequently align with English, human languages are characterized by lexical gaps---culturally distinct concepts that lack single-word translations. We investigate how multilingual LLMs process these lexical gaps across four open-weight models (Llama-3-8B, Llama-3-8B-Instruct, Mistral-7B-v0.3, Qwen2.5-7B) using an audited benchmark of 212 concepts and a strictly matched subset of 41 one-to-one pairs across 10 languages (100\% matched on semantic category and script).
+Do multilingual large language models (LLMs) truly ``think in English'', or is this conclusion an artifact of studying concepts that have direct English equivalents? While recent mechanistic investigations reveal that intermediate transformer representations frequently align with English, human languages are characterized by lexical gaps: culturally distinct concepts that lack single-word translations. We investigate how multilingual LLMs process these lexical gaps across four open-weight models (Llama-3-8B, Llama-3-8B-Instruct, Mistral-7B-v0.3, Qwen2.5-7B) using an audited benchmark of 212 concepts and a strictly matched subset of 41 one-to-one pairs across 10 languages (100\% matched on semantic category and script).
 Our investigation yields four primary findings.
-\textbf{(1)~Behavioral asymmetry.} Evaluating model generations blind to condition using a three-dimensional rubric (semantic correctness, nuance retained, cultural adequacy) demonstrates that instruction tuning imposes a selective faithfulness penalty on lexical gaps (Llama-3-8B-Instruct Cohen's $d = -0.26$, paired permutation $p = 0.042$), whereas uncalibrated base models produce verbose, wandering circumlocution.
+\textbf{(1)~Behavioral asymmetry.} Evaluating model generations blind to condition using a three-dimensional rubric (semantic correctness, nuance retained, cultural adequacy) demonstrates that instruction tuning imposes a selective faithfulness penalty on lexical gaps (for Llama-3-8B-Instruct, Cohen's $d = -0.26$, paired permutation $p = 0.042$), whereas uncalibrated base models produce verbose, wandering circumlocution.
 \textbf{(2)~Surface confound warning.} Naive logistic regression predicting translatability purely from surface features (character length, token count, language, category) achieves 75.0\% accuracy ($\text{AUROC} = 0.834$), but collapses to chance (41.7\%, $\text{AUROC} = 0.417$) on our strictly matched subset, proving that naive interpretability probes risk measuring orthographic artifacts rather than semantic representations.
-\textbf{(3)~Representational hierarchy.} Linear probes with concept-grouped cross-validation recover 10-way source language identity with near-perfect normalized improvement over chance (100\%), while translatability forms an authentic but subordinate linear direction (88--92\% normalized accuracy) that exceeds the surface baseline by +52 percentage points.
+\textbf{(3)~Representational hierarchy.} Linear probes with concept-grouped cross-validation recover 10-way source language identity with near-perfect normalized improvement over chance (100\%), while translatability forms an authentic but subordinate linear direction (88--92\% normalized accuracy), exceeding the surface baseline by +52 percentage points.
 \textbf{(4)~The English routing mirage.} English Routing Rate (ERR) and logit-lens English probability mass fail to diagnose lexical gaps on strictly matched pairs (all $p > 0.29$; $|d| \le 0.133$), tracking early-layer unigram vocabulary priors and tokenizer composition rather than semantic anglicization.
 Together, our results show that in a controlled lexical-gap inventory, models exhibit lower cultural-explanation faithfulness in instruction-tuned models, while ERR does not provide a stable diagnostic.
 \end{abstract}
 
 \section{Introduction}
 
-Multilingual large language models (LLMs) demonstrate remarkable cross-lingual capabilities, yet mechanistic analyses of their inner workings remain overwhelmingly viewed through an English lens. A growing body of interpretability research argues that multilingual transformers route semantic processing through an English-centric latent space~\cite{schut2025think,wendler2024llamas}, and that intermediate layers leverage romanization as a conceptual pivot between non-Latin scripts and target generations~\cite{saji2025romanlens}. However, these empirical claims rely almost exclusively on parallel datasets and translation pairs where direct, one-to-one lexical equivalents exist.
+Multilingual large language models (LLMs) demonstrate remarkable cross-lingual capabilities, yet mechanistic analyses of their internal representations remain overwhelmingly viewed through an English lens. A growing body of interpretability research argues that multilingual transformers route semantic processing through an English-centric latent space~\cite{schut2025think,wendler2024llamas}, and that intermediate layers leverage romanization as a conceptual pivot between non-Latin scripts and target generations~\cite{saji2025romanlens}. However, these empirical claims rely almost exclusively on parallel datasets and translation pairs where direct, one-to-one lexical equivalents exist.
 
-This methodology leaves a fundamental linguistic question unaddressed: \emph{what happens when a concept possesses no English equivalent?} Human languages are not isomorphic encodings of a universal inventory of words; rather, they harbor profound \emph{lexical gaps}---words that crystallize complex, culturally embedded phenomena into a single lexical unit~\cite{sapir1929,brown1954study}.
+This methodology leaves a fundamental linguistic question unaddressed: \emph{what happens when a concept possesses no English equivalent?} Human languages are not isomorphic encodings of a universal inventory of words; rather, they harbor profound \emph{lexical gaps}, crystallizing complex, culturally embedded phenomena into a single lexical unit~\cite{sapir1929,brown1954study}.
 
 Consider the Japanese concept \textit{Tsundoku} (the habit of acquiring books and letting them pile up unread) versus its control counterpart \textit{Tempura} (a deep-fried dish), or the German emotion \textit{Schadenfreude} (pleasure derived from another's misfortune) versus \textit{Wanderlust} (desire to travel). When a multilingual model encounters such a concept, three distinct architectural outcomes are plausible:
 \begin{enumerate}
@@ -55,15 +58,15 @@ Consider the Japanese concept \textit{Tsundoku} (the habit of acquiring books an
     \item \textbf{Behavioral Degradation}: The model's capacity to articulate and explain the cultural concept deteriorates, even while internal routing statistics appear indistinguishable from standard vocabulary.
 \end{enumerate}
 
-Distinguishing among these hypotheses requires navigating severe methodological hazards. In unconstrained benchmarks, untranslatable concepts differ systematically from ordinary controls in character length, subword fragmentation, and domain distribution. Indeed, we show that a non-neural baseline can predict whether a concept is ``untranslatable'' with 75.0\% accuracy from surface orthography alone. Without strict control pairing, interpretability experiments risk measuring tokenizer artifacts rather than conceptual representations.
+Distinguishing among these hypotheses requires navigating severe methodological hazards. In unconstrained benchmarks, untranslatable concepts differ systematically from ordinary controls in character length, subword fragmentation, and domain distribution. Indeed, a simple non-neural baseline predicts whether a concept is translatable with 75.0\% accuracy from surface orthography alone. Without strict control pairing, interpretability experiments risk measuring tokenizer artifacts rather than conceptual representations.
 
 \paragraph{Contributions.}
 In this work, we present a rigorous, tripartite evaluation of cultural lexical gaps across four open-weight models (Table~\ref{tab:models}):
 \begin{itemize}
-    \item \textbf{Strict Bipartite Benchmark}: We introduce an audited lexical-gap inventory of 212 concepts across 10 languages and construct 41 strictly matched within-language pairs using Hungarian bipartite matching (Table~\ref{tab:matching_balance}), achieving 100\% category and script balance and collapsing surface predictability to chance (41.7\%).
-    \item \textbf{Condition-Blind Behavioral Faithfulness}: We design an objective, label-invariant evaluation rubric assessing semantic correctness, nuance retained, and cultural adequacy. On strictly matched controls, instruction-tuned models exhibit a selective, statistically significant faithfulness deficit on lexical gaps (Llama-3-8B-Instruct Cohen's $d = -0.26$, paired permutation $p = 0.042$), whereas uncalibrated base models exhibit length-driven circumlocution.
-    \item \textbf{Representational Geometry vs.\ Surface Confounds}: Probing residual streams with concept-grouped cross-validation reveals that language identity dominates latent geometry (100\% normalized improvement over chance), while translatability forms an authentic, subordinate linear direction that outperforms surface baselines by +52 percentage points.
-    \item \textbf{The Diagnostic Mirage of English Routing}: We demonstrate that aggregate English Routing Rate (ERR) and logit-lens probability mass are statistically invariant to lexical gaps ($p > 0.29, |d| \le 0.133$), driven instead by early-layer unigram frequency priors and tokenizer composition.
+    \item \textbf{Strict Bipartite Benchmark}: We introduce an audited lexical-gap inventory of 212 concepts across 10 languages and construct 41 strictly matched within-language pairs using Hungarian bipartite matching (Table~\ref{tab:matching_balance}), achieving 100\% category and script balance while collapsing surface predictability to chance (41.7\%).
+    \item \textbf{Condition-Blind Behavioral Faithfulness}: We design an objective, label-invariant evaluation rubric assessing semantic correctness, nuance retained, and cultural adequacy. On strictly matched controls, instruction-tuned models exhibit a selective, statistically significant faithfulness deficit on lexical gaps (for Llama-3-8B-Instruct, Cohen's $d = -0.26$, paired permutation $p = 0.042$), whereas uncalibrated base models exhibit length-driven circumlocution.
+    \item \textbf{Representational Geometry vs.\ Surface Confounds}: Probing residual streams with concept-grouped cross-validation reveals that language identity dominates latent geometry (100\% normalized improvement over chance), while translatability forms an authentic linear direction exceeding surface baselines by +52 percentage points.
+    \item \textbf{The Diagnostic Mirage of English Routing}: We demonstrate that aggregate English Routing Rate (ERR) and logit-lens English mass are statistically invariant to lexical gaps on matched controls ($p > 0.29, |d| \le 0.133$), driven instead by early-layer unigram priors and tokenizer vocabulary composition.
 \end{itemize}
 
 \section{Related Work}
@@ -113,6 +116,7 @@ English loanword rate ($u$ / $t$) & 5.6\% / 0.0\% & \textbf{2.4\% / 0.0\%} \\
 Languages represented & 10 languages & \textbf{10 languages (2--8 pairs / lang)} \\
 \bottomrule
 \end{tabular}
+\vspace{1ex}
 \caption{Benchmark balance before and after strict one-to-one bipartite matching.}
 \label{tab:matching_balance}
 \end{table}
@@ -140,6 +144,7 @@ Mistral-7B-v0.3 & \texttt{Mistral-7B-v0.3} & 32 & 4096 & 33K \\
 Qwen2.5-7B & \texttt{Qwen2.5-7B} & 28 & 3584 & 152K \\
 \bottomrule
 \end{tabular}
+\vspace{1ex}
 \caption{Evaluated open-weight multilingual models.}
 \label{tab:models}
 \end{table}
@@ -149,7 +154,7 @@ Qwen2.5-7B & \texttt{Qwen2.5-7B} & 28 & 3584 & 152K \\
 
 Evaluating cultural explanation quality requires avoiding evaluation biases. Prior heuristics often penalized generations using condition-dependent rules (e.g., discounting copular collapse penalties by half for translatables) or computed raw lexical overlap against English glosses. This creates severe experimental bias: untranslatable concepts require multi-sentence descriptive circumlocutions where raw token overlap is naturally lower, while translatable controls benefit from concise synonyms.
 
-To eliminate this asymmetry, we establish a **condition-blind, label-invariant rubric**. The scoring function is mathematically independent of the translatability label ($\partial s / \partial c \equiv 0$ for condition $c \in \{\text{untrans}, \text{transl}\}$) and evaluates three orthogonal dimensions:
+To eliminate this asymmetry, we establish a \textbf{condition-blind, label-invariant rubric}. The scoring function is mathematically independent of the translatability label ($\partial s / \partial c \equiv 0$ for condition $c \in \{\text{untrans}, \text{transl}\}$) and evaluates three orthogonal dimensions:
 \begin{enumerate}
     \item \textbf{Semantic correctness ($s_{\mathrm{sem}} \in [0,1]$)}: Evaluates absence of degenerative repetition loops (penalizing low Type-Token Ratios $\text{TTR} < 0.6$), presence of definitional predicates (``means'', ``refers to'', ``concept of''), and semantic domain alignment with length-normalized precision against reference glosses.
     \item \textbf{Nuance retained ($s_{\mathrm{nuance}} \in [0,1]$)}: Evaluates explanatory depth, clausal complexity, and nuance markers (``specifically'', ``connotation'', ``cultural context''). Single-word copular collapses (e.g., ``means X.'') incur an identical penalty across both conditions.
@@ -214,12 +219,13 @@ Mistral-7B-v0.3 & 0.773 & 0.729 & $+0.33^*$ [$+0.13, +0.52$] & 0.792 & 0.740 & $
 Qwen2.5-7B & 0.803 & 0.823 & $-0.16$ [$-0.35, +0.03$] & 0.816 & 0.827 & $-0.10$ [$-0.41, +0.21$] \\
 \bottomrule
 \end{tabular}
+\vspace{1ex}
 \caption{Generation faithfulness across models. $^*$ indicates statistical significance ($p < 0.05$). Paired permutation test for Llama-3-8B-Instruct on matched pairs yields $p = 0.042$.}
 \label{tab:faith_results}
 \end{table}
 
 \paragraph{Instruction-tuned alignment vs.\ base model verbosity.}
-On strictly matched pairs, \textbf{Llama-3-8B-Instruct demonstrates a statistically significant faithfulness deficit on lexical gaps} (mean $0.863$ vs.\ $0.881$, Cohen's $d = -0.26$, paired permutation $p = 0.042$). Qwen2.5-7B exhibits a congruent directional deficit ($d = -0.10, p = 0.57$). 
+On strictly matched pairs, \textbf{Llama-3-8B-Instruct} exhibits a significant deficit in explaining lexical gaps (mean $0.863$ vs.\ $0.881$, Cohen's $d = -0.26$, paired permutation $p = 0.042$). Qwen2.5-7B exhibits a congruent directional deficit ($d = -0.10, p = 0.57$). 
 
 In contrast, base models (Mistral-7B and Llama-3-8B base) exhibit inverted differences ($d = +0.39$ and $+0.27$). Qualitative inspection reveals the mechanistic cause: unconstrained base models respond to culturally rich prompts with wandering, associative continuations filled with encyclopedic elaboration, boosting nuance and depth sub-scores. For concrete controls, however, base models quickly collapse into repetitive single-word definitions. 
 In the instruction-tuned regime, where output length and formatting are calibrated, models readily produce concise, faithful definitions for standard controls, but struggle to compress culturally nuanced lexical gaps into English without sacrificing nuance or hallucinating commercial associations.
@@ -230,8 +236,8 @@ In an OLS regression controlling for character length, token count, language, an
 \begin{table}[t]
 \centering
 \scriptsize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{p{1.1cm}p{1.3cm}p{3.2cm}p{5.1cm}c}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{ll>{\RaggedRight\arraybackslash}p{3.2cm}>{\RaggedRight\arraybackslash}p{5.1cm}c}
 \toprule
 Language & Word (Type) & Reference Meaning & Model Generation (Llama-3-8B-Instruct) & Score \\
 \midrule
@@ -248,6 +254,7 @@ Language & Word (Type) & Reference Meaning & Model Generation (Llama-3-8B-Instru
  & \textit{Restaurant} (Transl.) & A place where meals are served & ``means `restaurant'. In English, the word is used to refer to a place where people go to eat...'' & 0.878 \\
 \bottomrule
 \end{tabular}
+\vspace{1ex}
 \caption{Concrete paired examples from Llama-3-8B-Instruct with condition-blind rubric scores.}
 \label{tab:concrete_examples}
 \end{table}
@@ -280,15 +287,15 @@ Table~\ref{tab:concrete_examples} illustrates the linguistic mechanisms governin
 \end{figure}
 
 \paragraph{The confound mirage in linear probing.}
-As shown in Figure~\ref{fig:confound_bars}, a simple logistic regression trained purely on non-neural surface confounds (character length, token count, language, category) predicts whether a concept is untranslatable with **75.0\% accuracy ($\text{AUROC} = 0.834$)** on unconstrained data. On our strictly matched subset, this baseline collapses to **41.7\% accuracy ($\text{AUROC} = 0.417$)**, operating at chance level. This demonstrates why strict matching is mandatory: in unconstrained settings, high probe accuracy can merely reflect surface orthography rather than conceptual understanding.
+As shown in Figure~\ref{fig:confound_bars}, a simple logistic regression trained purely on non-neural surface confounds (character length, token count, language, category) predicts whether a concept is untranslatable with \textbf{75.0\% accuracy} ($\text{AUROC} = 0.834$) on unconstrained data. On our strictly matched subset, this baseline collapses to \textbf{41.7\% accuracy} ($\text{AUROC} = 0.417$), operating at chance level. This demonstrates why strict matching is mandatory: in unconstrained settings, high probe accuracy can merely reflect surface orthography rather than conceptual understanding.
 
 \paragraph{Normalized representational geometry.}
 Evaluating residual streams under GroupKFold reveals a clear geometric hierarchy:
 \begin{itemize}
-    \item \textbf{Language dominance}: 10-way language probes achieve peak accuracy $\approx 1.000$ across all models, corresponding to a **100.0\% normalized improvement over chance** ($\text{NormAcc} = 1.00$). Language identity is organized as the primary linear manifold in multilingual residual streams.
+    \item \textbf{Language dominance}: 10-way language probes achieve peak accuracy $\approx 1.000$ across all models, corresponding to a \textbf{100.0\% normalized improvement over chance} ($\text{NormAcc} = 1.00$). Language identity is organized as the primary linear manifold in multilingual residual streams.
     \item \textbf{Translatability subspace}: Binary translatability probes peak at $0.940$--$0.958$ ($\text{NormAcc} = 0.88$--$0.92$), while within-language probes peak at $0.84$--$0.88$ at the concept token ($\text{NormAcc} = 0.68$--$0.76$) and $0.92$--$0.94$ at the last token ($\text{NormAcc} = 0.84$--$0.88$).
 \end{itemize}
-Residual-stream activations exceed the surface confound baseline by **+20 percentage points** on unconstrained data and by **+52 percentage points** on the strictly matched subset. Thus, while language identity is the dominant linear coordinate, residual streams encode an authentic translatability direction that survives strict confound control.
+Residual-stream activations exceed the surface confound baseline by \textbf{+20 percentage points} on unconstrained data and by \textbf{+52 percentage points} on the strictly matched subset. Thus, while language identity is the dominant linear coordinate, residual streams encode an authentic translatability direction that survives strict confound control.
 
 \subsection{English routing: the diagnostic mirage of ERR}
 
@@ -314,12 +321,13 @@ Mistral-7B-v0.3 & 0.5245 & 0.5351 & $-0.133$ [$-0.38, +0.11$] & $-1.040$ & 0.300
 Qwen2.5-7B & 0.1864 & 0.1798 & $+0.092$ [$-0.15, +0.34$] & $+0.722$ & 0.472 \\
 \bottomrule
 \end{tabular}
+\vspace{1ex}
 \caption{English probability mass ($p_{\mathrm{eng}}$) on strictly matched pairs. All effects are null ($p > 0.29$).}
 \label{tab:err_matched}
 \end{table}
 
 \paragraph{A definitive negative result.}
-On strictly matched pairs, **differences in English probability mass between untranslatable concepts and controls are statistically indistinguishable from zero across all four models** ($|d| \le 0.133$, all $p > 0.29$). Top-1 ERR exhibits sharp early peaks in layers 1--6 (reaching 60--70\% in Llama and Mistral) before collapsing to near zero at output layers where tokens resolve into the target script.
+On strictly matched pairs, \textbf{differences in English probability mass are statistically indistinguishable from zero} across all four models ($|d| \le 0.133$, all $p > 0.29$). Top-1 ERR exhibits sharp early peaks in layers 1--6 (reaching 60--70\% in Llama and Mistral) before collapsing to near zero at output layers where tokens resolve into the target script.
 
 \paragraph{Why ERR fails as a cultural diagnostic.}
 Cross-model correlations reveal that early ERR peaks track tokenizer vocabulary composition ($r = 0.72$ between Llama and Mistral; near zero vs.\ Qwen) rather than cultural semantics. In early layers, un-embedded hidden states project onto the leading singular vectors of $W_{\mathrm{U}}$, which correspond to high-frequency Latin unigram tokens. Because Latin tokens dominate transformer vocabularies ($>70\%$ in Llama and Mistral), any uncalibrated projection yields an artificial ``English'' peak. ERR measures vocabulary entropy and unigram priors, not conceptual anglicization.
