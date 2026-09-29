@@ -1,9 +1,8 @@
 \documentclass{article}
 
-% NewInML @ NeurIPS 2026 -- double-blind workshop track
+% arXiv preprint style
 \PassOptionsToPackage{numbers,compress}{natbib}
-\usepackage[dblblindworkshop]{neurips_2026}
-\workshoptitle{New in ML}
+\usepackage{arxiv}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -26,9 +25,11 @@
 \title{The Geometry of Untranslatability:\\
 Generation Faithfulness and Language Identity in Multilingual LLMs}
 
-\author{
-  Anonymous Author(s)\\
-  \texttt{anonymous@example.com}
+\author{%
+  Akshaykumar \\
+  SMVITM \\
+  \texttt{aksh9881@gmail.com} \\
+  \texttt{akshay.22cs015@sode-edu.in}
 }
 
 \begin{document}
@@ -395,7 +396,7 @@ Edward Sapir.
 \bibitem{schaeffer2023emergent}
 Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo.
 \newblock Are Emergent Abilities of Large Language Models a Mirage?
-\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS 2023 - Outstanding Paper Award)}, volume~36, 2023.
+\newblock In \emph{Advances in Neural Information Processing Systems}, volume~36, pages 19600--19622, 2023.
 
 \bibitem{schut2025think}
 Lisa Schut, Yarin Gal, and Sebastian Farquhar.
@@ -413,92 +414,5 @@ Chenye Zou, Difan Jiao, and Lijie Hu.
 \newblock In \emph{Findings of ACL 2026}, pages 5656--5677, 2026.
 
 \end{thebibliography}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{NeurIPS Paper Checklist}
-
-\begin{enumerate}
-
-\item {\bf Claims}
-\item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
-\item[] Answer: \answerYes{}
-\item[] Justification: Claims are precisely calibrated: we report condition-blind generation faithfulness on matched pairs, probe performance against surface confound baselines, and establish that ERR is null on strictly matched controls.
-
-\item {\bf Limitations}
-\item[] Question: Does the paper discuss the limitations of the work performed by the authors?
-\item[] Answer: \answerYes{}
-\item[] Justification: Section~5 details four limitations: the contested nature of lexical gaps, sample size from strict matching, reliance on lexicographic reference glosses, and observational nature.
-
-\item {\bf Theory assumptions and proofs}
-\item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete (and correct) proof?
-\item[] Answer: \answerNA{}
-\item[] Justification: The paper is an empirical investigation.
-
-\item {\bf Experimental result reproducibility}
-\item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results?
-\item[] Answer: \answerYes{}
-\item[] Justification: Sections~3.1--3.5 describe the Hungarian matching optimization, model parameters, condition-blind rubric formulas, and probe CV setup.
-
-\item {\bf Open access to data and code}
-\item[] Question: Does the paper provide open access to the data and code?
-\item[] Answer: \answerYes{}
-\item[] Justification: Anonymized code, prompt sets, activation metadata, and scoring scripts are included with the submission repository.
-
-\item {\bf Experimental setting/details}
-\item[] Question: Does the paper specify all the training and test details?
-\item[] Answer: \answerYes{}
-\item[] Justification: Model IDs, decoding settings ($T=0, \text{max\_new\_tokens}=128$), GroupKFold splits, and regularization are fully documented.
-
-\item {\bf Experiment statistical significance}
-\item[] Question: Does the paper report error bars suitably and correctly defined?
-\item[] Answer: \answerYes{}
-\item[] Justification: All tests report exact $p$-values, paired permutation tests (10,000 permutations), and Cohen's $d$ with analytical 95\% confidence intervals (Tables~\ref{tab:faith_results},~\ref{tab:err_matched}).
-
-\item {\bf Experiments compute resources}
-\item[] Question: Does the paper provide sufficient information on compute resources?
-\item[] Answer: \answerYes{}
-\item[] Justification: Models were evaluated using open-weight checkpoints on NVIDIA L4 GPUs with execution times under 4 GPU-hours.
-
-\item {\bf Code of ethics}
-\item[] Question: Does the research conform with the NeurIPS Code of Ethics?
-\item[] Answer: \answerYes{}
-\item[] Justification: The research analyzes open linguistic concepts from public dictionaries without human subjects or dual-use risk.
-
-\item {\bf Broader impacts}
-\item[] Question: Does the paper discuss potential positive societal impacts and negative societal impacts?
-\item[] Answer: \answerYes{}
-\item[] Justification: Section~5 discusses the importance of objective metric validation and avoiding cultural stereotyping from unnormalized model metrics.
-
-\item {\bf Safeguards}
-\item[] Question: Does the paper describe safeguards for responsible release?
-\item[] Answer: \answerNA{}
-\item[] Justification: The study releases only small linguistic probe sets.
-
-\item {\bf Licenses for existing assets}
-\item[] Question: Are creators of existing assets properly credited?
-\item[] Answer: \answerYes{}
-\item[] Justification: Model origins (Meta, Mistral, Qwen) and citations are cited.
-
-\item {\bf New assets}
-\item[] Question: Are new assets well documented?
-\item[] Answer: \answerYes{}
-\item[] Justification: The 41 strictly matched pairs and diagnostics are documented in Section~3.1 and Table~\ref{tab:matching_balance}.
-
-\item {\bf Crowdsourcing and research with human subjects}
-\item[] Question: Does the paper include human subjects instructions?
-\item[] Answer: \answerNA{}
-\item[] Justification: No human subjects experiments were conducted.
-
-\item {\bf Institutional review board (IRB) approvals}
-\item[] Question: Were IRB approvals obtained?
-\item[] Answer: \answerNA{}
-\item[] Justification: No human subjects or private personal data were involved.
-
-\item {\bf Declaration of LLM usage}
-\item[] Question: Does the paper describe the usage of LLMs in research?
-\item[] Answer: \answerYes{}
-\item[] Justification: LLMs are the subject of empirical investigation; LLM-as-judge is disclosed as a secondary analysis interface in Section~3.3.
-
-\end{enumerate}
 
 \end{document}

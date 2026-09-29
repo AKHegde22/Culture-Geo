@@ -2,8 +2,6 @@
 
 **Probing LLM Representations of Cultural Concepts Without English Equivalents**
 
-Target venue: [NewInML @ NeurIPS 2026](https://newinml.github.io/NewInML2026NeurIPS/) (Paris, France)
-
 ---
 
 ## Overview
@@ -64,7 +62,7 @@ Culture-Geo/
 │   ├── 04_generate_figures.py    # Step 4: Generate paper figures
 │   └── 05_run_all.sh            # Run complete pipeline
 ├── paper/
-│   └── main.tex                  # LaTeX paper template (NeurIPS format)
+│   └── main.tex                  # LaTeX paper source
 ├── tests/
 │   ├── test_dataset.py
 │   └── test_extraction.py
@@ -307,11 +305,9 @@ python scripts/19_fill_paper_tables.py
 
 ## Paper
 
-The paper is being prepared for submission to **NewInML @ NeurIPS 2026**:
-- **Deadline:** August 29, 2026
-- **Format:** 2-8 pages (excluding references), NeurIPS workshop template
-- **Template:** See `paper/main.tex`
-
+The paper source and figures are located in `paper/`:
+- **Source:** [`paper/main.tex`](paper/main.tex)
+- **Preprint PDF:** [`paper/main.pdf`](paper/main.pdf)
 
 ## License
 
@@ -320,14 +316,14 @@ MIT License. See `LICENSE` for details.
 ## Citation
 
 ```bibtex
-@inproceedings{culturegeo2026,
-    title={The Geometry of Untranslatability: How LLMs Represent Cultural Concepts Without English Equivalents},
-    author={Anonymous},
-    booktitle={Workshop on New In Machine Learning (NeurIPS 2026)},
+@article{kumar2026geometry,
+    title={The Geometry of Untranslatability: Generation Faithfulness and Language Identity in Multilingual LLMs},
+    author={Kumar, Akshay},
+    journal={arXiv preprint},
     year={2026}
 }
 ```
 
 ## Acknowledgments
 
-Built for the NewInML @ NeurIPS 2026 workshop. Uses Llama-3-8B by Meta.
+This research uses open-weight multilingual LLMs provided by Meta, Mistral AI, and the Qwen Team.

@@ -58,6 +58,12 @@ paper/*.fdb_latexmk
 paper/*.nav
 paper/*.snm
 paper/*.toc
+paper/*.pdf
+paper/*.tar.gz
+paper/*.zip
+
+# Archives
+arxiv_submission.*
 
 # Environment variables
 .env
